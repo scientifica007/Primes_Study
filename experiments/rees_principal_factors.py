@@ -44,7 +44,9 @@ def rees_c3_monoid(p, group_size=1, labelled_values=None):
     if labelled_values is None:
         pp = tuple(tuple(0 if cell else -1 for cell in row) for row in p)
     else:
-        pp = tuple(tuple(x for x in row) for row in p)
+        if len(labelled_values) != rows or any(len(row) != columns for row in labelled_values):
+            raise ValueError("Group-valued matrix dimensions do not match")
+        pp = tuple(tuple(x for x in row) for row in labelled_values)
     if any(x < -1 or x >= group_size for row in pp for x in row):
         raise ValueError("Sandwich group entry is invalid")
     if not all(any(v != -1 for v in row) for row in pp):
