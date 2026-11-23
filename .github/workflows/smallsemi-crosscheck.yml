@@ -8,6 +8,7 @@ on:
       - 'experiments/match_smallsemi_catalogue.py'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
+      - 'results/smallsemi_catalogue_mapping_2026-11-23.json'
   workflow_dispatch:
 
 permissions:
@@ -53,10 +54,19 @@ jobs:
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
               f.write(summary)
           PY
-      - name: Archive machine-readable catalog mappings
-        uses: actions/upload-artifact@v4
-        with:
-          name: minimal-six-smallsemi-0_7_2-matches
-          path: /tmp/smallsemi_matches.json
-          if-no-files-found: error
-          retention-days: 30
+      - name: Verify recorded identifiers and all ten orientations
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/smallsemi_matches.json').read_text())
+          expected=json.loads(Path('results/smallsemi_catalogue_mapping_2026-11-23.json').read_text())
+          assert actual['smallsemi_ids_sorted'] == expected['selected_catalogue_ids']
+          assert actual['catalogue_source']['sha256'] == expected['catalogue']['verified_sha256']
+          for found, saved in zip(actual['matches'], expected['matches'], strict=True):
+              for key in ('local_class', 'unit_group', 'unit_action', 'smallsemi_id', 'orientation'):
+                  assert found[key] == saved[key], (key, found, saved)
+          assert actual['catalogue_classes_selected'] == 7
+          assert actual['local_isomorphism_classes_matched'] == 10
+          print('PASS: exact IDs and orientation labels match the committed JSON ledger.')
+          PY
