@@ -111,6 +111,21 @@ jobs:
           print('Complete group-action/ideal census reproduces ten distinct monoids.')
           PY
 
+      - name: Recheck general Green-J finite-monoid structural theorem
+        run: |
+          python3 experiments/green_structural_monoids.py \
+            --output /tmp/green-structural-monoids.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/green-structural-monoids.json').read_text())
+          assert d['original_E_definition_unchanged']
+          assert [r['enumerated_monoids'] for r in d['small_monoids_exhaustive']] == [1,2,11,156]
+          assert len(d['minimal_six_class_examples']) == 10
+          assert len(d['theorems']) == 5
+          print('PASS: T29–T33, all 170 labelled monoids up to n=4, and 10 minimal examples.')
+          PY
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
