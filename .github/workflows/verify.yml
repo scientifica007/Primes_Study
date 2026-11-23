@@ -122,8 +122,8 @@ jobs:
           assert d['original_E_definition_unchanged']
           assert [r['enumerated_monoids'] for r in d['small_monoids_exhaustive']] == [1,2,11,156]
           assert len(d['minimal_six_class_examples']) == 10
-          assert len(d['theorems']) == 5
-          print('PASS: T29–T33, all 170 labelled monoids up to n=4, and 10 minimal examples.')
+          assert len(d['theorems']) == 6
+          print('PASS: T29–T34, all 170 labelled monoids up to n=4, and 10 minimal examples.')
           PY
 
   independent-gap:
