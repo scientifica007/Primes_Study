@@ -59,3 +59,15 @@ jobs:
           assert expected == actual, 'Dynamic-system cases differ from checked-in report'
           print('Dynamic systems and target-dependent guards match checked-in report.')
           PY
+      - name: Recompute inhibited-reaction census (152 rules, both semantics)
+        run: python3 experiments/inhibited_reactions.py --output /tmp/inhibited-recomputed.json
+      - name: Validate study-six reproducibility
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/inhibited_reactions.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/inhibited-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Inhibited reaction census or witness traces differ'
+          print('Inhibitor, consumption and 152-rule census match the recorded data.')
+          PY
