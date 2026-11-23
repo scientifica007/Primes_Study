@@ -1,0 +1,136 @@
+{
+  "research_date": "2026-11-23",
+  "study": "T35-T36: Green skeleton incompleteness and Rees sandwich support graph",
+  "original_definition_unchanged": true,
+  "counterexample": {
+    "order": 10,
+    "external_unit_group": "C3",
+    "external_units_act_trivially": true,
+    "nonunit_J_class_size": 6,
+    "zero_label": 9,
+    "local_group_order": 1,
+    "Rees_indices": {
+      "rows": 2,
+      "columns": 3
+    },
+    "support_P_A": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "support_P_B": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "system_A_E": [],
+    "system_B_E": [
+      8
+    ],
+    "same_green_R_L_H_J_partitions": true,
+    "same_J_partial_order": true,
+    "all_elements_regular_in_both": true,
+    "same_idempotent_count": 6,
+    "same_unit_action_on_every_nonunit": true,
+    "meaning": "These invariants cannot decide even whether E(M) is empty. The missing data are the sandwich-matrix incidence entries."
+  },
+  "rees_support_census": [
+    {
+      "rows": 2,
+      "columns": 2,
+      "local_group_order": 1,
+      "regular_supports": 7,
+      "E_count_distribution": {
+        "1": 5,
+        "2": 2
+      }
+    },
+    {
+      "rows": 2,
+      "columns": 3,
+      "local_group_order": 1,
+      "regular_supports": 25,
+      "E_count_distribution": {
+        "0": 12,
+        "1": 13
+      }
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "local_group_order": 1,
+      "regular_supports": 265,
+      "E_count_distribution": {
+        "0": 246,
+        "1": 19
+      }
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "local_group_order": 2,
+      "regular_supports": 7,
+      "E_count_distribution": {
+        "0": 6,
+        "1": 1
+      }
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "local_group_order": 3,
+      "regular_supports": 7,
+      "E_count_distribution": {
+        "0": 6,
+        "1": 1
+      }
+    },
+    {
+      "rows": 1,
+      "columns": 1,
+      "local_group_order": 1,
+      "regular_supports": 1,
+      "E_count_distribution": {
+        "2": 1
+      }
+    },
+    {
+      "rows": 1,
+      "columns": 1,
+      "local_group_order": 2,
+      "regular_supports": 1,
+      "E_count_distribution": {
+        "2": 1
+      }
+    },
+    {
+      "rows": 1,
+      "columns": 1,
+      "local_group_order": 3,
+      "regular_supports": 1,
+      "E_count_distribution": {
+        "1": 1
+      }
+    }
+  ],
+  "reenactment": {
+    "program": "experiments/rees_principal_factors.py",
+    "gap_independent": "experiments/verify_rees_obstruction.g",
+    "method": "enumerate every 0/1 regular sandwich support in recorded dimensions and predict E from support graph and local group order"
+  },
+  "novelty_status": "not established; Rees theorem and maximal subsemigroup graph methods are classical"
+}
