@@ -148,6 +148,33 @@ def boolean_meet_E(k: int) -> tuple[int, ...]:
     return E(table, n)
 
 
+
+def cyclic_boolean_E(m: int, k: int) -> tuple[tuple[int, int], ...]:
+    """E for C_m × B_k, where B_k has bitwise meet; test all elements."""
+    if m < 1 or k < 0:
+        raise ValueError("Expected m>=1, k>=0")
+    elements = [(g, mask) for g in range(m) for mask in range(1 << k)]
+    elements_to_index = {element: i for i, element in enumerate(elements)}
+    n = len(elements)
+    table = tuple(
+        elements_to_index[((g + h) % m, mask & other_mask)]
+        for g, mask in elements
+        for h, other_mask in elements
+    )
+    return tuple(elements[i] for i in E(table, n))
+
+
+def cyclic_boolean_prediction(m: int, k: int) -> tuple[tuple[int, int], ...]:
+    """Structure theorem: m=1 gives top/coatoms; m=2 one unit; m>=3 none."""
+    top = (1 << k) - 1
+    if m == 1:
+        return tuple((0, mask) for mask in range(1 << k)
+                     if k - mask.bit_count() <= 1)
+    if m == 2:
+        return ((1, top),)
+    return ()
+
+
 def make_report(max_size: int = 4) -> dict[str, object]:
     if not 1 <= max_size <= 4:
         raise ValueError("Expected max size in 1..4")
