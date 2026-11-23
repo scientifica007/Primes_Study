@@ -155,12 +155,18 @@ def green_fingerprint(table):
     H=partition(lambda x:(
         frozenset(table[x*n+b] for b in range(n)),
         frozenset(table[a*n+x] for a in range(n))))
+    jideals=tuple(frozenset(table[table[a*n+x]*n+b]
+                              for a in range(n) for b in range(n))
+                  for x in range(n))
+    jpreorder=tuple((x,y) for x in range(n) for y in range(n)
+                    if jideals[x] <= jideals[y])
     regular=tuple(x for x in range(n)
                   if any(table[table[x*n+y]*n+x]==x
                          for y in range(n)))
     idempotents=tuple(x for x in range(n) if table[x*n+x]==x)
     return {
         "R":R,"L":L,"J":J,"H":H,
+        "J_preorder":jpreorder,
         "regular_elements":regular,
         "idempotent_count":len(idempotents),
         "idempotent_labels":idempotents,
@@ -192,7 +198,7 @@ def study():
     assert a["size"]==b["size"]==10
     assert a["E"]==[]
     assert b["E"]==[8]
-    for k in ("R","L","J","H","regular_elements",
+    for k in ("R","L","J","H","J_preorder","regular_elements",
               "idempotent_count","global_unit_group_order",
               "external_unit_actions_on_nonunits"):
         assert a["green"][k]==b["green"][k],(k,a["green"][k],b["green"][k])
