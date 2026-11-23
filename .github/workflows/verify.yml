@@ -126,6 +126,33 @@ jobs:
           print('PASS: T29–T34, all 170 labelled monoids up to n=4, and 10 minimal examples.')
           PY
 
+      - name: Reproduce study-ten Rees sandwich obstruction and support enumerations
+        run: |
+          python3 experiments/rees_principal_factors.py --output /tmp/rees-study10.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/rees-study10.json').read_text(encoding='utf-8'))
+          expected=json.loads(Path('results/rees_support_study10.json').read_text(encoding='utf-8'))
+          assert actual['example_A']['E'] == expected['counterexample']['system_A_E']
+          assert actual['example_B']['E'] == expected['counterexample']['system_B_E']
+          assert actual['example_A']['green']['idempotent_count'] == expected['counterexample']['same_idempotent_count']
+          assert actual['example_B']['green']['idempotent_count'] == expected['counterexample']['same_idempotent_count']
+          g1=actual['example_A']['green']
+          g2=actual['example_B']['green']
+          for field in ('R','L','H','J','regular_elements','idempotent_count',
+                        'external_unit_actions_on_nonunits'):
+              assert g1[field]==g2[field], field
+          by_dimensions={(c['matrix_rows'],c['matrix_columns'],c['local_group_order']):c
+                        for c in actual['regular_support_census']}
+          for item in expected['rees_support_census']:
+              actual_row=by_dimensions[(item['rows'],item['columns'],item['local_group_order'])]
+              assert actual_row['regular_supports_checked']==item['regular_supports']
+              assert actual_row['E_count_distribution']==item['E_count_distribution']
+              assert actual_row['all_predictions_matched']
+          print('PASS: Green-invariant counterexample and all Rees support predictions.')
+          PY
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
@@ -140,3 +167,5 @@ jobs:
         run: gap -q -b < experiments/verify_with_gap.g
       - name: Independently construct ten minimal monoids and distinguish opposites
         run: gap -q -b < experiments/verify_minimal_six_with_gap.g
+      - name: Rebuild Rees counterexamples and compare Green invariants using GAP
+        run: gap -q -b < experiments/verify_rees_obstruction.g
