@@ -9,6 +9,7 @@ from inhibited_reactions import (  # noqa: E402
     Reaction, all_reactions, example_inhibition,
     example_restoration_by_consumption, example_spontaneous_two_entities,
     make_report, one_rule_monotonicity_census, powerset, shortest_production,
+    analytic_single_rule_failure_count, direct_single_rule_failure_count,
 )
 
 
@@ -58,6 +59,19 @@ class TestInhibitedReactions(unittest.TestCase):
             "positive_only_failures": 0,
             "inhibited_failures": 48,
         })
+
+    def test_general_combinatorial_formula_against_direct_census(self):
+        expected = {1: 0, 2: 0, 3: 48, 4: 1920}
+        comparisons = {1: 0, 2: 40, 3: 2280, 4: 79040}
+        for n in range(1, 5):
+            with self.subTest(n=n):
+                self.assertEqual(analytic_single_rule_failure_count(n),
+                                 expected[n])
+                direct = direct_single_rule_failure_count(n)
+                self.assertTrue(direct["matches_closed_formula"])
+                self.assertEqual(direct["production_losses"], expected[n])
+                self.assertEqual(direct["comparisons"], comparisons[n])
+        self.assertEqual(analytic_single_rule_failure_count(5), 48320)
 
     def test_two_entities_with_spontaneous_reactants(self):
         row = one_rule_monotonicity_census(2, False, False)
@@ -132,6 +146,9 @@ class TestInhibitedReactions(unittest.TestCase):
     def test_report_summaries(self):
         report = make_report()
         self.assertTrue(report["original_law_unchanged"])
+        self.assertEqual(
+            report["exact_production_loss_formula_validation"][3]["production_losses"],
+            1920)
         self.assertEqual(
             len(report["exhaustive_single_reaction_census_nonempty_reactants"]),
             6)
