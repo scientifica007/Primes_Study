@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/smallsemi-crosscheck.yml'
       - 'experiments/match_smallsemi_catalogue.py'
+      - 'experiments/green_structural_monoids.py'
+      - 'experiments/green_smallsemi_audit.py'
       - 'experiments/check_smallsemi_ids_direct.g'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
@@ -29,6 +31,23 @@ jobs:
             --download \
             --output /tmp/smallsemi_matches.json
           python3 -m json.tool /tmp/smallsemi_matches.json > /dev/null
+      - name: Verify Green-J structural theorem over every order-six catalogue monoid
+        run: |
+          python3 experiments/green_smallsemi_audit.py --download \
+            --output /tmp/green-catalogue-audit.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/green-catalogue-audit.json').read_text())
+          assert x["general_Green_characterization_matched_every_monoid"]
+          assert x["maximal_singleton_obstruction_matched_every_monoid"]
+          assert x["maximal_J_two_element_action_criterion_matched_every_case"]
+          assert x["two_nonunit_criterion_matched_every_case"]
+          assert sorted(x["E_empty_nongroup_smallsemi_ids"]) == [
+              3170, 4333, 9407, 9504, 15903, 15957, 15958
+          ]
+          print("PASS: complete Green-J structural audit against Smallsemi.")
+          PY
       - name: Present exact IDs and cross-validation summary
         run: |
           python3 - <<'PY'
