@@ -1,0 +1,418 @@
+{
+  "model": "T0: individual token identities with explicitly different persistence conventions",
+  "original_hypothesis_modified": false,
+  "all_examples": {
+    "X_to_X_fresh": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          }
+        ],
+        "next_uid": 1,
+        "counts": {
+          "X": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "X"
+          ],
+          "post": [
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0
+        ],
+        "produced_tokens": [
+          {
+            "uid": 1,
+            "type": "X"
+          }
+        ],
+        "new_ids": [
+          1
+        ],
+        "retained_ids": [],
+        "after": {
+          "tokens": [
+            {
+              "uid": 1,
+              "type": "X"
+            }
+          ],
+          "next_uid": 2,
+          "counts": {
+            "X": 1
+          }
+        },
+        "policy": "fresh"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": false,
+        "new_individual_of_kind": true,
+        "quantity_grew": false,
+        "before_quantity": 1,
+        "after_quantity": 1
+      }
+    },
+    "X_to_X_retain": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          }
+        ],
+        "next_uid": 1,
+        "counts": {
+          "X": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "X"
+          ],
+          "post": [
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0
+        ],
+        "produced_tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          }
+        ],
+        "new_ids": [],
+        "retained_ids": [
+          0
+        ],
+        "after": {
+          "tokens": [
+            {
+              "uid": 0,
+              "type": "X"
+            }
+          ],
+          "next_uid": 1,
+          "counts": {
+            "X": 1
+          }
+        },
+        "policy": "retain_matching"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": false,
+        "new_individual_of_kind": false,
+        "quantity_grew": false,
+        "before_quantity": 1,
+        "after_quantity": 1
+      }
+    },
+    "X_to_2X_fresh": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          }
+        ],
+        "next_uid": 1,
+        "counts": {
+          "X": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "X"
+          ],
+          "post": [
+            "X",
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0
+        ],
+        "produced_tokens": [
+          {
+            "uid": 1,
+            "type": "X"
+          },
+          {
+            "uid": 2,
+            "type": "X"
+          }
+        ],
+        "new_ids": [
+          1,
+          2
+        ],
+        "retained_ids": [],
+        "after": {
+          "tokens": [
+            {
+              "uid": 1,
+              "type": "X"
+            },
+            {
+              "uid": 2,
+              "type": "X"
+            }
+          ],
+          "next_uid": 3,
+          "counts": {
+            "X": 2
+          }
+        },
+        "policy": "fresh"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": false,
+        "new_individual_of_kind": true,
+        "quantity_grew": true,
+        "before_quantity": 1,
+        "after_quantity": 2
+      }
+    },
+    "X_to_2X_retain": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          }
+        ],
+        "next_uid": 1,
+        "counts": {
+          "X": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "X"
+          ],
+          "post": [
+            "X",
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0
+        ],
+        "produced_tokens": [
+          {
+            "uid": 0,
+            "type": "X"
+          },
+          {
+            "uid": 1,
+            "type": "X"
+          }
+        ],
+        "new_ids": [
+          1
+        ],
+        "retained_ids": [
+          0
+        ],
+        "after": {
+          "tokens": [
+            {
+              "uid": 0,
+              "type": "X"
+            },
+            {
+              "uid": 1,
+              "type": "X"
+            }
+          ],
+          "next_uid": 2,
+          "counts": {
+            "X": 2
+          }
+        },
+        "policy": "retain_matching"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": false,
+        "new_individual_of_kind": true,
+        "quantity_grew": true,
+        "before_quantity": 1,
+        "after_quantity": 2
+      }
+    },
+    "A_to_A_plus_X_fresh_type_emergence": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "A"
+          }
+        ],
+        "next_uid": 1,
+        "counts": {
+          "A": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "A"
+          ],
+          "post": [
+            "A",
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0
+        ],
+        "produced_tokens": [
+          {
+            "uid": 0,
+            "type": "A"
+          },
+          {
+            "uid": 1,
+            "type": "X"
+          }
+        ],
+        "new_ids": [
+          1
+        ],
+        "retained_ids": [
+          0
+        ],
+        "after": {
+          "tokens": [
+            {
+              "uid": 0,
+              "type": "A"
+            },
+            {
+              "uid": 1,
+              "type": "X"
+            }
+          ],
+          "next_uid": 2,
+          "counts": {
+            "A": 1,
+            "X": 1
+          }
+        },
+        "policy": "retain_matching"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": true,
+        "new_individual_of_kind": true,
+        "quantity_grew": true,
+        "before_quantity": 0,
+        "after_quantity": 1
+      }
+    },
+    "A_plus_X_to_2X_quantity_gain_without_type_emergence": {
+      "before": {
+        "tokens": [
+          {
+            "uid": 0,
+            "type": "A"
+          },
+          {
+            "uid": 1,
+            "type": "X"
+          }
+        ],
+        "next_uid": 2,
+        "counts": {
+          "A": 1,
+          "X": 1
+        }
+      },
+      "transition": {
+        "rule": {
+          "pre": [
+            "A",
+            "X"
+          ],
+          "post": [
+            "X",
+            "X"
+          ]
+        },
+        "consumed_ids": [
+          0,
+          1
+        ],
+        "produced_tokens": [
+          {
+            "uid": 1,
+            "type": "X"
+          },
+          {
+            "uid": 2,
+            "type": "X"
+          }
+        ],
+        "new_ids": [
+          2
+        ],
+        "retained_ids": [
+          1
+        ],
+        "after": {
+          "tokens": [
+            {
+              "uid": 1,
+              "type": "X"
+            },
+            {
+              "uid": 2,
+              "type": "X"
+            }
+          ],
+          "next_uid": 3,
+          "counts": {
+            "X": 2
+          }
+        },
+        "policy": "retain_matching"
+      },
+      "profile": {
+        "target_type": "X",
+        "kind_absent_then_present": false,
+        "new_individual_of_kind": true,
+        "quantity_grew": true,
+        "before_quantity": 1,
+        "after_quantity": 2
+      }
+    }
+  },
+  "summary": {
+    "fresh_X_to_X": "New individual ID, equal quantity, no first type appearance",
+    "retain_X_to_X": "No new individual ID, equal quantity, no first type appearance",
+    "X_to_2X": "Quantity increases and individual offspring appear but type already existed",
+    "A_to_A_plus_X": "Previously absent type X first appears",
+    "identity_convention": "Token IDs are modelling choices, not physical persistence facts"
+  },
+  "exhaustive_projection": {
+    "verified_enabled_token_transitions": 504,
+    "witnesses_new_individual_without_quantity_gain": 39,
+    "stoichiometric_projection_verified": true,
+    "unique_ids_verified": true
+  }
+}
