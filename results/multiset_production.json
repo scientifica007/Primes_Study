@@ -1,0 +1,281 @@
+{
+  "extension_not_a_redefinition": true,
+  "semantics": "stoichiometric nonnegative integer vectors, optional repeated firing",
+  "counting_experiments": [
+    {
+      "species_count": 1,
+      "max_coefficient": 3,
+      "number_of_all_reactions": 16,
+      "type_external_including_spontaneous": 3,
+      "type_external_with_nonempty_input": 0,
+      "type_external_with_empty_input": 3,
+      "self_dependent_net_growth": 3,
+      "all_net_growth": 6,
+      "checked_by_direct_enumeration": true
+    },
+    {
+      "species_count": 2,
+      "max_coefficient": 2,
+      "number_of_all_reactions": 81,
+      "type_external_including_spontaneous": 18,
+      "type_external_with_nonempty_input": 12,
+      "type_external_with_empty_input": 6,
+      "self_dependent_net_growth": 9,
+      "all_net_growth": 27,
+      "checked_by_direct_enumeration": true
+    },
+    {
+      "species_count": 2,
+      "max_coefficient": 3,
+      "number_of_all_reactions": 256,
+      "type_external_including_spontaneous": 48,
+      "type_external_with_nonempty_input": 36,
+      "type_external_with_empty_input": 12,
+      "self_dependent_net_growth": 48,
+      "all_net_growth": 96,
+      "checked_by_direct_enumeration": true
+    },
+    {
+      "species_count": 3,
+      "max_coefficient": 2,
+      "number_of_all_reactions": 729,
+      "type_external_including_spontaneous": 162,
+      "type_external_with_nonempty_input": 144,
+      "type_external_with_empty_input": 18,
+      "self_dependent_net_growth": 81,
+      "all_net_growth": 243,
+      "checked_by_direct_enumeration": true
+    }
+  ],
+  "specific_reaction_examples": {
+    "source_A_to_A_plus_X": {
+      "reaction": {
+        "pre": [
+          1,
+          0
+        ],
+        "post": [
+          1,
+          1
+        ]
+      },
+      "from_A": {
+        "status": "reachable",
+        "minimal_steps": 1,
+        "trace": [
+          {
+            "reaction_index": 0,
+            "before": [
+              1,
+              0
+            ],
+            "after": [
+              1,
+              1
+            ]
+          }
+        ],
+        "visited_markings": 1
+      },
+      "without_A": {
+        "status": "unreachable_exhaustive",
+        "minimal_steps": null,
+        "trace": [],
+        "visited_markings": 1
+      }
+    },
+    "self_replication_X_to_2X": {
+      "reaction": {
+        "pre": [
+          0,
+          1
+        ],
+        "post": [
+          0,
+          2
+        ]
+      },
+      "from_zero": {
+        "status": "unreachable_exhaustive",
+        "minimal_steps": null,
+        "trace": [],
+        "visited_markings": 1
+      },
+      "from_one_reach_three": {
+        "status": "reachable",
+        "minimal_steps": 2,
+        "trace": [
+          {
+            "reaction_index": 0,
+            "before": [
+              0,
+              1
+            ],
+            "after": [
+              0,
+              2
+            ]
+          },
+          {
+            "reaction_index": 0,
+            "before": [
+              0,
+              2
+            ],
+            "after": [
+              0,
+              3
+            ]
+          }
+        ],
+        "visited_markings": 2
+      }
+    },
+    "threshold_2X_to_3X": {
+      "reaction": {
+        "pre": [
+          0,
+          2
+        ],
+        "post": [
+          0,
+          3
+        ]
+      },
+      "from_one_reach_three": {
+        "status": "unreachable_exhaustive",
+        "minimal_steps": null,
+        "trace": [],
+        "visited_markings": 1
+      },
+      "from_two_reach_four": {
+        "status": "reachable",
+        "minimal_steps": 2,
+        "trace": [
+          {
+            "reaction_index": 0,
+            "before": [
+              0,
+              2
+            ],
+            "after": [
+              0,
+              3
+            ]
+          },
+          {
+            "reaction_index": 0,
+            "before": [
+              0,
+              3
+            ],
+            "after": [
+              0,
+              4
+            ]
+          }
+        ],
+        "visited_markings": 2
+      }
+    },
+    "conserved_conversion_A_plus_X_to_2X": {
+      "reaction": {
+        "pre": [
+          1,
+          1
+        ],
+        "post": [
+          0,
+          2
+        ]
+      },
+      "positive_weights": [
+        1,
+        1
+      ],
+      "conservation_verified": true,
+      "from_A2_X1_reach_X3": {
+        "status": "reachable",
+        "minimal_steps": 2,
+        "trace": [
+          {
+            "reaction_index": 0,
+            "before": [
+              2,
+              1
+            ],
+            "after": [
+              1,
+              2
+            ]
+          },
+          {
+            "reaction_index": 0,
+            "before": [
+              1,
+              2
+            ],
+            "after": [
+              0,
+              3
+            ]
+          }
+        ],
+        "visited_markings": 2
+      },
+      "from_A2_X1_reach_X4": {
+        "status": "unreachable_exhaustive",
+        "minimal_steps": null,
+        "trace": [],
+        "visited_markings": 3
+      }
+    },
+    "reachable_requires_reactants": {
+      "reaction": {
+        "pre": [
+          1,
+          1,
+          0
+        ],
+        "post": [
+          0,
+          0,
+          1
+        ]
+      },
+      "type_external_X": true,
+      "from_A_without_B": {
+        "status": "unreachable_exhaustive",
+        "minimal_steps": null,
+        "trace": [],
+        "visited_markings": 1
+      },
+      "from_A_and_B": {
+        "status": "reachable",
+        "minimal_steps": 1,
+        "trace": [
+          {
+            "reaction_index": 0,
+            "before": [
+              1,
+              1,
+              0
+            ],
+            "after": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "visited_markings": 1
+      }
+    },
+    "identity_interpretations": {
+      "type": "X->2X is not de-novo generation of the type X",
+      "copy": "unique output token IDs can be minted from another X token; this is an explicit token convention",
+      "quantity": "X->2X increases count by one, but cannot fire with zero X",
+      "quantity_object": "in (N0,+), 3 can be generated as 1+2; 1 and 0 cannot be generated from pairs different from the target"
+    }
+  }
+}
