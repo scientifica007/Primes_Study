@@ -189,6 +189,63 @@ def unit_with_left_zero_ideal(group="C3", active=False):
     return tuple(table)
 
 
+def two_nonunit_extension_from_group_quotient(
+    group_table: tuple[int, ...], parity: tuple[int, ...],
+) -> tuple[int, ...]:
+    """Explicit T33 construction for any finite group with quotient C2.
+
+    Group table uses labels 0..m-1 and has identity 0.
+    parity[g] in {0,1} is a surjective homomorphism to C2.
+    """
+    m=len(parity)
+    if m < 3 or len(group_table)!=m*m or set(parity)!={0,1} or parity[0]!=0:
+        raise ValueError("Expected a group of size >=3 with a surjective C2 map")
+    if not associative(group_table,m):
+        raise ValueError("Invalid group table")
+    if not all(group_table[g]==g and group_table[g*m]==g for g in range(m)):
+        raise ValueError("Identity must be labelled 0")
+    if not all(any(group_table[g*m+h]==0 and group_table[h*m+g]==0
+                   for h in range(m)) for g in range(m)):
+        raise ValueError("Not a group")
+    if not all(parity[group_table[g*m+h]]==(parity[g]+parity[h])%2
+               for g in range(m) for h in range(m)):
+        raise ValueError("Map is not a homomorphism to C2")
+
+    n=m+2
+    tab=[]
+    for a in range(n):
+        for b in range(n):
+            if a<m and b<m:
+                x=group_table[a*m+b]
+            elif a<m:
+                x=m+((b-m+parity[a])%2)
+            elif b<m:
+                x=a
+            else:
+                x=a
+            tab.append(x)
+    out=tuple(tab)
+    assert associative(out,n)
+    assert not structural_audit(out)["E_direct"]
+    return out
+
+
+def s3_eight_element_extension() -> tuple[int, ...]:
+    """Nonabelian unit group S3, sign map S3 -> C2; eight-element witness."""
+    from itertools import permutations
+    perms=tuple(permutations(range(3)))
+    positions={p:i for i,p in enumerate(perms)}
+    table=tuple(
+        positions[tuple(p[q[i]] for i in range(3))]
+        for p in perms for q in perms
+    )
+    parity=tuple(
+        sum(p[i]>p[j] for i in range(3) for j in range(i+1,3))%2
+        for p in perms
+    )
+    return two_nonunit_extension_from_group_quotient(table,parity)
+
+
 def group_with_zero():
     n = 4
     return tuple(
@@ -289,6 +346,8 @@ def make_report():
             unit_with_left_zero_ideal("C4", True)),
         "V4_with_nontrivial_unit_action_on_left_zero_ideal2": structural_audit(
             unit_with_left_zero_ideal("V4", True)),
+        "S3_with_sign_quotient_and_two_nonunits": structural_audit(
+            s3_eight_element_extension()),
         "C3_with_trivial_units_on_ideal_group3": structural_audit(
             c3_with_trivial_group_ideal()),
         "C3_ideal_group3_and_lower_zero": structural_audit(
@@ -298,6 +357,7 @@ def make_report():
     assert examples["C3_with_trivial_units_on_left_zero_ideal2"]["E_direct"] == [3,4]
     assert examples["C4_with_nontrivial_unit_action_on_left_zero_ideal2"]["E_direct"] == []
     assert examples["V4_with_nontrivial_unit_action_on_left_zero_ideal2"]["E_direct"] == []
+    assert examples["S3_with_sign_quotient_and_two_nonunits"]["E_direct"] == []
     assert examples["C3_with_trivial_units_on_ideal_group3"]["E_direct"] == []
     assert examples["C3_ideal_group3_and_lower_zero"]["E_direct"] == [6]
     for name in ("C3_with_trivial_units_on_left_zero_ideal2",
