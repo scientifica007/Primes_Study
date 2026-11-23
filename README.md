@@ -8,6 +8,7 @@
 
 - [تقرير التدقيق، وما نُفذ وما لم يُحسم](docs/11-review-and-correction-audit.md)
 - [مصفوفة حدود النماذج: القانون الثنائي مقابل الامتدادات](docs/MODEL_SCOPE.md)
+- [سجل المراجع الأساسية المحققة ببيانات DOI](docs/VERIFIED_REFERENCES.md)
 - [السجل المركزي لـ27 قضية، مع الفرضيات والأدلة والأسبقية](docs/THEOREM_REGISTRY.md)
 - [النسخة المؤرشفة قبل التصحيحات](https://github.com/scientifica007/Primes_Study/tree/archive/pre-audit-2026-11-23)
 - [اختبار هوية النسخ (T0)](experiments/token_identity.py) و[نتائجه](results/token_identity.json)
