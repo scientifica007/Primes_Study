@@ -112,6 +112,10 @@ T35Check := function()
         <> (T35TwoSidedIdeal(B,i,n)=T35TwoSidedIdeal(B,j,n)) then
         Error("Green J partitions differ");
       fi;
+      if ForAll(T35TwoSidedIdeal(A,i,n),x->x in T35TwoSidedIdeal(A,j,n))
+        <> ForAll(T35TwoSidedIdeal(B,i,n),x->x in T35TwoSidedIdeal(B,j,n)) then
+        Error("Green J preorder differs");
+      fi;
     od;
     for j in [1..3] do
       if A[i][j]<>B[i][j] or A[j][i]<>B[j][i] then
