@@ -32,15 +32,15 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T42_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,38)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,43)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 37)
+        self.assertEqual(len(registry), 42)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
 
@@ -58,6 +58,24 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
         self.assertEqual(data["total_anti_isomorphism_classes"], 7)
         self.assertEqual(sum(len(row["representatives"])
                              for row in data["unit_group_decomposition"]), 10)
+
+    def test_clifford_study_theorems_and_saved_counterexample(self):
+        study = (ROOT / "docs" / "18-experiment-11-clifford-cross-layer-criterion.md").read_text(
+            encoding="utf-8"
+        )
+        data = json.loads(
+            (ROOT / "results" / "clifford_linking_maps_study11.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        for n in range(38, 43):
+            self.assertIn(f"T{n:02d}", self.registry)
+            self.assertIn(f"T{n:02d}", study)
+        self.assertTrue(data["identical_principal_factors_and_local_group_tables"])
+        self.assertEqual(data["examples"]["A"]["E"], [8])
+        self.assertEqual(data["examples"]["B"]["E"], [])
+        self.assertEqual(data["exhaustive_cyclic_chain"]["two_layers"]["systems"],24)
+        self.assertEqual(data["exhaustive_cyclic_chain"]["three_layers"]["systems"],152)
 
     def test_priorities_are_complete_and_consistent(self):
         result = Counter(entry["priority"] for entry in self.data["all_theorems"])
