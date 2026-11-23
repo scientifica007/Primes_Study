@@ -1,0 +1,131 @@
+{
+  "review_date": "2026-11-23",
+  "type": "editorial priority classification, not a probability of originality",
+  "original_hypothesis_unchanged": true,
+  "selected_for_next_specialized_literature_review": "T09",
+  "secondary_candidate": "T07",
+  "rank_definitions": {
+    "A": "next to investigate, novelty not established",
+    "B": "useful supporting question, more likely routine or extended model",
+    "C": "supporting structural/example result",
+    "D": "known or immediate consequence of standard theory"
+  },
+  "counts": {
+    "A": 2,
+    "B": 4,
+    "C": 7,
+    "D": 14
+  },
+  "all_theorems": [
+    {
+      "id": "T01",
+      "priority": "D"
+    },
+    {
+      "id": "T02",
+      "priority": "D"
+    },
+    {
+      "id": "T03",
+      "priority": "B"
+    },
+    {
+      "id": "T04",
+      "priority": "C"
+    },
+    {
+      "id": "T05",
+      "priority": "C"
+    },
+    {
+      "id": "T06",
+      "priority": "C"
+    },
+    {
+      "id": "T07",
+      "priority": "A"
+    },
+    {
+      "id": "T08",
+      "priority": "C"
+    },
+    {
+      "id": "T09",
+      "priority": "A"
+    },
+    {
+      "id": "T10",
+      "priority": "B"
+    },
+    {
+      "id": "T11",
+      "priority": "D"
+    },
+    {
+      "id": "T12",
+      "priority": "D"
+    },
+    {
+      "id": "T13",
+      "priority": "D"
+    },
+    {
+      "id": "T14",
+      "priority": "B"
+    },
+    {
+      "id": "T15",
+      "priority": "D"
+    },
+    {
+      "id": "T16",
+      "priority": "D"
+    },
+    {
+      "id": "T17",
+      "priority": "D"
+    },
+    {
+      "id": "T18",
+      "priority": "D"
+    },
+    {
+      "id": "T19",
+      "priority": "C"
+    },
+    {
+      "id": "T20",
+      "priority": "D"
+    },
+    {
+      "id": "T21",
+      "priority": "D"
+    },
+    {
+      "id": "T22",
+      "priority": "D"
+    },
+    {
+      "id": "T23",
+      "priority": "B"
+    },
+    {
+      "id": "T24",
+      "priority": "D"
+    },
+    {
+      "id": "T25",
+      "priority": "D"
+    },
+    {
+      "id": "T26",
+      "priority": "C"
+    },
+    {
+      "id": "T27",
+      "priority": "C"
+    }
+  ],
+  "document": "docs/12-synthesis-27-theorems.md",
+  "priority_case_review": "docs/13-priority-T09-literature-review.md"
+}
