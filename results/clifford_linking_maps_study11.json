@@ -1,0 +1,291 @@
+{
+  "date": "2026-11-23",
+  "status": "exact result of cyclic Clifford strong semilattice experiment",
+  "original_definition_modified": false,
+  "examples": {
+    "A": {
+      "name": "C3>C4>C2 with trivial C4->C2",
+      "orders": [
+        3,
+        4,
+        2
+      ],
+      "maps_adjacent": [
+        0,
+        0
+      ],
+      "E": [
+        8
+      ],
+      "idempotents": [
+        0,
+        3,
+        7
+      ],
+      "table": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          3,
+          7,
+          8
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          6,
+          3,
+          4,
+          7,
+          8
+        ],
+        [
+          6,
+          6,
+          6,
+          6,
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          7
+        ]
+      ]
+    },
+    "B": {
+      "name": "C3>C4>C2 with mod2 epimorphism C4->C2",
+      "orders": [
+        3,
+        4,
+        2
+      ],
+      "maps_adjacent": [
+        0,
+        1
+      ],
+      "E": [],
+      "idempotents": [
+        0,
+        3,
+        7
+      ],
+      "table": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          3,
+          8,
+          7
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          6,
+          3,
+          4,
+          7,
+          8
+        ],
+        [
+          6,
+          6,
+          6,
+          6,
+          3,
+          4,
+          5,
+          8,
+          7
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7
+        ]
+      ]
+    }
+  },
+  "identical_green_R_L_H_J_and_preorder": true,
+  "identical_principal_factors_and_local_group_tables": true,
+  "identical_idempotent_positions": true,
+  "identical_global_unit_actions": true,
+  "diamond": {
+    "orders": [
+      3,
+      1,
+      1,
+      1
+    ],
+    "E": [
+      3,
+      4
+    ],
+    "bottom_label": 5,
+    "witness_for_bottom": [
+      3,
+      4
+    ]
+  },
+  "exhaustive_cyclic_chain": {
+    "two_layers": {
+      "systems": 24,
+      "E_empty": 10,
+      "distribution": {
+        "0": 10,
+        "1": 10,
+        "2": 4
+      }
+    },
+    "three_layers": {
+      "systems": 152,
+      "E_empty": 50,
+      "distribution": {
+        "0": 50,
+        "1": 62,
+        "2": 32,
+        "3": 8
+      }
+    }
+  },
+  "theorem": "E for a Clifford monoid depends only on meet decompositions of singleton levels and nontrivial higher images into local C2 groups; local groups >=3 have no E",
+  "external_novelty": "not established"
+}
