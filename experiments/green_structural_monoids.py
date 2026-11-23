@@ -334,7 +334,7 @@ def make_report():
         "original_E_definition_unchanged":True,
         "classification_scope":"finite monoids; Green J order and units",
         "theorems":{
-            "T29":"For every x in I: nontrivial UxU orbit OR x in ((strict-upper-J-filter with x removed)^2); plus |U|>=3",
+            "T29":"For every x in I: nontrivial UxU orbit OR x in ((weak-upper-J-filter with x removed)^2); plus |U|>=3",
             "T30":"A maximal singleton J-class of nonunits forces E(x)",
             "T31":"At maximal nonunit J-class of size 2, E-empty on the class iff the unit action is nontrivial",
             "T32":"For precisely two nonunits, E(M) empty iff |U|>=3 and the action on the two nonunits is nontrivial",
