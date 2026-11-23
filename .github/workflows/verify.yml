@@ -153,6 +153,34 @@ jobs:
           print('PASS: Green-invariant counterexample and all Rees support predictions.')
           PY
 
+      - name: Recompute the exact Clifford linking-map theorem and 176 finite models
+        run: |
+          python3 experiments/clifford_linking_maps.py --output /tmp/clifford-study11.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          observed=json.loads(Path('/tmp/clifford-study11.json').read_text(encoding='utf-8'))
+          saved=json.loads(Path('results/clifford_linking_maps_study11.json').read_text(encoding='utf-8'))
+          pair=observed['pair_of_nine_element_monoids']
+          assert pair['identical_principal_factors_Green_order_idempotent_positions_unit_action']
+          a,b=pair['A_trivial_middle_to_bottom'],pair['B_surjective_middle_to_bottom']
+          for label,model in (('A',a),('B',b)):
+              wanted=saved['examples'][label]
+              assert model['E']==wanted['E']
+              assert model['idempotents']==wanted['idempotents']
+              assert model['table']==wanted['table']
+              assert model['orders']==wanted['orders']
+          assert observed['diamond_meet_example']['E']==saved['diamond']['E']
+          for row in observed['exhaustive_chain_models']:
+              k='two_layers' if row['chain_layers']==2 else 'three_layers'
+              exp=saved['exhaustive_cyclic_chain'][k]
+              assert row['valid_linking_systems_tested']==exp['systems']
+              assert row['systems_with_E_empty']==exp['E_empty']
+              assert row['E_cardinality_histogram']==exp['distribution']
+              assert row['structural_criterion_agrees_with_brute_force']
+          print('PASS: Clifford theorem, nine-element pair and 176 linked systems.')
+          PY
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
@@ -169,3 +197,5 @@ jobs:
         run: gap -q -b < experiments/verify_minimal_six_with_gap.g
       - name: Rebuild Rees counterexamples and compare Green invariants using GAP
         run: gap -q -b < experiments/verify_rees_obstruction.g
+      - name: Verify Clifford cross-J linking-map counterexample using GAP
+        run: gap -q -b < experiments/verify_clifford_linking_maps.g
