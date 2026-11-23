@@ -96,6 +96,21 @@ jobs:
           print('Identity policies, type emergence and count projection verified.')
           PY
 
+      - name: Classify the ten order-six minimal monoids from first principles
+        run: python3 experiments/classify_minimal_monoids.py --output /tmp/minimal-six-recomputed.json
+      - name: Compare all canonical multiplication tables to checked-in class census
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/minimal_monoids_order6.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/minimal-six-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Six-element monoid classification differs from its archive'
+          assert actual['total_isomorphism_classes'] == 10
+          assert actual['total_anti_isomorphism_classes'] == 7
+          print('Complete group-action/ideal census reproduces ten distinct monoids.')
+          PY
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
