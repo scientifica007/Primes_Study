@@ -49,6 +49,16 @@ class TestMultipleOperations(unittest.TestCase):
                     closed, _ = closure(ops, n, other)
                     self.assertEqual(x not in closed, x in joint)
 
+    def test_smaller_seed_set_can_require_multiple_steps(self):
+        # A different question: start from B={0}, not S\{x}={0,1}.
+        # F(0,0)=1, then F(1,1)=2. No single call on B produces 2.
+        op = (2, (1, 0, 0, 1, 2, 1, 2, 2, 2))
+        self.assertEqual(evaluate(op, 3, (0, 0)), 1)
+        self.assertEqual(evaluate(op, 3, (1, 1)), 2)
+        self.assertEqual(closure([op], 3, (0,))[0], (0, 1, 2))
+        self.assertIn((0, (1, 1)), witnesses([op], 3, 2))
+        self.assertNotIn(2, nongenerable([op], 3))
+
     def test_term_operation_does_not_change_E(self):
         rng = random.Random(8675309)
         for n in (2, 3):
