@@ -25,6 +25,7 @@ import json
 from collections import Counter, deque
 from dataclasses import dataclass
 from itertools import combinations
+from math import comb
 from typing import FrozenSet, Iterable
 
 EntitySet = FrozenSet[int]
@@ -178,6 +179,54 @@ def one_rule_monotonicity_census(
     }
 
 
+
+def analytic_single_rule_failure_count(n: int) -> int:
+    """Closed-form count of (rule,x,B,C) with production loss B proper subset C.
+
+    The rule must have >=1 reactant, R cap I empty; P arbitrary.
+    This counts each labelled (rule,target,stock-pair) separately.
+    """
+    if n < 1:
+        raise ValueError("Expected a nonempty universe")
+    return n * (2 ** (n - 1)) * sum(
+        comb(n - 1, b) * (2 ** b - 1)
+        * (2 ** (2 * n - 1 - 2 * b) - 2 * 3 ** (n - 1 - b))
+        for b in range(1, n - 1)
+    )
+
+
+def direct_single_rule_failure_count(n: int) -> dict:
+    """Independent single-step counting; practical n<=4.
+
+    For a single reaction targeting x absent from the seed, a reachable
+    production occurs iff x belongs to P and the reaction is enabled
+    already in that seed. Hence no BFS is needed for this census.
+    """
+    if not 1 <= n <= 4:
+        raise ValueError("Independent direct count limited to n=1..4")
+    universe = frozenset(range(n))
+    count = 0
+    comparisons = 0
+    for reaction in all_reactions(universe, require_reactant=True):
+        for x in sorted(universe):
+            stocks = powerset(universe - {x})
+            for smaller in stocks:
+                for larger in stocks:
+                    if smaller < larger:
+                        comparisons += 1
+                        if (x in reaction.products
+                                and reaction.reactants <= smaller
+                                and not (reaction.inhibitors & smaller)
+                                and bool(reaction.inhibitors & larger)):
+                            count += 1
+    return {
+        "universe_size": n,
+        "comparisons": comparisons,
+        "production_losses": count,
+        "matches_closed_formula": count == analytic_single_rule_failure_count(n),
+    }
+
+
 def example_inhibition() -> dict:
     """a=0, i=1, x=2: presence of i blocks production of x."""
     U = frozenset({0, 1, 2})
@@ -225,6 +274,8 @@ def make_report() -> dict:
         for consuming in (False, True):
             census.append(one_rule_monotonicity_census(n, consuming, True))
     spontaneous = one_rule_monotonicity_census(2, False, False)
+    formula_cases = [direct_single_rule_failure_count(n) for n in range(1, 5)]
+    assert all(case["matches_closed_formula"] for case in formula_cases)
     assert [row["reaction_count"] for row in census] == [2, 2, 20, 20, 152, 152]
     assert all(row["comparison_counts"]["positive_only_failures"] == 0
                for row in census)
@@ -241,6 +292,9 @@ def make_report() -> dict:
         "spontaneous_reaction_exception": example_spontaneous_two_entities(),
         "exhaustive_single_reaction_census_nonempty_reactants": census,
         "two_entity_census_with_empty_reactants": spontaneous,
+        "exact_production_loss_formula_validation": formula_cases,
+        "analytic_prediction_for_five_entities":
+            analytic_single_rule_failure_count(5),
     }
 
 
