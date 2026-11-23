@@ -106,13 +106,25 @@ class StudyNineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             structural_audit((0,1,2,1,2,2,2,1,1)) # nonassociative, identity 0
 
+    def test_any_monoid_factor_with_C3_gives_no_E(self):
+        # Direct product of C3 with a non-group two-element monoid.
+        # Deliberately the global identity is not the first label.
+        factors=((0,0),(0,1),(1,0),(1,1),(2,0),(2,1))
+        at={v:i for i,v in enumerate(factors)}
+        table=tuple(at[((g+h)%3,min(s,t))]
+                    for g,s in factors for h,t in factors)
+        audit=structural_audit(table)
+        self.assertEqual(audit["identity"],1)
+        self.assertEqual(audit["E_direct"],[])
+        self.assertEqual(audit["E_structural"],[])
+
     def test_new_report_coverage(self):
         out=make_report()
         self.assertEqual([x["enumerated_monoids"]
                           for x in out["small_monoids_exhaustive"]],
                          [1,2,11,156])
         self.assertEqual(len(out["minimal_six_class_examples"]),10)
-        self.assertEqual(len(out["theorems"]),5)
+        self.assertEqual(len(out["theorems"]),6)
 
 
 if __name__=="__main__":
