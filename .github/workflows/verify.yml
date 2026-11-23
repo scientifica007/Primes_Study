@@ -140,7 +140,7 @@ jobs:
           assert actual['example_B']['green']['idempotent_count'] == expected['counterexample']['same_idempotent_count']
           g1=actual['example_A']['green']
           g2=actual['example_B']['green']
-          for field in ('R','L','H','J','regular_elements','idempotent_count',
+          for field in ('R','L','H','J','J_preorder','regular_elements','idempotent_count',
                         'external_unit_actions_on_nonunits'):
               assert g1[field]==g2[field], field
           by_dimensions={(c['matrix_rows'],c['matrix_columns'],c['local_group_order']):c
