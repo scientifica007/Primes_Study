@@ -1,0 +1,46 @@
+{
+  "source": "GAP Smallsemi 0.7.2, all 15973 order-six iso/anti representatives",
+  "sha256": "944f356c42b8e703988f5684cd81b650f99cc0ccd1ef1d7fc6e900f2c95f287c",
+  "catalogue_semigroups_scanned": 15973,
+  "catalogue_classes_that_are_monoids": 1373,
+  "checked_nonunit_elements": 6597,
+  "monoids_by_unit_group_size": {
+    "1": 1160,
+    "2": 178,
+    "3": 20,
+    "4": 12,
+    "5": 1,
+    "6": 2
+  },
+  "E_empty_nongroup_smallsemi_ids": [
+    3170,
+    4333,
+    9407,
+    9504,
+    15903,
+    15957,
+    15958
+  ],
+  "E_empty_group_smallsemi_ids": [
+    4337,
+    14996
+  ],
+  "E_empty_total_including_groups": 9,
+  "monoids_with_maximal_nonunit_singleton_J_class": 1148,
+  "first_five_singleton_examples": [
+    1179,
+    1186,
+    1194,
+    1195,
+    1196
+  ],
+  "monoids_with_maximal_nonunit_two_element_J_class": 272,
+  "top_two_element_classes_with_active_unit_action": 43,
+  "monoids_with_exactly_two_nonunits": 12,
+  "E_empty_monoids_with_exactly_two_nonunits": 4,
+  "general_Green_characterization_matched_every_monoid": true,
+  "maximal_singleton_obstruction_matched_every_monoid": true,
+  "maximal_J_two_element_action_criterion_matched_every_case": true,
+  "two_nonunit_criterion_matched_every_case": true,
+  "historical_novelty_not_claimed": true
+}
