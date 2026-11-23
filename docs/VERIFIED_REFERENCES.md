@@ -70,3 +70,17 @@
 - **التحقق الخارجي:** [الدراسة التاسعة](16-experiment-09-general-green-criterion.md)، [نتائج تدقيق 1,373 مونويدًا](../results/green_smallsemi_order6_audit.json).
 
 **الحكم التاريخي:** وجود مصطلح «indecomposable» في مصدر لا يكفي للحكم بالتطابق. يجب دائمًا مقارنة **تعريف العاملين وشروطهما** ثم مقارنة النتيجة المحددة؛ ولا يجوز تقديم إعادة ترتيب شرط معلوم بوصفها أصالة تاريخية.
+
+
+## R17–R20 — أسبقية Rees والرسوم المرتبطة بأشباه الزمر القصوى (الدراسة العاشرة)
+
+| الرمز | المرجع | الرابط | ما يمكن الاستناد إليه |
+|---|---|---|---|
+| **R17** | **GAP Reference Manual, Rees (0-)matrix semigroups** | https://docs.gap-system.org/doc/ref/chap51_mj.html | الصيغة البنيوية لـRees، وشرط انتظام مصفوفة sandwich بعدم وجود صف أو عمود صفري |
+| **R18** | **Donoven, Mitchell, Wilson (2018)**، *Computing maximal subsemigroups of a finite semigroup*, Journal of Algebra 505 | https://arxiv.org/abs/1606.05583 ؛ https://www.sciencedirect.com/science/article/pii/S0021869318301236 | خوارزميات لتحديد أشباه الزمر القصوى باستخدام علاقات Green والرسوم البيانية المتصلة بفئات \(\mathcal J\) ومجموعات الزمر الفرعية |
+| **R19** | *Maximal subsemigroups of finite semigroups* (1968)، Journal of Combinatorial Theory | https://mathweb.ucsd.edu/~ronspubs/68_02_semigroups.pdf | سابقة تاريخية مباشرة للبحث عن أشباه الزمر القصوى، التي يشملها حذف عنصر واحد عندما يبقى الضرب مغلقًا |
+| **R20** | *Computing finite semigroups* (2018)، Journal of Symbolic Computation | https://doi.org/10.1016/j.jsc.2018.01.002 | يبين ارتباط حساب البنى المنتهية بتمثيلات Rees وبنية Green والمجموعات المحلية |
+
+**العلاقة المنطقية الحاسمة:** في مونويد M، يحقق العنصر x قانون E إذا وفقط إذا كانت \(M\setminus\{x\}\) مغلقة تحت الضرب؛ وعند حدوث ذلك فهي شبه زمرة **قصوى بالإدراج** لأنها تختلف عن M في عنصر واحد. هذا يجعل R18 وR19 ذوي صلة بنيوية قوية، ويخفض احتمال الأصالة التاريخية للأفكار العامة عن «حذف عنصر واحد».
+
+**التحفظ:** المثال المضاد ذو العشرة عناصر ومقارنة مصفوفتي sandwich في [الدراسة العاشرة](17-experiment-10-rees-sandwich-obstruction.md) مثبتان ضمن مشروعنا، لكن لا ندعي أن هذه المصفوفات نفسها أو معيار الرسم لم يسبق عرضهما في الأدبيات. البحث في المصادر المتاحة **لا يثبت** أسبقية خاصة ولا جِدّة تاريخية.
