@@ -47,3 +47,15 @@ jobs:
           assert expected == actual, 'Multi-operation count table differs from committed results'
           print('Multi-operation theorem counts match checked-in data.')
           PY
+      - name: Recompute the dynamic-system and control-guard cases
+        run: python3 experiments/dynamic_systems.py --output /tmp/dynamic-recomputed.json
+      - name: Compare dynamic-system report with committed data
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/dynamic_systems.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/dynamic-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Dynamic-system cases differ from checked-in report'
+          print('Dynamic systems and target-dependent guards match checked-in report.')
+          PY
