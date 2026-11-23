@@ -123,3 +123,5 @@ jobs:
           sudo apt-get install -y --no-install-recommends gap-core
       - name: Recount monoids using GAP and verify published algebra tables
         run: gap -q -b < experiments/verify_with_gap.g
+      - name: Independently construct ten minimal monoids and distinguish opposites
+        run: gap -q -b < experiments/verify_minimal_six_with_gap.g
