@@ -37,10 +37,10 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
         registry = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,35)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,38)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 34)
+        self.assertEqual(len(registry), 37)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
 
