@@ -339,6 +339,7 @@ def make_report():
             "T31":"At maximal nonunit J-class of size 2, E-empty on the class iff the unit action is nontrivial",
             "T32":"For precisely two nonunits, E(M) empty iff |U|>=3 and the action on the two nonunits is nontrivial",
             "T33":"For a finite given group G, a G-unit monoid with precisely two nonunits and E empty exists iff |G|>=3 and G has an index-2 subgroup",
+            "T34":"For every group G with |G|>=3 and any monoid S, E(G x S) is empty",
         },
         "small_monoids_exhaustive":exhaustive_small_census(),
         "minimal_six_class_examples":representatives,
