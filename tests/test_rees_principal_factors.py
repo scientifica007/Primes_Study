@@ -27,7 +27,7 @@ class ReesPrincipalFactorTests(unittest.TestCase):
         self.assertEqual(independent_E(ta),set())
         self.assertEqual(independent_E(tb),{8})
         ga,gb=green_fingerprint(ta),green_fingerprint(tb)
-        for k in ("R","L","J","H","regular_elements","idempotent_count",
+        for k in ("R","L","J","H","J_preorder","regular_elements","idempotent_count",
                   "global_unit_group_order","external_unit_actions_on_nonunits"):
             self.assertEqual(ga[k],gb[k],k)
         self.assertEqual(ga["idempotent_count"],6)
