@@ -32,17 +32,32 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_registry_and_review_contain_exactly_the_same_27_ids(self):
+    def test_historic_27_stable_and_new_T28_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected)
+        self.assertEqual(set(registry), expected | {"T28"})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 27)
+        self.assertEqual(len(registry), 28)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_new_T28_has_full_study_and_reproducible_census(self):
+        import json
+        study = (ROOT / "docs" / "14-experiment-08-minimal-six-classification.md").read_text(
+            encoding="utf-8"
+        )
+        data = json.loads(
+            (ROOT / "results" / "minimal_monoids_order6.json").read_text(encoding="utf-8")
+        )
+        self.assertIn("T28", self.registry)
+        self.assertIn("T28", study)
+        self.assertEqual(data["total_isomorphism_classes"], 10)
+        self.assertEqual(data["total_anti_isomorphism_classes"], 7)
+        self.assertEqual(sum(len(row["representatives"])
+                             for row in data["unit_group_decomposition"]), 10)
 
     def test_priorities_are_complete_and_consistent(self):
         result = Counter(entry["priority"] for entry in self.data["all_theorems"])
