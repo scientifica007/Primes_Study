@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/smallsemi-crosscheck.yml'
       - 'experiments/match_smallsemi_catalogue.py'
+      - 'experiments/check_smallsemi_ids_direct.g'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
       - 'results/smallsemi_catalogue_mapping_2026-11-23.json'
@@ -70,3 +71,25 @@ jobs:
           assert actual['local_isomorphism_classes_matched'] == 10
           print('PASS: exact IDs and orientation labels match the committed JSON ledger.')
           PY
+
+
+  direct-gap-smallsemi:
+    name: Verify IdSmallSemigroup against the installed 0.7.2 package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GAP core
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gap-core
+      - name: Install exact Smallsemi 0.7.2 source and library
+        run: |
+          mkdir -p "$HOME/.gap/pkg"
+          git clone --depth 1 --branch v0.7.2 \
+            https://github.com/gap-packages/smallsemi.git \
+            "$HOME/.gap/pkg/smallsemi"
+          test "$(git -C "$HOME/.gap/pkg/smallsemi" rev-parse HEAD)" = \
+            "22784de79fc9a182d600781e60c7cb5d8f06ebfc"
+      - name: Verify all ten IDs from GAP itself
+        run: gap -q -b < experiments/check_smallsemi_ids_direct.g
