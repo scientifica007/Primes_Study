@@ -1,0 +1,293 @@
+{
+  "model": "optional persistence or consumption, guarded sequential reactions",
+  "original_law_unchanged": true,
+  "smallest_inhibition_example": {
+    "legend": {
+      "0": "a (reactant)",
+      "1": "i (inhibitor)",
+      "2": "x (target)"
+    },
+    "reaction": {
+      "reactants": [
+        0
+      ],
+      "inhibitors": [
+        1
+      ],
+      "products": [
+        2
+      ]
+    },
+    "without_inhibitor": {
+      "reachable": true,
+      "minimal_steps": 1,
+      "trace": [
+        {
+          "reaction_index": 0,
+          "before": [
+            0
+          ],
+          "after": [
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    "with_inhibitor": {
+      "reachable": false,
+      "minimal_steps": null,
+      "trace": [],
+      "explored_stocks": 1
+    }
+  },
+  "consumption_restores_productivity": {
+    "reaction_list": [
+      {
+        "reactants": [
+          0
+        ],
+        "inhibitors": [
+          1
+        ],
+        "products": [
+          2
+        ]
+      },
+      {
+        "reactants": [
+          1
+        ],
+        "inhibitors": [],
+        "products": []
+      }
+    ],
+    "initial_stock": [
+      0,
+      1
+    ],
+    "nonconsuming": {
+      "reachable": false,
+      "minimal_steps": null,
+      "trace": [],
+      "explored_stocks": 1
+    },
+    "consuming": {
+      "reachable": true,
+      "minimal_steps": 2,
+      "trace": [
+        {
+          "reaction_index": 1,
+          "before": [
+            0,
+            1
+          ],
+          "after": [
+            0
+          ]
+        },
+        {
+          "reaction_index": 0,
+          "before": [
+            0
+          ],
+          "after": [
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "spontaneous_reaction_exception": {
+    "reaction": {
+      "reactants": [],
+      "inhibitors": [
+        1
+      ],
+      "products": [
+        0
+      ]
+    },
+    "from_empty_stock": {
+      "reachable": true,
+      "minimal_steps": 1,
+      "trace": [
+        {
+          "reaction_index": 0,
+          "before": [],
+          "after": [
+            0
+          ]
+        }
+      ]
+    },
+    "from_added_inhibitor": {
+      "reachable": false,
+      "minimal_steps": null,
+      "trace": [],
+      "explored_stocks": 1
+    }
+  },
+  "exhaustive_single_reaction_census_nonempty_reactants": [
+    {
+      "universe_size": 1,
+      "consuming": false,
+      "nonempty_reactants_required": true,
+      "reaction_count": 2,
+      "comparison_counts": {
+        "all_comparisons": 0,
+        "positive_only_comparisons": 0,
+        "inhibited_comparisons": 0,
+        "monotonicity_failures": 0,
+        "positive_only_failures": 0,
+        "inhibited_failures": 0
+      },
+      "first_counterexample": null
+    },
+    {
+      "universe_size": 1,
+      "consuming": true,
+      "nonempty_reactants_required": true,
+      "reaction_count": 2,
+      "comparison_counts": {
+        "all_comparisons": 0,
+        "positive_only_comparisons": 0,
+        "inhibited_comparisons": 0,
+        "monotonicity_failures": 0,
+        "positive_only_failures": 0,
+        "inhibited_failures": 0
+      },
+      "first_counterexample": null
+    },
+    {
+      "universe_size": 2,
+      "consuming": false,
+      "nonempty_reactants_required": true,
+      "reaction_count": 20,
+      "comparison_counts": {
+        "all_comparisons": 40,
+        "positive_only_comparisons": 24,
+        "inhibited_comparisons": 16,
+        "monotonicity_failures": 0,
+        "positive_only_failures": 0,
+        "inhibited_failures": 0
+      },
+      "first_counterexample": null
+    },
+    {
+      "universe_size": 2,
+      "consuming": true,
+      "nonempty_reactants_required": true,
+      "reaction_count": 20,
+      "comparison_counts": {
+        "all_comparisons": 40,
+        "positive_only_comparisons": 24,
+        "inhibited_comparisons": 16,
+        "monotonicity_failures": 0,
+        "positive_only_failures": 0,
+        "inhibited_failures": 0
+      },
+      "first_counterexample": null
+    },
+    {
+      "universe_size": 3,
+      "consuming": false,
+      "nonempty_reactants_required": true,
+      "reaction_count": 152,
+      "comparison_counts": {
+        "all_comparisons": 2280,
+        "positive_only_comparisons": 840,
+        "inhibited_comparisons": 1440,
+        "monotonicity_failures": 48,
+        "positive_only_failures": 0,
+        "inhibited_failures": 48
+      },
+      "first_counterexample": {
+        "reaction": {
+          "reactants": [
+            0
+          ],
+          "inhibitors": [
+            1
+          ],
+          "products": [
+            2
+          ]
+        },
+        "target": 2,
+        "small_stock": [
+          0
+        ],
+        "large_stock": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "universe_size": 3,
+      "consuming": true,
+      "nonempty_reactants_required": true,
+      "reaction_count": 152,
+      "comparison_counts": {
+        "all_comparisons": 2280,
+        "positive_only_comparisons": 840,
+        "inhibited_comparisons": 1440,
+        "monotonicity_failures": 48,
+        "positive_only_failures": 0,
+        "inhibited_failures": 48
+      },
+      "first_counterexample": {
+        "reaction": {
+          "reactants": [
+            0
+          ],
+          "inhibitors": [
+            1
+          ],
+          "products": [
+            2
+          ]
+        },
+        "target": 2,
+        "small_stock": [
+          0
+        ],
+        "large_stock": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "two_entity_census_with_empty_reactants": {
+    "universe_size": 2,
+    "consuming": false,
+    "nonempty_reactants_required": false,
+    "reaction_count": 36,
+    "comparison_counts": {
+      "all_comparisons": 72,
+      "positive_only_comparisons": 32,
+      "inhibited_comparisons": 40,
+      "monotonicity_failures": 8,
+      "positive_only_failures": 0,
+      "inhibited_failures": 8
+    },
+    "first_counterexample": {
+      "reaction": {
+        "reactants": [],
+        "inhibitors": [
+          0
+        ],
+        "products": [
+          1
+        ]
+      },
+      "target": 1,
+      "small_stock": [],
+      "large_stock": [
+        0
+      ]
+    }
+  }
+}
