@@ -1,0 +1,129 @@
+{
+  "model": "snapshot-local original law, with explicitly separate dynamics",
+  "switching": {
+    "element": 0,
+    "start": "dormant",
+    "reachable_states": [
+      "dormant",
+      "active",
+      "restored"
+    ],
+    "local_status": {
+      "dormant": "nongenerable",
+      "active": "generable",
+      "restored": "nongenerable"
+    },
+    "present_in_every_state": true,
+    "persistent_nongenerability": false,
+    "ever_has_external_witness": true,
+    "note": "Reachability here is graph-level, ignoring ingredient access."
+  },
+  "carrier_expansion_and_contraction": {
+    "element": 2,
+    "start": "small",
+    "reachable_states": [
+      "small",
+      "large",
+      "small_again"
+    ],
+    "local_status": {
+      "small": "nongenerable",
+      "large": "generable",
+      "small_again": "nongenerable"
+    },
+    "present_in_every_state": true,
+    "persistent_nongenerability": false,
+    "ever_has_external_witness": true,
+    "note": "Reachability here is graph-level, ignoring ingredient access."
+  },
+  "target_absent_is_undefined": {
+    "element": 1,
+    "start": "small",
+    "reachable_states": [
+      "small",
+      "large",
+      "small_again"
+    ],
+    "local_status": {
+      "small": "absent/undefined",
+      "large": "nongenerable",
+      "small_again": "absent/undefined"
+    },
+    "present_in_every_state": false,
+    "persistent_nongenerability": null,
+    "ever_has_external_witness": false,
+    "note": "Reachability here is graph-level, ignoring ingredient access."
+  },
+  "reactive_activation_without_target": {
+    "local_E_at_dormant": [
+      0,
+      1
+    ],
+    "local_E_at_active": [
+      1
+    ],
+    "control_reachable_ignoring_stock": [
+      "active",
+      "dormant"
+    ],
+    "construct_from_other_element": {
+      "constructible": true,
+      "steps": [
+        {
+          "before": "dormant",
+          "inputs": [
+            1,
+            1
+          ],
+          "output": 1,
+          "after": "active"
+        },
+        {
+          "before": "active",
+          "inputs": [
+            1,
+            1
+          ],
+          "output": 0,
+          "after": "dormant"
+        }
+      ]
+    }
+  },
+  "reactive_activation_requires_target": {
+    "local_E_at_dormant": [
+      0,
+      1
+    ],
+    "local_E_at_active": [
+      1
+    ],
+    "control_reachable_ignoring_stock": [
+      "active",
+      "dormant"
+    ],
+    "construct_from_other_element": {
+      "constructible": false,
+      "steps": [],
+      "reachable_control_states_with_restricted_stock": [
+        "dormant"
+      ],
+      "explored_stock_control_configurations": 1
+    }
+  },
+  "all_two_element_operation_switches": {
+    "ordered_operation_pairs": 256,
+    "relation_between_E_sets": {
+      "equal": 64,
+      "strict_loss": 80,
+      "strict_gain": 80,
+      "incomparable": 32
+    },
+    "one_fixed_target_0_transition_counts": {
+      "0->0": 64,
+      "0->1": 64,
+      "1->0": 64,
+      "1->1": 64
+    }
+  }
+}
