@@ -38,7 +38,7 @@ m'=m-a_r+b_r.
 هذه دلالة الاستهلاك والإنتاج المعروفة في شبكات بتري وشبكات التفاعلات الكيميائية. ولا نضيف هنا مثبطات، أو سقف سعة، أو احتمالات تفاعل.
 
 **تنبيه على الأسبقية:** هذه الدلالة ليست جديدة. انظر مثلًا:
-- M. Blondin et al. (2017), *The Reachability Problem for Two-Virtual-Counter Machines and Petri Nets* / مرجع حول reachability and coverability: https://lsv.ens-paris-saclay.fr/Publis/PAPERS/PDF/BFHH-tocl17.pdf
+- M. Blondin وA. Finkel وC. Haase وS. Haddad، *The Logical View on Continuous Petri Nets*؛ يتضمن عرضًا لتعريف شبكات بتري المنفصلة ومسألة الوصول: https://lsv.ens-paris-saclay.fr/Publis/PAPERS/PDF/BFHH-tocl17.pdf
 - شرح الصياغة المتجهية في شبكات بتري: https://pmc.ncbi.nlm.nih.gov/articles/PMC10450281/
 - التمييز بين الرموز الفردية والجماعية: https://www.sciencedirect.com/science/article/pii/S0304397522003231
 
