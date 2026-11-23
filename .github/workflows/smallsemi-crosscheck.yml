@@ -8,6 +8,7 @@ on:
       - 'experiments/match_smallsemi_catalogue.py'
       - 'experiments/green_structural_monoids.py'
       - 'experiments/green_smallsemi_audit.py'
+      - 'results/green_smallsemi_order6_audit.json'
       - 'experiments/check_smallsemi_ids_direct.g'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
@@ -47,6 +48,9 @@ jobs:
               3170, 4333, 9407, 9504, 15903, 15957, 15958
           ]
           print("PASS: complete Green-J structural audit against Smallsemi.")
+          expected=json.loads(Path('results/green_smallsemi_order6_audit.json').read_text())
+          assert x == expected, 'Full external Green-J report differs from committed audit data'
+          print("PASS: Green-J report also matches checked-in reproducible results.")
           PY
       - name: Present exact IDs and cross-validation summary
         run: |
