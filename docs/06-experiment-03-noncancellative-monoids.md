@@ -147,9 +147,9 @@ https://www.researchgate.net/publication/38371087_The_Minimal_Generating_Sets_of
 - [اختبارات التعداد والقضايا والأمثلة](../tests/test_finite_monoids.py)
 - [سجل النتائج](../results/monoids_n1_to_n4.json)
 
-\`\`\`bash
+```bash
 python3 -m unittest discover -s tests -v
 python3 experiments/finite_monoids.py --max-size 4 --output /tmp/monoids.json
-\`\`\`
+```
 
 **القضية البحثية اللاحقة:** الانتقال من عملية واحدة إلى نظام متعدد العمليات، أو توليد متعدد الخطوات؛ مع الحفاظ على نص التعريف الأصلي وتمييز أي توسيع تشغيلي عنه.
