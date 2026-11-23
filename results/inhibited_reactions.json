@@ -289,5 +289,32 @@
         0
       ]
     }
-  }
+  },
+  "exact_production_loss_formula_validation": [
+    {
+      "universe_size": 1,
+      "comparisons": 0,
+      "production_losses": 0,
+      "matches_closed_formula": true
+    },
+    {
+      "universe_size": 2,
+      "comparisons": 40,
+      "production_losses": 0,
+      "matches_closed_formula": true
+    },
+    {
+      "universe_size": 3,
+      "comparisons": 2280,
+      "production_losses": 48,
+      "matches_closed_formula": true
+    },
+    {
+      "universe_size": 4,
+      "comparisons": 79040,
+      "production_losses": 1920,
+      "matches_closed_formula": true
+    }
+  ],
+  "analytic_prediction_for_five_entities": 48320
 }
