@@ -16,6 +16,10 @@ jobs:
       - name: Run reproducibility tests
         run: python3 -m unittest discover -s tests -v
       - name: Recompute finite-system statistics
-        run: python3 experiments/finite_binary_systems.py --max-size 4 --output /tmp/recomputed.json
-      - name: Check checked-in result
-        run: diff -u results/finite_binary_systems_n1_to_n4.json /tmp/recomputed.json
+        run: python3 experiments/finite_binary_systems.py --max-size 4 --output /tmp/finite-recomputed.json
+      - name: Check first checked-in result
+        run: diff -u results/finite_binary_systems_n1_to_n4.json /tmp/finite-recomputed.json
+      - name: Recompute residues mod 2 through 100
+        run: python3 experiments/multiplication_mod_n.py --max-modulus 100 --output /tmp/residue-recomputed.json
+      - name: Check residue result
+        run: diff -u results/residue_multiplication_n2_to_n100.json /tmp/residue-recomputed.json
