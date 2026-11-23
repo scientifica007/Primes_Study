@@ -23,3 +23,15 @@ jobs:
         run: python3 experiments/multiplication_mod_n.py --max-modulus 100 --output /tmp/residue-recomputed.json
       - name: Check residue result
         run: diff -u results/residue_multiplication_n2_to_n100.json /tmp/residue-recomputed.json
+      - name: Recompute order-1-through-4 monoids and structural witnesses
+        run: python3 experiments/finite_monoids.py --max-size 4 --output /tmp/recomputed-monoids.json
+      - name: Compare monoid report to committed results
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/monoids_n1_to_n4.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/recomputed-monoids.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Recomputed monoid census differs from committed results'
+          print('Monoid report matches committed data.')
+          PY
