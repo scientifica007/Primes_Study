@@ -27,8 +27,8 @@ S_c\subseteq U,\qquad F_c:S_c\times S_c\to S_c.
 
 \[
 \boxed{
-E_c(x)\iff x\in S_c
-\ \land\
+\text{لكل }x\in S_c:\quad
+E_c(x)\iff
 \nexists a,b\in S_c\setminus\{x\}:F_c(a,b)=x
 }
 \]
