@@ -1,0 +1,156 @@
+{
+  "model": "positive-arity operations; original law without exclusions",
+  "binary_table_families": [
+    {
+      "carrier_size": 1,
+      "binary_operation_count": 1,
+      "ordered_families": 1,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 0,
+        "1": 1
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "0/1",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 1,
+      "binary_operation_count": 2,
+      "ordered_families": 1,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 0,
+        "1": 1
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "0/1",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 1,
+      "binary_operation_count": 3,
+      "ordered_families": 1,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 0,
+        "1": 1
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "0/1",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 2,
+      "binary_operation_count": 1,
+      "ordered_families": 16,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 4,
+        "1": 8,
+        "2": 4
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "4/16",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 2,
+      "binary_operation_count": 2,
+      "ordered_families": 256,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 144,
+        "1": 96,
+        "2": 16
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "144/256",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 2,
+      "binary_operation_count": 3,
+      "ordered_families": 4096,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 3136,
+        "1": 896,
+        "2": 64
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "3136/4096",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 3,
+      "binary_operation_count": 1,
+      "ordered_families": 19683,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 9683,
+        "1": 8400,
+        "2": 1536,
+        "3": 64
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "9683/19683",
+      "independent_exhaustive_census": true
+    },
+    {
+      "carrier_size": 3,
+      "binary_operation_count": 2,
+      "ordered_families": 387420489,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 343062089,
+        "1": 43371264,
+        "2": 983040,
+        "3": 4096
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "343062089/387420489",
+      "independent_exhaustive_census": false
+    },
+    {
+      "carrier_size": 3,
+      "binary_operation_count": 3,
+      "ordered_families": 7625597484987,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 7449851162555,
+        "1": 175173537792,
+        "2": 572522496,
+        "3": 262144
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "7449851162555/7625597484987",
+      "independent_exhaustive_census": false
+    },
+    {
+      "carrier_size": 4,
+      "binary_operation_count": 1,
+      "ordered_families": 4294967296,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 3094232576,
+        "1": 1113009152,
+        "2": 86244864,
+        "3": 1476608,
+        "4": 4096
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "3094232576/4294967296",
+      "independent_exhaustive_census": false
+    },
+    {
+      "carrier_size": 4,
+      "binary_operation_count": 2,
+      "ordered_families": 18446744073709551616,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 18032124993371242496,
+        "1": 413249135385509888,
+        "2": 1369387746852864,
+        "3": 557189169152,
+        "4": 16777216
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "18032124993371242496/18446744073709551616",
+      "independent_exhaustive_census": false
+    },
+    {
+      "carrier_size": 4,
+      "binary_operation_count": 3,
+      "ordered_families": 79228162514264337593543950336,
+      "count_by_jointly_nongenerable_elements": {
+        "0": 79094032310080594640283631616,
+        "1": 134109478919758510863417344,
+        "2": 20725055989857298415616,
+        "3": 207994516379009024,
+        "4": 68719476736
+      },
+      "fraction_with_no_jointly_nongenerable_elements": "79094032310080594640283631616/79228162514264337593543950336",
+      "independent_exhaustive_census": false
+    }
+  ],
+  "theorem": "E(F_1,...,F_m) = intersection_i E(F_i); also invariant under term composition"
+}
