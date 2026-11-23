@@ -1,0 +1,162 @@
+{
+  "review_date": "2026-11-23",
+  "theorem": "T28",
+  "verification_status": "PASS: all 15973 catalogued order-six structures scanned; all 10 representatives matched by full 6! isomorphism test",
+  "catalogue": {
+    "package": "GAP Smallsemi",
+    "version": "0.7.2",
+    "scope": "isomorphism or anti-isomorphism classes, order 6",
+    "records_scanned": 15973,
+    "source_repository": "nasqret/semibase-order6",
+    "pinned_commit": "6f75ceacff8f54d0db1f0ab286c05f0f5301f90d",
+    "source_file": "research/order6/catalogue.json",
+    "verified_sha256": "944f356c42b8e703988f5684cd81b650f99cc0ccd1ef1d7fc6e900f2c95f287c"
+  },
+  "selection_criterion": "monoid but not group; no x is nongenerable by binary product from two inputs both different from x",
+  "selected_catalogue_ids": [
+    [
+      6,
+      3170
+    ],
+    [
+      6,
+      4333
+    ],
+    [
+      6,
+      9407
+    ],
+    [
+      6,
+      9504
+    ],
+    [
+      6,
+      15903
+    ],
+    [
+      6,
+      15957
+    ],
+    [
+      6,
+      15958
+    ]
+  ],
+  "selected_catalogue_class_count": 7,
+  "project_isomorphism_class_count": 10,
+  "matches": [
+    {
+      "local_class": 1,
+      "unit_group": "C3",
+      "unit_action": "both_active",
+      "smallsemi_id": [
+        6,
+        15958
+      ],
+      "orientation": "both"
+    },
+    {
+      "local_class": 2,
+      "unit_group": "C3",
+      "unit_action": "both_trivial",
+      "smallsemi_id": [
+        6,
+        15957
+      ],
+      "orientation": "both"
+    },
+    {
+      "local_class": 3,
+      "unit_group": "C3",
+      "unit_action": "left_active",
+      "smallsemi_id": [
+        6,
+        15903
+      ],
+      "orientation": "direct"
+    },
+    {
+      "local_class": 4,
+      "unit_group": "C3",
+      "unit_action": "right_active",
+      "smallsemi_id": [
+        6,
+        15903
+      ],
+      "orientation": "opposite"
+    },
+    {
+      "local_class": 5,
+      "unit_group": "C4",
+      "unit_action": "both_active",
+      "smallsemi_id": [
+        6,
+        9407
+      ],
+      "orientation": "both"
+    },
+    {
+      "local_class": 6,
+      "unit_group": "C4",
+      "unit_action": "left_active",
+      "smallsemi_id": [
+        6,
+        9504
+      ],
+      "orientation": "opposite"
+    },
+    {
+      "local_class": 7,
+      "unit_group": "C4",
+      "unit_action": "right_active",
+      "smallsemi_id": [
+        6,
+        9504
+      ],
+      "orientation": "direct"
+    },
+    {
+      "local_class": 8,
+      "unit_group": "V4",
+      "unit_action": "both_active",
+      "smallsemi_id": [
+        6,
+        3170
+      ],
+      "orientation": "both"
+    },
+    {
+      "local_class": 9,
+      "unit_group": "V4",
+      "unit_action": "left_active",
+      "smallsemi_id": [
+        6,
+        4333
+      ],
+      "orientation": "opposite"
+    },
+    {
+      "local_class": 10,
+      "unit_group": "V4",
+      "unit_action": "right_active",
+      "smallsemi_id": [
+        6,
+        4333
+      ],
+      "orientation": "direct"
+    }
+  ],
+  "orientation_definitions": {
+    "both": "the local table and its opposite are each isomorphic to the catalogued representative",
+    "direct": "the local table is isomorphic to the catalogued representative",
+    "opposite": "the opposite of the local table is isomorphic to the catalogued representative"
+  },
+  "evidence": {
+    "workflow_run": "https://github.com/scientifica007/Primes_Study/actions/runs/45256733580",
+    "calculation": "successful, all IDs recorded in runner logs",
+    "artifact_upload": "failed due to GitHub Actions artifact storage quota; calculation and logs succeeded",
+    "reproducer": "experiments/match_smallsemi_catalogue.py"
+  },
+  "historical_novelty": "not established; this proves catalogue identity and completeness, not originality of the 10-class selection"
+}
