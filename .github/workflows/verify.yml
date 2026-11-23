@@ -71,3 +71,15 @@ jobs:
           assert expected == actual, 'Inhibited reaction census or witness traces differ'
           print('Inhibitor, consumption and 152-rule census match the recorded data.')
           PY
+      - name: Recompute study-seven multiset and conservation results
+        run: python3 experiments/multiset_production.py --output /tmp/multiset-recomputed.json
+      - name: Check study-seven results and witness traces
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/multiset_production.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/multiset-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Multiset results or witness traces do not match the code'
+          print('Multiset coefficient census, type-emergence tests, and conservation traces verified.')
+          PY
