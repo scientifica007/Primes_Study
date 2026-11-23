@@ -35,3 +35,15 @@ jobs:
           assert expected == actual, 'Recomputed monoid census differs from committed results'
           print('Monoid report matches committed data.')
           PY
+      - name: Recompute multi-operation exact counts
+        run: python3 experiments/multiple_operations.py --max-size 4 --max-operations 3 --output /tmp/multi-recomputed.json
+      - name: Compare multi-operation results to committed data
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/multiple_binary_operations_n1_to_n4_m1_to_m3.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/multi-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Multi-operation count table differs from committed results'
+          print('Multi-operation theorem counts match checked-in data.')
+          PY
