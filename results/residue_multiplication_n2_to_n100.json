@@ -1,0 +1,772 @@
+{
+  "definition": "E(x): no a,b in Z/nZ, both distinct from x, satisfy a*b=x",
+  "range": {
+    "start": 2,
+    "end": 100
+  },
+  "cases": [
+    {
+      "n": 2,
+      "observed": [
+        0,
+        1
+      ],
+      "predicted": [
+        0,
+        1
+      ],
+      "equal": true
+    },
+    {
+      "n": 3,
+      "observed": [
+        0,
+        2
+      ],
+      "predicted": [
+        0,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "n": 4,
+      "observed": [
+        2,
+        3
+      ],
+      "predicted": [
+        2,
+        3
+      ],
+      "equal": true
+    },
+    {
+      "n": 5,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 6,
+      "observed": [
+        3,
+        5
+      ],
+      "predicted": [
+        3,
+        5
+      ],
+      "equal": true
+    },
+    {
+      "n": 7,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 8,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 9,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 10,
+      "observed": [
+        5
+      ],
+      "predicted": [
+        5
+      ],
+      "equal": true
+    },
+    {
+      "n": 11,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 12,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 13,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 14,
+      "observed": [
+        7
+      ],
+      "predicted": [
+        7
+      ],
+      "equal": true
+    },
+    {
+      "n": 15,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 16,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 17,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 18,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 19,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 20,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 21,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 22,
+      "observed": [
+        11
+      ],
+      "predicted": [
+        11
+      ],
+      "equal": true
+    },
+    {
+      "n": 23,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 24,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 25,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 26,
+      "observed": [
+        13
+      ],
+      "predicted": [
+        13
+      ],
+      "equal": true
+    },
+    {
+      "n": 27,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 28,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 29,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 30,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 31,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 32,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 33,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 34,
+      "observed": [
+        17
+      ],
+      "predicted": [
+        17
+      ],
+      "equal": true
+    },
+    {
+      "n": 35,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 36,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 37,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 38,
+      "observed": [
+        19
+      ],
+      "predicted": [
+        19
+      ],
+      "equal": true
+    },
+    {
+      "n": 39,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 40,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 41,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 42,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 43,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 44,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 45,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 46,
+      "observed": [
+        23
+      ],
+      "predicted": [
+        23
+      ],
+      "equal": true
+    },
+    {
+      "n": 47,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 48,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 49,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 50,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 51,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 52,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 53,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 54,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 55,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 56,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 57,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 58,
+      "observed": [
+        29
+      ],
+      "predicted": [
+        29
+      ],
+      "equal": true
+    },
+    {
+      "n": 59,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 60,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 61,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 62,
+      "observed": [
+        31
+      ],
+      "predicted": [
+        31
+      ],
+      "equal": true
+    },
+    {
+      "n": 63,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 64,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 65,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 66,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 67,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 68,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 69,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 70,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 71,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 72,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 73,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 74,
+      "observed": [
+        37
+      ],
+      "predicted": [
+        37
+      ],
+      "equal": true
+    },
+    {
+      "n": 75,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 76,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 77,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 78,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 79,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 80,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 81,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 82,
+      "observed": [
+        41
+      ],
+      "predicted": [
+        41
+      ],
+      "equal": true
+    },
+    {
+      "n": 83,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 84,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 85,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 86,
+      "observed": [
+        43
+      ],
+      "predicted": [
+        43
+      ],
+      "equal": true
+    },
+    {
+      "n": 87,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 88,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 89,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 90,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 91,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 92,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 93,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 94,
+      "observed": [
+        47
+      ],
+      "predicted": [
+        47
+      ],
+      "equal": true
+    },
+    {
+      "n": 95,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 96,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 97,
+      "observed": [
+        0
+      ],
+      "predicted": [
+        0
+      ],
+      "equal": true
+    },
+    {
+      "n": 98,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 99,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    },
+    {
+      "n": 100,
+      "observed": [],
+      "predicted": [],
+      "equal": true
+    }
+  ],
+  "all_match": true
+}
