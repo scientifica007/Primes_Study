@@ -1,0 +1,62 @@
+name: Verify against external Smallsemi catalogue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/smallsemi-crosscheck.yml'
+      - 'experiments/match_smallsemi_catalogue.py'
+      - 'tests/test_match_smallsemi_catalogue.py'
+      - 'results/minimal_monoids_order6.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crosscheck-external-catalogue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate internal matching algorithm
+        run: python3 -m unittest discover -s tests -p 'test_match_smallsemi_catalogue.py' -v
+      - name: Compare full independently exported Smallsemi 0.7.2 catalogue
+        run: |
+          python3 experiments/match_smallsemi_catalogue.py \
+            --download \
+            --output /tmp/smallsemi_matches.json
+          python3 -m json.tool /tmp/smallsemi_matches.json > /dev/null
+      - name: Present exact IDs and cross-validation summary
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          p=json.loads(Path('/tmp/smallsemi_matches.json').read_text())
+          lines=['# T28: External Smallsemi 0.7.2 cross-check',
+                 '',
+                 'Catalogue SHA256: '+p['catalogue_source']['sha256'],
+                 'Smallsemi IDs: '+str(p['smallsemi_ids_sorted']),
+                 'External anti-isomorphism classes: '+str(p['catalogue_classes_selected']),
+                 'Local isomorphism classes: '+str(p['local_isomorphism_classes_matched']),
+                 '',
+                 '| Local class | Unit group | Action | Smallsemi ID | Orientation |',
+                 '|---|---|---|---|---|']
+          for x in p['matches']:
+              lines.append(
+                  f"| {x['local_class']} | {x['unit_group']} | {x['unit_action']} | "
+                  f"{x['smallsemi_id']} | {x['orientation']} |"
+              )
+          summary='\n'.join(lines)+'\n'
+          print(summary)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+              f.write(summary)
+          PY
+      - name: Archive machine-readable catalog mappings
+        uses: actions/upload-artifact@v4
+        with:
+          name: minimal-six-smallsemi-0_7_2-matches
+          path: /tmp/smallsemi_matches.json
+          if-no-files-found: error
+          retention-days: 30
