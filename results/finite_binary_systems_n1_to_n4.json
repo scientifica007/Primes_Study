@@ -1,0 +1,52 @@
+{
+  "hypothesis": "all elements x are tested: no a,b distinct from x yield F(a,b)=x",
+  "max_size": 4,
+  "systems": [
+    {
+      "size": 1,
+      "number_of_all_operations": 1,
+      "counts_by_number_nongenerable": {
+        "0": 0,
+        "1": 1
+      },
+      "method": "exhaustive enumeration + independent analytical formula",
+      "verified_by_exhaustive_enumeration": true
+    },
+    {
+      "size": 2,
+      "number_of_all_operations": 16,
+      "counts_by_number_nongenerable": {
+        "0": 4,
+        "1": 8,
+        "2": 4
+      },
+      "method": "exhaustive enumeration + independent analytical formula",
+      "verified_by_exhaustive_enumeration": true
+    },
+    {
+      "size": 3,
+      "number_of_all_operations": 19683,
+      "counts_by_number_nongenerable": {
+        "0": 9683,
+        "1": 8400,
+        "2": 1536,
+        "3": 64
+      },
+      "method": "exhaustive enumeration + independent analytical formula",
+      "verified_by_exhaustive_enumeration": true
+    },
+    {
+      "size": 4,
+      "number_of_all_operations": 4294967296,
+      "counts_by_number_nongenerable": {
+        "0": 3094232576,
+        "1": 1113009152,
+        "2": 86244864,
+        "3": 1476608,
+        "4": 4096
+      },
+      "method": "analytical formula only",
+      "verified_by_exhaustive_enumeration": false
+    }
+  ]
+}
