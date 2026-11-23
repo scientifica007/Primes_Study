@@ -7,6 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments"))
 
 from finite_monoids import (  # noqa: E402
     E, associative, boolean_meet_E, direct_product_C3_B,
+    cyclic_boolean_E, cyclic_boolean_prediction,
     enumerate_monoids, make_report, operation_tables_with_identity,
     predicted_E, units, witnesses,
 )
@@ -69,6 +70,16 @@ class TestFiniteMonoids(unittest.TestCase):
             with self.subTest(k=k):
                 self.assertEqual(observed, expected)
                 self.assertEqual(len(observed), k + 1)
+
+    def test_cyclic_group_boolean_product_transition(self):
+        for m in range(1, 6):
+            for k in range(0, 4):
+                with self.subTest(group_order=m, boolean_rank=k):
+                    observed = cyclic_boolean_E(m, k)
+                    predicted = cyclic_boolean_prediction(m, k)
+                    self.assertEqual(observed, predicted)
+                    expected_count = k + 1 if m == 1 else (1 if m == 2 else 0)
+                    self.assertEqual(len(observed), expected_count)
 
     def test_report_contains_reproducible_evidence(self):
         data = make_report(4)
