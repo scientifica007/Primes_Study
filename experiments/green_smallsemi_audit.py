@@ -29,6 +29,7 @@ EXPECTED_SELECTED = {3170,4333,9407,9504,15903,15957,15958}
 def evaluate(catalogue: dict) -> dict:
     monoids = 0
     e_empty = []
+    group_e_empty = []
     j_singleton = 0
     j_pair = 0
     i2 = 0
@@ -51,7 +52,10 @@ def evaluate(catalogue: dict) -> dict:
         checked_nonunit_elements += len(audit["nonunits"])
         current_e = set(audit["E_direct"])
         if not current_e:
-            e_empty.append(record["smallsemi_id"][1])
+            if not audit["nonunits"]:
+                group_e_empty.append(record["smallsemi_id"][1])
+            else:
+                e_empty.append(record["smallsemi_id"][1])
         top = audit["maximal_nonunit_j_classes"]
         if audit["maximal_singleton_obstructions"]:
             j_singleton += 1
@@ -81,6 +85,9 @@ def evaluate(catalogue: dict) -> dict:
             if not current_e:
                 i2_empty += 1
     e_empty.sort()
+    group_e_empty.sort()
+    if len(group_e_empty) != 2:
+        raise AssertionError(("Expected both six-element group types", group_e_empty))
     if set(e_empty) != EXPECTED_SELECTED:
         raise AssertionError(("Unexpected E-empty monoids", e_empty))
     if monoids <= 100:
@@ -95,6 +102,8 @@ def evaluate(catalogue: dict) -> dict:
             str(k):v for k,v in sorted(monoid_hist_by_unit_count.items())
         },
         "E_empty_nongroup_smallsemi_ids": e_empty,
+        "E_empty_group_smallsemi_ids": group_e_empty,
+        "E_empty_total_including_groups": len(e_empty) + len(group_e_empty),
         "monoids_with_maximal_nonunit_singleton_J_class": j_singleton,
         "first_five_singleton_examples": singleton_examples,
         "monoids_with_maximal_nonunit_two_element_J_class": j_pair,
