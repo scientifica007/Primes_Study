@@ -10,6 +10,7 @@ from green_structural_monoids import (  # noqa: E402
     structural_audit, group_with_zero, unit_with_left_zero_ideal,
     c3_with_trivial_group_ideal, c3_with_trivial_group_ideal_and_zero,
     principal_ideal, make_report, test_exact_two_nonunit_criterion,
+    s3_eight_element_extension, two_nonunit_extension_from_group_quotient,
 )
 from finite_monoids import operation_tables_with_identity, associative
 
@@ -105,6 +106,23 @@ class StudyNineTests(unittest.TestCase):
     def test_nonassociative_table_rejected(self):
         with self.assertRaises(ValueError):
             structural_audit((0,1,2,1,2,2,2,1,1)) # nonassociative, identity 0
+
+    def test_noncummutative_S3_group_sign_quotient_produces_E_empty(self):
+        t=s3_eight_element_extension()
+        self.assertEqual(len(t),64)
+        audit=structural_audit(t)
+        self.assertEqual(audit["size"],8)
+        self.assertEqual(len(audit["units"]),6)
+        self.assertEqual(audit["nonunits"],[6,7])
+        self.assertEqual(audit["E_direct"],[])
+        self.assertEqual(audit["unit_double_orbit_sizes"],{"6":2,"7":2})
+        self.assertTrue(test_exact_two_nonunit_criterion(t)["E_empty"])
+
+    def test_no_bogus_index_two_quotient_is_accepted(self):
+        # C3 has no nontrivial C2 quotient; "mod 2" fails homomorphism.
+        table=tuple((a+b)%3 for a in range(3) for b in range(3))
+        with self.assertRaises(ValueError):
+            two_nonunit_extension_from_group_quotient(table,(0,1,0))
 
     def test_any_monoid_factor_with_C3_gives_no_E(self):
         # Direct product of C3 with a non-group two-element monoid.
