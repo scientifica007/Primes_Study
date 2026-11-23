@@ -83,3 +83,28 @@ jobs:
           assert expected == actual, 'Multiset results or witness traces do not match the code'
           print('Multiset coefficient census, type-emergence tests, and conservation traces verified.')
           PY
+      - name: Recompute individual-token identity and count projection
+        run: python3 experiments/token_identity.py --output /tmp/token-identity-recomputed.json
+      - name: Validate individual-token model and saved result
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('results/token_identity.json').read_text(encoding='utf-8'))
+          actual = json.loads(Path('/tmp/token-identity-recomputed.json').read_text(encoding='utf-8'))
+          assert expected == actual, 'Token identity counts or witness traces differ'
+          print('Identity policies, type emergence and count projection verified.')
+          PY
+
+  independent-gap:
+    name: Independent algebra audit (GAP)
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GAP computer algebra system
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gap-core
+      - name: Recount monoids using GAP and verify published algebra tables
+        run: gap -q -b < experiments/verify_with_gap.g
