@@ -104,7 +104,7 @@ class StudyNineTests(unittest.TestCase):
 
     def test_nonassociative_table_rejected(self):
         with self.assertRaises(ValueError):
-            structural_audit((0,1,1,0)) # no 2-element identity
+            structural_audit((0,1,2,1,2,2,2,1,1)) # nonassociative, identity 0
 
     def test_new_report_coverage(self):
         out=make_report()
