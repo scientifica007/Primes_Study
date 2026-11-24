@@ -53,9 +53,17 @@ jobs:
               assert used <= allowed, f'{name}: disallowed axioms {used - allowed}'
               print(name, 'axioms:', sorted(used))
           PY
-      - name: Preserve resolved dependency manifest
-        uses: actions/upload-artifact@v4
-        with:
-          name: lean-dependency-manifest
-          path: formal/lake-manifest.json
-          if-no-files-found: error
+      - name: Record resolved dependency manifest without artifact storage
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          raw = Path('lake-manifest.json').read_bytes()
+          data = json.loads(raw)
+          assert data.get('packages'), 'Resolved package list is empty'
+          print('LEAN_MANIFEST_SHA256=' + hashlib.sha256(raw).hexdigest())
+          print('LEAN_MANIFEST_BEGIN')
+          print(raw.decode('utf-8'))
+          print('LEAN_MANIFEST_END')
+          PY
