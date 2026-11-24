@@ -1,0 +1,143 @@
+# Quadratic query lower bounds for detecting indispensable elements in finite monoids with prescribed Green structure
+
+**Research manuscript — draft v0.1, 24 November 2026.**  
+Author name, affiliation, and contribution statement to be confirmed before circulation. Not submitted or peer reviewed. The novelty assessment remains provisional, particularly pending examination of the full text of Chang (2014).
+
+## Abstract
+
+An element \(x\) of a finite monoid \(M\) is called indispensable here if every factorization \(ab=x\) contains \(x\) as a factor. Equivalently, \(x\) belongs to every semigroup generating set of \(M\). We consider the exact query complexity of deciding whether indispensable elements exist when multiplication is available only through a labelled multiplication oracle. For every pair of positive integers \(p,q\), we construct a family of \(2^{pq}\) distinct labelled monoids of order \(n=2(p+q)+6\), all having identical labelled principal left, right and two-sided ideals, identical principal factors and within-class multiplication, identical unit-group actions, and identical idempotent and regular elements. Each member encodes a Boolean matrix \(W\) in its products between two distinct Green \(\mathcal J\)-classes. A designated element is indispensable precisely when \(W\) is zero; no other element is indispensable. The deterministic worst-case query complexity on the promised family is exactly \(pq\); the optimal worst-case expected query complexity for randomized algorithms with error at most \(\varepsilon<1/2\) is \((1-2\varepsilon)pq\). In particular, prescribed Green metadata does not permit a uniform subquadratic multiplication-query bound in general. We distinguish this oracle result from known computational methods for maximal subsemigroups and from Cayley-table learning and membership problems.
+
+**Keywords:** finite monoids; indispensable elements; irreducible elements; Green's relations; maximal subsemigroups; multiplication oracle; decision-tree complexity.
+
+## 1. Introduction and terminology
+
+For a monoid \(M\), viewed as an algebra whose sole basic operation is multiplication, write
+
+\[
+\mathcal I(M)=\{x\in M:\ \forall a,b\in M,\ ab=x\Rightarrow a=x\text{ or }b=x\}.
+\]
+
+We test all elements, including the identity and any absorbing zero. Equal factors are allowed. The monoid's identity is distinguished as input metadata, not a nullary operation in the generation convention. In particular, semigroup generation uses nonempty words.
+
+This is an established algebraic notion. Proposition 3.8 of Bergman and Slutzki [1] gives the corresponding equivalence for general algebras under the name *irreducible element*; Lipparini [2, proof of Proposition 2.4] uses *indispensable element*. Proposition 3.9 of [1] gives a deterministic log-space test with explicit operation tables. For a monoid of order at least two, an element belongs to \(\mathcal I(M)\) exactly when its complement is a maximal proper subsemigroup: closure is precisely the displayed condition, and a proper superset of a singleton complement must be all of \(M\). The one-element monoid satisfies the displayed condition, although its empty complement is not a nonempty semigroup. We use \(\mathcal I\), rather than \(E\), to avoid confusion with the usual notation for idempotents.
+
+The present question concerns the number of entries of an initially unknown multiplication table that must be examined, even when substantial structural information is supplied. It is not a question about discovering a generating set of minimum cardinality or computing the Frattini subuniverse.
+
+## 2. Query model
+
+A labelled carrier of cardinality \(n\), with its distinguished identity, is given. The oracle returns the element \(ab\) on a query of any ordered pair \((a,b)\). The input is promised to be an associative monoid. Arbitrary computation on supplied metadata and previous replies is free; each oracle call costs one. We ask either whether \(\mathcal I(M)=\varnothing\), whether a specified element belongs to \(\mathcal I(M)\), or to output the entire set. A single pass over the table solves all three problems using at most \((n-1)^2\) queries: products involving the known identity cannot certify that an element is dispensable.
+
+In the strengthened model the following data are also supplied:
+
+- the labelled group of units with its multiplication and left and right actions on the whole carrier;
+- the sets \(xM,Mx,MxM\) for every labelled element \(x\), hence the Green relations and their preorders;
+- all principal factors, with the labels of their nonzero class elements, and actual products of elements in the same \(\mathcal J\)-class;
+- the sets of idempotent and regular elements.
+
+No table of general cross-class products, Cayley graph giving all such products, or minimal generating set is supplied. Lower bounds below even allow all products outside one specified rectangular part of the table to be supplied.
+
+## 3. The construction
+
+**Theorem 1 (fixed-structure family).** For positive integers \(p,q\), there exists a family of \(2^{pq}\) pairwise distinct labelled monoids of order \(2(p+q)+6\) having identical data in the strengthened model. They are indexed by \(W\in\{0,1\}^{p\times q}\), with a common labelled element \(t\) satisfying
+
+\[
+\mathcal I(M_W)=
+\begin{cases}
+\{t\},&W=0,\\
+\varnothing,&W\ne0.
+\end{cases}
+\]
+
+**Proof.** Let \(G=C_4\), written additively, and use the disjoint sets
+
+\[
+ A=\{a_{i,r}:1\le i\le p,\ r\in C_2\},\qquad
+ B=\{b_{j,s}:1\le j\le q,\ s\in C_2\}.
+\]
+Set \(M_W=G\sqcup A\sqcup B\sqcup\{t,z\}\). On \(G\) use its group law. For \(g\in G\) write \(\bar g\) for its image in \(C_2\). Define
+\[
+ ga_{i,r}=a_{i,r},\quad a_{i,r}g=a_{i,r+\bar g},
+ \qquad gb_{j,s}=b_{j,s+\bar g},\quad b_{j,s}g=b_{j,s}.
+\]
+Units fix \(t,z\) on both sides. The remaining products are given in Table 1, where \(a,a'\in A\), \(b,b'\in B\), and \(w(a_{i,r},b_{j,s})=t\) if \(W_{ij}=1\), and \(z\) otherwise.
+
+| Left / right | \(a'\in A\) | \(b'\in B\) | \(t\) | \(z\) |
+|---|---|---|---|---|
+| \(a\in A\) | \(a'\) | \(w(a,b')\) | \(t\) | \(z\) |
+| \(b\in B\) | \(z\) | \(b\) | \(z\) | \(z\) |
+| \(t\) | \(z\) | \(t\) | \(z\) | \(z\) |
+| \(z\) | \(z\) | \(z\) | \(z\) | \(z\) |
+
+*Table 1. Products of nonunits.*
+
+To verify associativity, first consider triples in \(A\cup B\cup\{t,z\}\). Any triple containing \(z\) has product \(z\). For triples using only \(A,B\), the pure triples are associative by the right-zero and left-zero laws; in type \(AAB\) both bracketings select \(w\) of the second and third factors, and in \(ABB\) both select \(w\) of the first and second. The other four mixed types yield \(z\). With exactly one occurrence of \(t\), the types \(AAt,AtB,tBB\) give \(t\) under both bracketings; all other types give \(z\). With at least two occurrences of \(t\), both bracketings give \(z\).
+
+For triples involving \(G\), the stated translations are commuting left and right group actions. For \(x,y\notin G\) they satisfy
+\[
+ (gx)y=g(xy),\qquad (xg)y=x(gy),\qquad (xy)g=x(yg).
+\]
+Indeed, on \(A^2\) multiplication selects the right factor, whose left unit action is trivial; on \(B^2\) it selects the left factor, whose right unit action is trivial. On \(A\times B\) the value \(w\) depends only on \(i,j\), unchanged by translations. The other mixed products are fixed \(t\) or \(z\). These identities, together with the group action laws, verify every mixed triple. Thus \(M_W\) is associative. The group identity is a global identity, and the nonunits form an ideal, so the group of units is exactly \(G\).
+
+The principal ideals are obtained directly from Table 1:
+
+| \(x\) | \(xM_W\) | \(M_Wx\) | \(M_WxM_W\) |
+|---|---|---|---|
+| \(g\in G\) | \(M_W\) | \(M_W\) | \(M_W\) |
+| \(a\in A\) | \(A\cup\{t,z\}\) | \(\{a,z\}\) | \(A\cup\{t,z\}\) |
+| \(b\in B\) | \(\{b,z\}\) | \(B\cup\{t,z\}\) | \(B\cup\{t,z\}\) |
+| \(t\) | \(\{t,z\}\) | \(\{t,z\}\) | \(\{t,z\}\) |
+| \(z\) | \(\{z\}\) | \(\{z\}\) | \(\{z\}\) |
+
+In particular, the products \(at=t\) and \(tb=t\) ensure that \(t\) lies in the same ideals even when every entry of \(W\) is zero. There are five \(\mathcal J\)-classes \(G,A,B,\{t\},\{z\}\), with \(A,B\) incomparable and both strictly above \(\{t\}\), which is above \(\{z\}\). All labelled ideals are independent of \(W\). All products within classes are fixed, so the principal factors (obtained by collapsing strictly lower elements to zero, when present) are fixed. The idempotents are \(0_G\), all of \(A\cup B\), and \(z\). Every element except \(t\) is regular: for \(t\), \(tM_Wt=\{z\}\). The unit actions were defined independently of \(W\).
+
+It remains to compute \(\mathcal I\). Every element \(g\in G\) has a factorization \(h(h^{-1}g)\) inside the group with both factors different from \(g\), choosing \(h\notin\{1_G,g\}\) (multiplicative notation for the group law). Every element \(a_{i,r}\) is the product of \(a_{i,r+1}\) and the unit \(1\in C_4\); both factors differ from it. Likewise \(b_{j,s}\) is the product of that unit and \(b_{j,s+1}\). The zero \(z\) has the factorization \(tt=z\). The only products producing \(t\) without a factor \(t\) are the \(A\times B\) products for which \(W_{ij}=1\). Consequently \(t\) is indispensable exactly when \(W=0\), as claimed. Different matrices give distinct labelled tables since each bit changes the four products with the corresponding indices. No assertion of pairwise nonisomorphism is needed. \(\square\)
+
+## 4. Exact query lower bounds
+
+**Theorem 2.** On the promised family in Theorem 1, each of the three tasks in Section 2 has deterministic worst-case query complexity exactly \(pq\), even if the full definition of the family and all products outside \(A\times B\) are supplied.
+
+**Proof.** For each \((i,j)\) the four pairs
+\[
+ (a_{i,r},b_{j,s}),\qquad r,s\in C_2,
+\]
+form a disjoint block containing exactly the information in \(W_{ij}\). Run a correct deterministic algorithm on \(W=0\). If one block is unqueried, change just its bit to 1. The metadata and all queried replies are unchanged, so by induction on adaptive queries the entire computation and output are identical. But the correct outputs differ. Hence every block must be queried on the zero input, requiring at least \(pq\) calls. Conversely, query one representative of each block and take the Boolean OR. Theorem 1 supplies all three outputs. \(\square\)
+
+**Theorem 3.** For \(0\le\varepsilon<1/2\), the optimal worst-case expected query count on the promised family is exactly \((1-2\varepsilon)pq\) for each task, with error probability at most \(\varepsilon\) on each input.
+
+**Proof.** Couple the execution on the zero matrix and on the matrix with just bit \((i,j)\) set, using identical internal random coins. The probability of outputting the zero-matrix answer differs by at least \(1-2\varepsilon\) between the executions. (For output of the whole set use the event that the output equals \(\{t\}\).) The outputs cannot differ unless the block \((i,j)\) is visited. Until that block is visited, the transcripts coincide. Therefore on the zero input the probability of visiting each block is at least \(1-2\varepsilon\). Summing these probabilities bounds the expected number of visited blocks from below, which is at most the number of oracle calls.
+
+For the matching upper bound, with probability \(1-2\varepsilon\) run the exact algorithm of Theorem 2, stopping at the first nonzero bit if desired. With probability \(\varepsilon\) give the zero-matrix answer without querying and with probability \(\varepsilon\) give the nonzero-matrix answer without querying. Each input has error at most \(\varepsilon\), and the worst-case expectation is exactly \((1-2\varepsilon)pq\), attained on the zero input. \(\square\)
+
+This is a bound on expected calls, not an exact bound on the maximum number of calls over random coins.
+
+**Corollary 4.** Taking \(p=q=k\), we have \(n=4k+6\). The deterministic lower bound is \((n-6)^2/16\), and for error at most \(1/3\) the randomized expected lower bound is \((n-6)^2/48\). Together with the table-scan upper bound these rule out any uniform \(o(n^2)\) bound in the strengthened model. The displayed finite-size constants refer to this sequence of orders, not every possible order.
+
+## 5. A simpler construction with less metadata (T45)
+
+For comparison, take \(G=C_3\), disjoint sets \(A_i=\{i\}\times C_3\), \(1\le i\le k\), and \(t,z\), for order \(3k+5\). Units translate the second coordinate on both sides of each \(A_i\) and fix \(t,z\). All products of nonunits are \(z\), except that on each block \(A_i\times A_j\) a free Boolean parameter may change the value to \(t\). All triple products of nonunits are \(z\), and mixed associativity follows from invariance under the translations. As before, exactly \(t\) is indispensable on the zero matrix, and no element is indispensable on a nonzero matrix. The same OR argument yields \(k^2=(n-5)^2/9\) deterministic and \((1-2\varepsilon)k^2\) expected randomized queries on this promised family.
+
+Unlike Theorem 1, here the principal ideals can change when a bit changes. Thus this construction gives a larger constant under weaker metadata, not a stronger structural assertion. The main contribution of Theorem 1 is the preservation of the labelled structural data, not the generic OR lower-bound method.
+
+## 6. Comparison with existing work and limits
+
+The characterization of maximal subsemigroups of finite semigroups goes back to Graham, Graham and Rhodes [3]. Donoven, Mitchell and Wilson [4] develop algorithms using Green structure together with generators and actions. In particular their Proposition 3.3 treats maximal subsemigroups obtained by deleting a nonregular \(\mathcal J\)-class, reducing the issue to whether elements from higher classes generate elements of that class. Our \(\{t\}\) is precisely a nonregular singleton class. Their criterion therefore addresses the algebraic question in our construction; our lower bound concerns the oracle cost of discovering the missing generation information. Their Algorithm 2 assumes a generating set, and the full associated action graphs or an irredundant generating set can contain information that differs across our family. We make no lower-bound claim when such distinguishing data are supplied for free.
+
+Bergman and Slutzki [1] already address the exact element property in general algebra and its space complexity. Chang [5] studies query lower bounds for recovering operation tables of loops and semirings; the latter include commutative aperiodic additive monoids. Table reconstruction and deciding one particular property are different tasks. Only the abstract and bibliographic record of [5] were accessible in the present audit; its full construction must be compared before asserting priority. Dörn and Thierauf [6] consider operation-table query models for other algebraic properties. Fleischer [7] treats semigroup membership with a supplied Cayley table, which differs in input model and complexity measure from our oracle question.
+
+The proof shows that prescribed structural data listed in Section 2 cannot guarantee subquadratic query complexity. It does not establish a lower bound for succinct concrete representations (e.g., transformations), for the computation of Green metadata itself, for quantum queries, or for ordinary running time with a different input representation. It also does not imply that computing all maximal subsemigroups is necessary to identify singleton complements. No priority claim is made in this draft.
+
+## 7. Reproducibility
+
+The companion project `Primes_Study` contains a Python verification of 683 labelled tables: full Boolean matrix families for dimensions \(1\times1,1\times2,2\times1,2\times2,2\times3,3\times2,3\times3\), and the zero and sixteen single-bit matrices for \(4\times4\). Associativity, principal ideals, the structural fingerprint, and indispensability are checked directly. An independent GAP implementation checks all sixteen \(2\times2\) matrices. The preserved successful run is [GitHub Actions 45328903261](https://github.com/scientifica007/Primes_Study/actions/runs/45328903261), commit `d80185c137ed2cd33bc94b54e6aa9a90707beeea`. These finite checks supplement, rather than replace, the proofs.
+
+Code: [Python](../experiments/green_metadata_adversary.py), [GAP](../experiments/verify_green_metadata_adversary.g), [results](../results/green_metadata_adversary_study13.json).
+
+## References
+
+1. C. Bergman and G. Slutzki, Computational complexity of generators and nongenerators in algebra, *International Journal of Algebra and Computation* **12** (2002), 719–735. [DOI](https://doi.org/10.1142/S0218196702001127). Propositions 3.8–3.9. [Author-hosted text](https://faculty.sites.iastate.edu/cbergman/files/inline-files/frattini.pdf).
+2. P. Lipparini, Non-generators in extensions of infinitary algebras, *Reports on Mathematical Logic* **57** (2022), 31–43. [DOI](https://doi.org/10.4467/20842589RM.22.002.16659).
+3. N. Graham, R. Graham and J. Rhodes, Maximal subsemigroups of finite semigroups, *Journal of Combinatorial Theory* **4** (1968), 203–209. [Publisher](https://www.sciencedirect.com/science/article/pii/S0021980068800018).
+4. C. R. Donoven, J. D. Mitchell and W. A. Wilson, Computing maximal subsemigroups of a finite semigroup, *Journal of Algebra* **505** (2018), 559–596. [DOI](https://doi.org/10.1016/j.jalgebra.2018.01.044); [arXiv:1606.05583](https://arxiv.org/abs/1606.05583).
+5. C.-L. Chang, Hardness of learning loops, monoids, and semirings, *Discrete Applied Mathematics* **162** (2014), 149–158. [DOI](https://doi.org/10.1016/j.dam.2013.08.012). Abstract reviewed; full text pending.
+6. S. Dörn and T. Thierauf, The quantum query complexity of algebraic properties, *Fundamentals of Computation Theory* (2007). [DOI](https://doi.org/10.1007/978-3-540-74240-1_22); [arXiv:0705.1446](https://arxiv.org/abs/0705.1446).
+7. L. Fleischer, On the complexity of the Cayley semigroup membership problem, *CCC 2018*, LIPIcs 102, Article 25. [DOI](https://doi.org/10.4230/LIPIcs.CCC.2018.25).
