@@ -1,0 +1,16 @@
+{
+  "study": 52,
+  "nielsenModels": 7,
+  "nielsenPatterns": 3279,
+  "compositionChecks": 49206,
+  "inverseChecks": 49206,
+  "parityChecks": 196,
+  "protectedModels": 25,
+  "protectedRequests": 600,
+  "protectedChecks": 7200,
+  "positiveWitnessChecks": 1200,
+  "repairCases": 14112,
+  "repairChecks": 42336,
+  "all_passed": true,
+  "scope": "Exact reduced free-word composition and inverse checks; positive integer witnesses and protected finite-prefix construction; exhaustive finite vector closure repair. Infinite Rees example and countable fusion proved analytically."
+}

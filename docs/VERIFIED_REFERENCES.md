@@ -245,3 +245,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R70 — الدراسة 51
 مقتطفات ويب مسترجعة: [Baire category theorem — Math foundations](https://math.hodapp.com/lectures/foundations/topology/metric-baire.html)، [Hahn–Banach, Baire and the basic theorems on Banach spaces](https://openmaths.org/courses/foundations-of-von-neumann-algebras/hahn-banach-baire-and-the-basic-theorems-on-banach-spaces.html). مبدأ Baire معروف؛ لا قراءة كاملة أو إثبات أسبقية T213–T214. لا تأكيد جديد لـR60–R69. [الدراسة](61-experiment-51-finite-change-synchronization.md).
+
+## R71 — الدراسة 52
+مقتطفات بحث مسترجعة عن تحويلات Nielsen: [Direct Products of Free Groups in Aut(F_N)](https://doi.org/10.1007/s00039-024-00688-5)، [Folding free-group automorphisms](https://arxiv.org/abs/1111.6794)، [The Abelian Case of Solitar's Conjecture on Infinite Nielsen Transformations](https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/abelian-case-of-solitar-s-conjecture-on-infinite-nielsen-transformations/D56533F165C3C87C7C056C9411346083). الأدوات معروفة، لا قراءة كاملة أو إثبات أسبقية، لا تحقق جديد لـR60–R70. [الدراسة](62-experiment-52-protected-replacement.md).

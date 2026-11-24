@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 51 (24/11/2026)
+## آخر دراسة — الدراسة 52 (24/11/2026)
+[الدراسة 52: الاستبدال المحمي](docs/62-experiment-52-protected-replacement.md) — T216–T219. CI الدراسة 51 ناجح. جدولة تحويلات عكوسة، مثال Nielsen غير تبادلي، إصلاح محمي وبناء قاعدتين تكيفيًا. [التجربة](experiments/protected_replacement.js)، [النتائج](results/protected_replacement_study52.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 51 (24/11/2026)
 [الدراسة 51: استقرار التغييرات المنتهية](docs/61-experiment-51-finite-change-synchronization.md) — T212–T215. CI الدراسة 50 ناجح. التزامن للكتل المعدودة تحت الاستقرار المنتهي، تركيب عالمي وحد مشروط، وأمثلة تفصل الاستقرار والتوليد. [التجربة](experiments/finite_change_synchronization.js)، [النتائج](results/finite_change_synchronization_study51.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 50 (24/11/2026)
