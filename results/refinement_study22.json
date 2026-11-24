@@ -1,0 +1,92 @@
+{
+  "study": "T83-T87",
+  "finite_repair": [
+    {
+      "n": 1,
+      "tables": 1,
+      "repair_cases": 1,
+      "protected_element_checks": 1
+    },
+    {
+      "n": 2,
+      "tables": 16,
+      "repair_cases": 52,
+      "protected_element_checks": 48
+    },
+    {
+      "n": 3,
+      "tables": 19683,
+      "repair_cases": 255754,
+      "protected_element_checks": 217434
+    }
+  ],
+  "total_tables": 19700,
+  "total_repair_cases": 255807,
+  "quotient_truncations": [
+    {
+      "p": 2,
+      "n": 2,
+      "group_order": 8,
+      "quotient_order": 4,
+      "kernel_order": 2
+    },
+    {
+      "p": 2,
+      "n": 3,
+      "group_order": 64,
+      "quotient_order": 8,
+      "kernel_order": 8
+    },
+    {
+      "p": 2,
+      "n": 4,
+      "group_order": 1024,
+      "quotient_order": 16,
+      "kernel_order": 64
+    },
+    {
+      "p": 2,
+      "n": 5,
+      "group_order": 32768,
+      "quotient_order": 32,
+      "kernel_order": 1024
+    },
+    {
+      "p": 3,
+      "n": 2,
+      "group_order": 27,
+      "quotient_order": 9,
+      "kernel_order": 3
+    },
+    {
+      "p": 3,
+      "n": 3,
+      "group_order": 729,
+      "quotient_order": 27,
+      "kernel_order": 27
+    },
+    {
+      "p": 3,
+      "n": 4,
+      "group_order": 59049,
+      "quotient_order": 81,
+      "kernel_order": 729
+    },
+    {
+      "p": 5,
+      "n": 2,
+      "group_order": 125,
+      "quotient_order": 25,
+      "kernel_order": 5
+    },
+    {
+      "p": 5,
+      "n": 3,
+      "group_order": 15625,
+      "quotient_order": 125,
+      "kernel_order": 125
+    }
+  ],
+  "total_quotient_elements": 109419,
+  "note": "Finite checks only. Finite truncations have minimal generating sets; the infinite obstruction requires unbounded order."
+}
