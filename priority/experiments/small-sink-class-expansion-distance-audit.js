@@ -97,7 +97,22 @@ function audit(){
   })));
   return check("hierarchy k="+k+" s="+s,F,g,[...T,z],false);
  }
- const results=[splitFamily(2,2,1,2,[1,4],[2,2],0,true),splitFamily(2,2,2,2,[1,4],[2,2],0,true),splitFamily(2,4,2,3,[1,1,4,4,4,4],[2,2,2,2,2,8],1,false),hierarchy(2,2),hierarchy(2,4),hierarchy(3,2),hierarchy(2,1)];
+ function parity(k){
+  const g=k===2?4:k,A=range(k).map(i=>g+i),B=range(k).map(i=>g+k+i),t=g+2*k,z=t+1,I=range(z+1);
+  const F=range(2**k).map(w=>I.map(x=>I.map(y=>{
+   if(x===z||y===z)return z;
+   if(x<g&&y<g)return(x+y)%g;
+   if(x<g)return B.includes(y)?g+k+(y-g-k+x)%k:y;
+   if(y<g)return A.includes(x)?g+(x-g+y)%k:x;
+   if(A.includes(x)&&A.includes(y))return y;
+   if(B.includes(x)&&B.includes(y))return x;
+   if(A.includes(x)&&B.includes(y))return(w>>((x-g+y-g-k)%k))&1?t:z;
+   if(A.includes(x)&&y===t||x===t&&B.includes(y))return t;return z;
+  })));
+  return check("plain parity "+k,F,g,[t,z],false);
+ }
+ const results=[splitFamily(2,2,1,2,[1,4],[2,2],0,true),splitFamily(2,2,2,2,[1,4],[2,2],0,true),splitFamily(2,4,2,3,[1,1,4,4,4,4],[2,2,2,2,2,8],1,false),hierarchy(2,2),hierarchy(2,4),hierarchy(3,2),hierarchy(2,1),parity(2),parity(3)];
+ assert(results[7].minSingleton===2&&results[7].minDistance===2&&results[8].minSingleton===3,"sharp singleton");
  assert(results[0].minDistance===8&&results[1].minDistance===8,"sharp distance");
  assert(results.slice(3,6).every(r=>r.nonSingletonSmallSinks>0),"nonsingleton small sink counterexample");
  return {results,totalTables:results.reduce((s,r)=>s+r.tables,0),totalTriples:results.reduce((s,r)=>s+r.triples,0),totalClassSets:results.reduce((s,r)=>s+r.classSets,0),totalSmallSinks:results.reduce((s,r)=>s+r.smallSinks,0),totalNonSingletonSmallSinks:results.reduce((s,r)=>s+r.nonSingletonSmallSinks,0),totalTranslationChecks:results.reduce((s,r)=>s+r.translationChecks,0),totalOpposite:results.reduce((s,r)=>s+r.opposite,0),totalSameSignatureOpposite:results.reduce((s,r)=>s+r.sameSignatureOpposite,0)};
