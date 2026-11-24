@@ -1,0 +1,10 @@
+{
+  "periodic_targets": 480,
+  "nonperiodic_targets": 480,
+  "local_idempotent_certificates": 1920,
+  "cell_shift_certificates": 1920,
+  "anchor_positive_words": 5760,
+  "positive_multiplications": 33279,
+  "infinite_elementary_abelian_basis_words": 16384,
+  "scope": "Finite samples of actual infinite groups S3 x direct_sum C2 and S3 x F2 x direct_sum C2; finite-support words, not exhaustive infinite verification."
+}
