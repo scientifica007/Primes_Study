@@ -123,3 +123,13 @@
 ## R28 — تحديث القراءة الكاملة (24/11/2026)
 
 قرأنا Chang (2014) كاملًا من [نسخة صاحب المشروع](https://drive.google.com/file/d/1hmVtEjk9GeLJJi9_dRNNaWT_0obkW1gS/view). Eq. (10)، Lemma 19، Theorem 23، Corollary 24، والملحق Lemma 26/Theorem 7. [تقرير المقارنة والاشتقاق](22-chang-fulltext-priority-comparison.md): حد عضوية عنصر محدد تربيعي ينتج من تقييد ثنائي مباشر، لكن المثاليات تكشف القرار ولا يتغير فراغ E. طريقة T46 في الزمر مسبوقة. R28 لم يعد مرجعًا مقروء الملخص فقط. **R31:** Berman–Bordalo (2002) [DOI](https://doi.org/10.1016/S0012-365X(01)00364-8)، الملخص والسجل فقط. **R32:** Ergün et al. (2000) Spot-checkers، §4.4، إحالة من Chang §3، برهان القسم لم يراجع كاملًا.
+
+
+## R31–R34: تحديث 24/11/2026
+
+- **R31:** Berman–Bordalo (2002)، [DOI](https://doi.org/10.1016/S0012-365X(01)00364-8)، [PDF صاحب المشروع](https://drive.google.com/file/d/1juCFobz2HhVVG8w8_d7fXG0qu-n20i_V/view)؛ تمت قراءة النص الكامل ص63–79. Def. 1.1، Prop. 1.2، Prop. 1.4، Thm. 3.1(1)، §6. أسبقية مباشرة للنواة وT01/T02/T12/T13.
+- **R32:** Ergün et al. (2000)، [Spot-checkers](https://www.cs.princeton.edu/courses/archive/spr04/cos598B/bib/ErgunKKRV.pdf)، §4.4.1–2، فُحص النص المستخرج؛ تقنية الكتل مسبوقة في مسائل اختبار مختلفة.
+- **R33:** Schmid (1999)، [النص](https://citeseerx.ist.psu.edu/document?doi=9d7ec08426729e2b97d6978c59a2802b837ec3bb&repid=rep1&type=pdf)، Fact 3.1 ص409، تعريف irreducible وارتباطه بالمكمل الأقصى.
+- **R34:** Pasini (1975)، *On the Frattini subalgebra Φ(A) of an algebra A*، Boll. UMI Ser. IV 12، 37–40؛ **إحالة ثانوية** من Schmid [18]، لم يقرأ النص الأصلي.
+
+[جدول المطابقة والتدقيق التحكيمي](23-berman-bordalo-schmid-referee-audit.md). لا ادعاء أصالة تاريخية.
