@@ -1,0 +1,83 @@
+{
+  "study": "23",
+  "prefix_truncations": [
+    {
+      "n": 1,
+      "carrier": 1,
+      "seed_subsets": 2,
+      "generating_sets": 1,
+      "irredundant_sets": 1,
+      "depth": 1
+    },
+    {
+      "n": 2,
+      "carrier": 3,
+      "seed_subsets": 8,
+      "generating_sets": 5,
+      "irredundant_sets": 2,
+      "depth": 2
+    },
+    {
+      "n": 3,
+      "carrier": 5,
+      "seed_subsets": 32,
+      "generating_sets": 21,
+      "irredundant_sets": 3,
+      "depth": 2
+    },
+    {
+      "n": 4,
+      "carrier": 7,
+      "seed_subsets": 128,
+      "generating_sets": 85,
+      "irredundant_sets": 4,
+      "depth": 2
+    },
+    {
+      "n": 5,
+      "carrier": 9,
+      "seed_subsets": 512,
+      "generating_sets": 341,
+      "irredundant_sets": 5,
+      "depth": 2
+    },
+    {
+      "n": 6,
+      "carrier": 11,
+      "seed_subsets": 2048,
+      "generating_sets": 1365,
+      "irredundant_sets": 6,
+      "depth": 2
+    },
+    {
+      "n": 7,
+      "carrier": 13,
+      "seed_subsets": 8192,
+      "generating_sets": 5461,
+      "irredundant_sets": 7,
+      "depth": 2
+    },
+    {
+      "n": 8,
+      "carrier": 15,
+      "seed_subsets": 32768,
+      "generating_sets": 21845,
+      "irredundant_sets": 8,
+      "depth": 2
+    }
+  ],
+  "total_seed_subsets": 43690,
+  "group_checks": [
+    {
+      "group": "C2^4",
+      "order": 16,
+      "bases_checked": 840
+    },
+    {
+      "group": "D8 x C2^2",
+      "order": 32,
+      "bases_checked": 3
+    }
+  ],
+  "note": "Finite checks only; unbounded irredundant depth is proved for the infinite carrier."
+}
