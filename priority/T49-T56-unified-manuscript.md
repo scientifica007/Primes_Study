@@ -198,3 +198,8 @@ Additional references:
 - J. Jonušas and S. Troscheit, Random ubiquitous transformation semigroups, *Semigroup Forum* 99 (2019), 655–678, https://doi.org/10.1007/s00233-018-09992-7.
 
 Reproducibility: [parity-extension audit](experiments/t56-parity-extension-audit.js) checks 292 basic and 210 balanced labelled tables (including all triples, labelled ideals, the additional extension data, indispensable elements, obligatory-block complements and explicit generating witnesses). These finite checks do not replace the proofs. See the [construction priority report](reviews/P03-ideal-extension-priority-2026-11-24.md) for the literature coverage and limits. Section 9 is an internal extension of the draft, not a peer-reviewed or formally verified result.
+
+
+## Related extremal note (24 November 2026)
+
+The [extension-freedom research note](reviews/P03-extension-freedom-extremal-2026-11-24.md) distinguishes raw fibre cardinality from query complexity. It gives an asymptotically sharp leading-order bound for raw extension capacity, and proves a sharp deterministic upper bound for designated-element membership under labelled extension and principal-ideal metadata. The latter sharpness example does not preserve rank or change emptiness; it therefore does not establish an optimal constant for Theorem 9.2. This is separate, internally checked work with unresolved historical priority.
