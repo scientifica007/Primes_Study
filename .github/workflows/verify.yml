@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 27 local class repair certificates (Node.js)
+        run: |
+          node experiments/local_class_repair.js > /tmp/local-class-repair-recomputed.json
+          diff -u results/local_class_repair_study27.json /tmp/local-class-repair-recomputed.json
       - name: Recompute finite-system statistics
         run: python3 experiments/finite_binary_systems.py --max-size 4 --output /tmp/finite-recomputed.json
       - name: Check first checked-in result

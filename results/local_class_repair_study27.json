@@ -1,0 +1,12 @@
+{
+  "graphs": 1099,
+  "graphChecks": 9891,
+  "tables": 278,
+  "bases": 304,
+  "classes": 802,
+  "nontrivialRepairs": 78,
+  "depEdges": 21,
+  "certificates": 912,
+  "infiniteWords": 4800,
+  "witnesses": 960
+}

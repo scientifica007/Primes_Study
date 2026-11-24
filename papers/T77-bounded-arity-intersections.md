@@ -36,3 +36,6 @@ The two depths coincide and are at most three in any periodic Clifford semigroup
 
 ## Addendum (Study 26)
 The Clifford depth theorem no longer requires periodicity. For any strong semilattice of groups with a positive irredundant basis, the two depths coincide, and depth three is exactly an unsupported local Klein four-group. The dependency graph of finite positive words for inverse donor images is acyclic and finitely branching, even with unbounded outdegree. A two-colour layering lemma makes monochromatic recovery well-founded, so no inverse is granted as an operation. [Study 26](../docs/36-experiment-26-nonperiodic-clifford-depth.md). This does not settle all infinite semigroups.
+
+## Addendum (Study 27)
+For arbitrary semigroups, a basis A with finitely many nonindispensable elements per J-class suffices for irredundant depth at most three, even if every class is infinite and refinement fails. The key is simultaneous finite relative repairs scheduled by a three-colour dependency DAG in which every infinite path visits all colours. In completely regular semigroups group J-classes can be handled by the earlier positive donor-word argument without the finiteness assumption. [Study 27](../docs/37-experiment-27-local-class-repair.md). The unrestricted infinite associative question remains open.
