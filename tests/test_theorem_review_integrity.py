@@ -32,17 +32,27 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T158_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T161_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,159)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,162)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 158)
+        self.assertEqual(len(registry), 161)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study37_star_flexibility(self):
+        study = (ROOT / "docs" / "47-experiment-37-cardinal-star-flexibility.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_star_flexibility_study37.json").read_text(encoding="utf-8"))
+        for n in range(159,162):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["models"], 40)
+        self.assertEqual(data["configurations"], 1024)
+        self.assertEqual(data["properInternal"], 128)
 
     def test_study36_relative_sources(self):
         study = (ROOT / "docs" / "46-experiment-36-relative-structural-irredundance.md").read_text(encoding="utf-8")

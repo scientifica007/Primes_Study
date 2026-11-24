@@ -1,0 +1,14 @@
+{
+  "study": 37,
+  "models": 40,
+  "sourcePhaseModels": 20,
+  "configurations": 1024,
+  "deleted": 8192,
+  "internalChecks": 1024,
+  "complementChecks": 1024,
+  "properInternal": 128,
+  "wordChecks": 1024,
+  "naiveMixCounterexample": true,
+  "all_passed": true,
+  "scope": "Finite capacity analogues; five group/coefficient models C2,C3,C4,S3,C6, four normalized sandwich patterns, two phase sizes; all binary block configurations; no exhaustive enumeration of arbitrary semigroups or infinite cardinals."
+}
