@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 47 positive essentiality (Node.js)
+        run: |
+          node experiments/rees_positive_essentiality.js > /tmp/rees-positive-essentiality.json
+          diff -u results/rees_positive_essentiality_study47.json /tmp/rees-positive-essentiality.json
       - name: Recompute Study 46 countable local bases (Node.js)
         run: |
           node experiments/rees_countable_local_bases.js > /tmp/rees-countable-local.json

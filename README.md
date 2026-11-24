@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 46 (24/11/2026)
+## آخر دراسة — الدراسة 47 (24/11/2026)
+[الدراسة 47: الضرورة المونويدية الموجبة](docs/57-experiment-47-positive-essentiality.md) — T196–T199. CI الدراسة 46 ناجح. رفع أحادي، ترميز بخارج قسمة حر أبلي، استخراج موجب متسلسل، ومثال بمصادر منتهية وزمرة معاملات كاملة. [التجربة](experiments/rees_positive_essentiality.js)، [النتائج](results/rees_positive_essentiality_study47.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 46 (24/11/2026)
 [الدراسة 46: القواعد المحلية المعدودة](docs/56-experiment-46-countable-local-bases.md) — T192–T195. CI الدراسة 45 ناجح. تكافؤ فوق نواة منتهية، توصيف الغطاء البنيوي، ترميز المواضع الخاصة ومثال بلا غطاء. [التجربة](experiments/rees_countable_local_bases.js)، [النتائج](results/rees_countable_local_bases_study46.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 45 (24/11/2026)

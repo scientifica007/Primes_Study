@@ -226,3 +226,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R65 — الدراسة 46
 بحث مقتطفات عن relative generators / completely simple Rees / minimal edge covers. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [Quinn-Gregson](https://doi.org/10.1112/mtk.12035)، [minimal edge covers](https://www.sciencedirect.com/science/article/pii/S0166218X25001908). لا قراءة كاملة أو إثبات أسبقية. [الدراسة](56-experiment-46-countable-local-bases.md).
+
+## R66 — الدراسة 47
+بحث مقتطفات عن Rees matrix / relative rank / positive irredundant generators. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02). لا قراءة كاملة أو إثبات أسبقية. [الدراسة](57-experiment-47-positive-essentiality.md).

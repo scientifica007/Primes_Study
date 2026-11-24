@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T195_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T199_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,196)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,200)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 195)
+        self.assertEqual(len(registry), 199)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study47_positive_essentiality(self):
+        study = (ROOT / "docs" / "57-experiment-47-positive-essentiality.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_positive_essentiality_study47.json").read_text(encoding="utf-8"))
+        for n in range(196,200):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["liftDeletionChecks"], 40)
+        self.assertEqual(data["quotientChoices"], 32)
+        self.assertEqual(data["bootstrapStepChecks"], 32)
+        self.assertEqual(data["freeBootstrapChecks"], 150)
 
     def test_study46_countable_local_bases(self):
         study = (ROOT / "docs" / "56-experiment-46-countable-local-bases.md").read_text(encoding="utf-8")
