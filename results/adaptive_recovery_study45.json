@@ -10,16 +10,18 @@
   "graphModels": 60,
   "requirements": 9402,
   "frontierChecks": 18804,
-  "newColored": 733,
-  "forbiddenDepthChecks": 20373,
+  "newColored": 728,
+  "forbiddenDepthChecks": 49551,
   "ruleModels": 48,
   "seedSets": 6144,
   "trapSubsets": 98832,
   "trapEquivalence": 6144,
-  "rankChecks": 21504,
+  "rankChecks": 14398,
+  "completeRecoveries": 1996,
+  "incompleteRecoveries": 4148,
   "adaptiveCases": 18432,
   "adaptiveDirect": 55296,
   "badDefaultTraces": 15,
   "all_passed": true,
-  "scope": "Finite relative Rees models with exhaustive mixtures, positive-word cylinders and uniform donor unions; finite directed block graphs for frontier-extension mechanics; exhaustive seed/trap subsets in 48 small rule systems; finite traces of alternative witnesses. Compactness, countable coloring, reaping threshold and infinite recovery are proved analytically, not by finite tests."
+  "scope": "Finite relative Rees models with exhaustive mixtures, positive-word cylinders and uniform donor unions; finite directed block graphs for frontier-extension mechanics (certificates must reach the target color or a precolored terminal, never an uncolored block); exhaustive seed/trap subsets in 48 small rule systems; finite traces of alternative witnesses. Compactness, countable coloring, reaping threshold and infinite recovery are proved analytically, not by finite tests."
 }

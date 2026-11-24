@@ -1,7 +1,7 @@
 'use strict';
 function experiment(){
  const ok=(x,m)=>{if(!x)throw Error(m)};
- let state=123456789;const rand=n=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state%n};
+ let state=123456789;const rand=n=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return Math.floor((state/4294967296)*n)};
  let models=0,mixes=0,closureChecks=0,deletionChecks=0,cylinderChecks=0,uniformChecks=0,distinctWitnesses=0;
  // Four-element group, three private rows, one upper group mapped to fourth row.
  const N=16,prod=(a,b)=>a>=N&&b>=N?N+((a-N)^(b-N)):((a>=N?3:Math.floor(a/4))*4+((a>=N?a-N:a%4)^(b>=N?b-N:b%4)));
@@ -50,14 +50,14 @@ function experiment(){
     if(colors[b]===-1){colors[b]=c;newColored++;continue}
     ok(F.has(b),"precolored only");for(const w of adj[v])stack.push([w,d+1]);
    }
-   const check=new Map();for(let v=V-1;v>=0;v--)check.set(v,colors[block(v)]===c||adj[v].every(w=>check.get(w)));
+   const check=new Map();for(let v=V-1;v>=0;v--)check.set(v,colors[block(v)]===c||(colors[block(v)]>=0&&adj[v].every(w=>check.get(w))));
    ok(check.get(root),"frontier cuts all branches or terminal");frontierChecks++;requirements++;
   }
   // Previous certificates persist under extension: no already colored block changes.
-  for(const [root,c] of req){const check=new Map();for(let v=V-1;v>=0;v--)check.set(v,colors[block(v)]===c||adj[v].every(w=>check.get(w)));ok(check.get(root),"persisting frontier");frontierChecks++}
+  for(const [root,c] of req){const check=new Map();for(let v=V-1;v>=0;v--)check.set(v,colors[block(v)]===c||(colors[block(v)]>=0&&adj[v].every(w=>check.get(w))));ok(check.get(root),"persisting frontier");frontierChecks++}
   graphModels++;
  }
- let ruleModels=0,seedSets=0,trapSubsets=0,trapEquivalence=0,rankChecks=0;
+ let ruleModels=0,seedSets=0,trapSubsets=0,trapEquivalence=0,rankChecks=0,completeRecoveries=0,incompleteRecoveries=0;
  for(let t=0;t<48;t++){
   const n=7,full=(1<<n)-1;
   const rules=Array.from({length:n},(_,a)=>Array.from({length:rand(4)},()=>{let m=0;for(let j=0;j<rand(4);j++){let b=rand(n);if(t%2===0&&b<=a)continue;m|=1<<b}return m}));
@@ -68,7 +68,7 @@ function experiment(){
    }
    let union=0;
    for(let m=1;m<=full;m++)if(!(m&seed)){trapSubsets++;let trap=true;for(let a=0;a<n;a++)if((m&(1<<a))&&rules[a].some(d=>!(d&m)))trap=false;if(trap)union|=m}
-   ok(union===(full^cur),"trap union equals complement");trapEquivalence++;
+   ok(union===(full^cur),"trap union equals complement");trapEquivalence++;if(cur===full)completeRecoveries++;else incompleteRecoveries++;
    for(let a=0;a<n;a++)if(rank[a]>0){ok(rules[a].some(d=>Array.from({length:n},(_,b)=>b).every(b=>!(d&(1<<b))||(rank[b]>=0&&rank[b]<rank[a]))),"rank decreases");rankChecks++}
    seedSets++;
   }ruleModels++;
@@ -85,6 +85,6 @@ function experiment(){
    ok(j!==undefined&&j>i&&j%3===c,"adaptive next donor");adaptiveDirect++;
   }adaptiveCases++}
  }
- return {study:45,models,mixes,closureChecks,deletionChecks,cylinderChecks,uniformChecks,distinctWitnesses,graphModels,requirements,frontierChecks,newColored,forbiddenDepthChecks,ruleModels,seedSets,trapSubsets,trapEquivalence,rankChecks,adaptiveCases,adaptiveDirect,badDefaultTraces,all_passed:true,scope:"Finite relative Rees models with exhaustive mixtures, positive-word cylinders and uniform donor unions; finite directed block graphs for frontier-extension mechanics; exhaustive seed/trap subsets in 48 small rule systems; finite traces of alternative witnesses. Compactness, countable coloring, reaping threshold and infinite recovery are proved analytically, not by finite tests."};
+ return {study:45,models,mixes,closureChecks,deletionChecks,cylinderChecks,uniformChecks,distinctWitnesses,graphModels,requirements,frontierChecks,newColored,forbiddenDepthChecks,ruleModels,seedSets,trapSubsets,trapEquivalence,rankChecks,completeRecoveries,incompleteRecoveries,adaptiveCases,adaptiveDirect,badDefaultTraces,all_passed:true,scope:"Finite relative Rees models with exhaustive mixtures, positive-word cylinders and uniform donor unions; finite directed block graphs for frontier-extension mechanics (certificates must reach the target color or a precolored terminal, never an uncolored block); exhaustive seed/trap subsets in 48 small rule systems; finite traces of alternative witnesses. Compactness, countable coloring, reaping threshold and infinite recovery are proved analytically, not by finite tests."};
 }
 console.log(JSON.stringify(experiment(), null, 2));
