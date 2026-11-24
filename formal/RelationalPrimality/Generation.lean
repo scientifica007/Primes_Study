@@ -14,7 +14,7 @@ variable (F : (i : I) → (Fin (arity i + 1) → S) → S)
 
 /-- A fixed term operation, obtained from projections and finite positive-arity composition. -/
 inductive TermOperation (n : Nat) : ((Fin (n+1) → S) → S) → Prop
-  | projection (j : Fin (n+1)) : TermOperation arity F n (fun a => a j)
+  | projection (j : Fin (n+1)) : TermOperation n (fun a => a j)
   | compose (i : I) (H : Fin (arity i + 1) → (Fin (n+1) → S) → S) :
       (∀ j, TermOperation n (H j)) →
       TermOperation n (fun a => F i (fun j => H j a))
