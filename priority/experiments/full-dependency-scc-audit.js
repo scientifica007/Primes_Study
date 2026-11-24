@@ -23,11 +23,20 @@ function audit(){
   const X=new Set(),Y=new Set();let s2=0;for(let C of sinks){if(C.length<2)throw Error("singleton");if(C.length===2){s2++;for(let c of C){X.add(Math.floor(c/n));Y.add(c%n)}if(Math.floor(C[0]/n)===Math.floor(C[1]/n)||C[0]%n===C[1]%n)throw Error("shared coordinate");}}
   if([...X].some(x=>Y.has(x))||s2>Math.floor(a*a/8)||sinks.length>Math.floor((U.size+Math.floor(a*a/8))/3))throw Error("upper bound");
   for(let T of tables){let val=new Map(sinks.map(C=>[C[0],at(T,C[0])]));while(val.size<U.size){let old=val.size;for(let c of U)if(!val.has(c))for(let [d,f] of adj.get(c))if(val.has(d)){val.set(c,f(val.get(d)));break}if(old===val.size)throw Error("stalled");}for(let [c,v] of val)if(at(T,c)!==v)throw Error("recovery");}
+  // Reverse-cell charging lemma. A reverse in U lies in an SCC of size at least four.
+  const sinkOf=new Map();for(let C of sinks)for(let c of C)sinkOf.set(c,C);
+  let revInside=0,revLargeSink=0;
+  for(let C of sinks)if(C.length===2)for(let c of C){
+    let x=Math.floor(c/n),y=c%n,d=ix(y,x);
+    if(U.has(d)){revInside++;const size=[...reachMap.get(d)].filter(e=>reachMap.get(e).has(d)).length;
+      if(size<4)throw Error("reverse SCC "+name);if(sinkOf.has(d)){revLargeSink++;if(sinkOf.get(d).length<4)throw Error("reverse sink");}}
+  }
+  if(sinks.length>Math.floor((a*(a-1)+Math.floor(a*a/16))/3))throw Error("reverse-charged bound");
   // All unary functional dependencies across relevant cells, including non-algebraic ones from promise.
   let unarySinks=null;
   if(name==="balanced T54"){let sizes=[];for(let C of sinks){for(let c of C)for(let d of U)if(!C.includes(d)){let map=new Map(),possible=true;for(let T of tables){let key=at(T,d),v=at(T,c);if(map.has(key)&&map.get(key)!==v){possible=false;break;}map.set(key,v)}if(possible)throw Error("unexpected unary dependence");}sizes.push(C.length);}unarySinks=sizes;}
   let hist={};for(let C of sinks)hist[C.length]=(hist[C.length]||0)+1;
-  return {name,tables:tables.length,a,targets:target.length,relevant:U.size,queries:sinks.length,sinkSizes:hist,unarySinks};
+  return {name,tables:tables.length,a,targets:target.length,relevant:U.size,queries:sinks.length,sinkSizes:hist,unarySinks,revInside,revLargeSink};
  }
  function parity(p,q){
   const a=2*p,b=2*q,n=4+a+b+2,t=n-2,z=n-1,A=x=>x>=4&&x<4+a,B=x=>x>=4+a&&x<t;
@@ -36,6 +45,19 @@ function audit(){
     if(A(x)&&A(y))return y;if(B(x)&&B(y))return x;if(A(x)&&B(y))return (m>>(2*(((x-4)>>1)*q+((y-4-a)>>1))+(x-4+y-4-a)%2))&1?t:z;
     if(A(x)&&y===t||x===t&&B(y))return t;return z;})));
   return check("parity "+p+"x"+q,tables,4,[t,z]);
+ }
+ function bidirectional(p,q){
+   const a=2*p,b=2*q,n=4+a+b+3,t=n-3,u=n-2,z=n-1,A=x=>x>=4&&x<4+a,B=x=>x>=4+a&&x<t;
+   const tables=[];for(let m=0;m<2**(2*p*q);m++)for(let reverse=0;reverse<2;reverse++)tables.push(Array.from({length:n},(_,x)=>Array.from({length:n},(_,y)=>{
+     if(x<4&&y<4)return(x+y)%4;if(x<4)return B(y)?4+a+((y-4-a)^(x%2)):y;if(y<4)return A(x)?4+((x-4)^(y%2)):x;
+     if(A(x)&&A(y))return y;if(B(x)&&B(y))return x;
+     if(A(x)&&B(y))return (m>>(2*(((x-4)>>1)*q+((y-4-a)>>1))+(x-4+y-4-a)%2))&1?t:z;
+     if(B(x)&&A(y))return reverse?u:z;
+     if(A(x)&&y===t||x===t&&B(y))return t;
+     if(B(x)&&y===u||x===u&&A(y))return u;return z;
+   })));
+   for(let T of tables)for(let x=0;x<n;x++)for(let y=0;y<n;y++)for(let w=0;w<n;w++)if(T[T[x][y]][w]!==T[x][T[y][w]])throw Error("bidirectional assoc");
+   return check("bidirectional "+p+"x"+q,tables,4,[t,u,z]);
  }
  function opposite(){
   let tables=[];const n=14,t=11,u=12,z=13,typ=x=>x<3?"G":x<7?"A":x<11?"B":x===t?"t":x===u?"u":"z",row=x=>((x-3)%4)>>1,col=x=>(x-3)%2;
@@ -59,6 +81,6 @@ function audit(){
   }
   return check("balanced T54",tables,16,K);
  }
- return [parity(1,1),parity(1,2),parity(2,1),parity(2,2),opposite(),balanced()];
+ return [parity(1,1),parity(1,2),parity(2,1),parity(2,2),opposite(),balanced(),bidirectional(1,1),bidirectional(1,2),bidirectional(2,2)];
 }
 console.log(JSON.stringify(audit(),null,2));
