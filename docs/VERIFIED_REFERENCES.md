@@ -223,3 +223,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R64 — الدراسة 45
 بحث مقتطفات عن definite Horn rules / forward chaining / reaping number. [A Proof-Theoretic Framework for Logic Programming](https://www.sciencedirect.com/science/article/abs/pii/S0049237X98800244)، [Blass](https://arxiv.org/abs/math/9405202) و[نسخة المؤلف](https://sites.lsa.umich.edu/ablass/wp-content/uploads/sites/1471/2025/10/sccc.pdf)، [Monk](https://euclid.colorado.edu/~monkd/cont_card.pdf). أدوات معروفة؛ لا قراءة كاملة أو إثبات أسبقية. [الدراسة](55-experiment-45-adaptive-recovery.md).
+
+## R65 — الدراسة 46
+بحث مقتطفات عن relative generators / completely simple Rees / minimal edge covers. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [Quinn-Gregson](https://doi.org/10.1112/mtk.12035)، [minimal edge covers](https://www.sciencedirect.com/science/article/pii/S0166218X25001908). لا قراءة كاملة أو إثبات أسبقية. [الدراسة](56-experiment-46-countable-local-bases.md).

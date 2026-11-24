@@ -1,0 +1,23 @@
+{
+  "study": 46,
+  "reachModels": 512,
+  "coverageChecks": 3312,
+  "privateChecks": 5376,
+  "finiteResidualChecks": 512,
+  "coverConstructions": 46,
+  "coverDeletionChecks": 200,
+  "repairModels": 12,
+  "repairMutualChecks": 72,
+  "repairClosureChecks": 24,
+  "repairDeletionChecks": 96,
+  "coreModels": 9,
+  "coreChoices": 672,
+  "coreAnchorChecks": 672,
+  "coreClosureChecks": 672,
+  "coreDeletionChecks": 6336,
+  "coreComplementChecks": 672,
+  "renormalizationChecks": 17496,
+  "freeObstructionChecks": 2048,
+  "all_passed": true,
+  "scope": "Exhaustive reachability on 3 labeled vertices, finite private-reservoir allocations, explicit finite-core repairs in cyclic groups, relative Rees models with min actions and group-essential tail, noncommutative S3 normalization identities, bounded occurrence counts. Infinite source-residual classification and free-group example are analytic; finite graphs have no residual outside V/source reach."
+}

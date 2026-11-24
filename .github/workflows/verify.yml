@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 46 countable local bases (Node.js)
+        run: |
+          node experiments/rees_countable_local_bases.js > /tmp/rees-countable-local.json
+          diff -u results/rees_countable_local_bases_study46.json /tmp/rees-countable-local.json
       - name: Recompute Study 45 adaptive recovery (Node.js)
         run: |
           node experiments/adaptive_recovery.js > /tmp/adaptive-recovery.json

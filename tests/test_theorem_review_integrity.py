@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T191_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T195_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,192)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,196)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 191)
+        self.assertEqual(len(registry), 195)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study46_countable_local_bases(self):
+        study = (ROOT / "docs" / "56-experiment-46-countable-local-bases.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_countable_local_bases_study46.json").read_text(encoding="utf-8"))
+        for n in range(192,196):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["privateChecks"], 5376)
+        self.assertEqual(data["coreDeletionChecks"], 6336)
+        self.assertEqual(data["renormalizationChecks"], 17496)
+        self.assertEqual(data["repairMutualChecks"], 72)
 
     def test_study45_adaptive_recovery(self):
         study = (ROOT / "docs" / "55-experiment-45-adaptive-recovery.md").read_text(encoding="utf-8")
