@@ -34,16 +34,26 @@ jobs:
       - name: Audit foundational theorem axiom dependencies
         run: |
           set -o pipefail
-          lake env lean RelationalPrimality/Foundations.lean | tee /tmp/formal-axioms.txt
+          {
+            lake env lean RelationalPrimality/Foundations.lean &&
+            lake env lean RelationalPrimality/Monoids.lean &&
+            lake env lean RelationalPrimality/Operations.lean
+          } | tee /tmp/formal-axioms.txt
           python3 - <<'PY'
           import re
           from pathlib import Path
           out = Path('/tmp/formal-axioms.txt').read_text()
           allowed = {'propext', 'Classical.choice', 'Quot.sound'}
-          for name in ['T01', 'T02']:
+          for name in ['T01', 'T02', 'T06', 'T11', 'T12', 'T13']:
               m = re.search(r"'(?:RelationalPrimality\.)?" + name + r"' (does not depend on any axioms|depends on axioms: \[([^\]]*)\])", out)
               assert m, f'Missing axiom audit: {name}: {out}'
               used = {x.strip() for x in (m.group(2) or '').split(',') if x.strip()}
               assert used <= allowed, f'{name}: disallowed axioms {used - allowed}'
               print(name, 'axioms:', sorted(used))
           PY
+      - name: Preserve resolved dependency manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-dependency-manifest
+          path: formal/lake-manifest.json
+          if-no-files-found: error
