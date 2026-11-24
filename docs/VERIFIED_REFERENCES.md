@@ -217,3 +217,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R62 — الدراسة 43
 بحث ويب عن Rees / relative rank / graph cycle consistency. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [cycle consistency](https://geometry.stanford.edu/lgl_2024/papers/bgtg-qps-21/bgtg-qps-21.pdf) مقتطفات فقط. لا حسم للأسبقية. [الدراسة](53-experiment-43-overlapping-relations.md).
+
+## R63 — الدراسة 44
+بحث مقتطفات عن infinite directed paths / graph colouring / Rees relative generators. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [Monochromatic infinite paths](https://www.sciencedirect.com/science/article/pii/0012365X9390508Q)، [Quinn-Gregson](https://doi.org/10.1112/mtk.12035). لا قراءة كاملة أو حسم أسبقية. [الدراسة](54-experiment-44-infinite-block-synchronization.md).

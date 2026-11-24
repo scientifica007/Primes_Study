@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 43 (24/11/2026)
+## آخر دراسة — الدراسة 44 (24/11/2026)
+[الدراسة 44: تزامن الكتل اللانهائية](docs/54-experiment-44-infinite-block-synchronization.md) — T184–T187. CI الدراسة 43 ناجح. معيار نقاط العبور والشواهد المعدودة، حد 3 بشروط، مثال مضاد بياني ومثال Rees. [التجربة](experiments/rees_infinite_block_synchronization.js)، [النتائج](results/rees_infinite_block_synchronization_study44.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 43 (24/11/2026)
 [الدراسة 43: العلاقات المتداخلة](docs/53-experiment-43-overlapping-relations.md) — T180–T183. CI الدراسة 42 ناجح. رسم منافذ وحفظ العلاقات، حد 3 بشروط، وعائق لاستخراج الكتل المنتهية. [التجربة](experiments/rees_overlapping_relations.js)، [النتائج](results/rees_overlapping_relations_study43.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 42 (24/11/2026)

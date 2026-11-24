@@ -1,0 +1,18 @@
+{
+  "study": 44,
+  "checkpointGraphs": 22,
+  "quotientEdges": 2299,
+  "checkpointEdges": 275,
+  "pathChecks": 2893,
+  "colorings": 90600,
+  "obstructionWitnesses": 90600,
+  "finiteModels": 3,
+  "finiteChoices": 6,
+  "finiteClosureChecks": 6,
+  "finiteDeletionChecks": 30,
+  "finiteInvariantChecks": 24,
+  "freeDecodeChecks": 200,
+  "freeRecoveryChecks": 200,
+  "all_passed": true,
+  "scope": "Finite checkpoint graph truncations and all 2/3-colorings on 3..10 labels; finite C3^6 Rees models with upper C3 donors and private sources; exact reduced free-word decoding/recovery. Infinite-ray and no-uniform-donor obstructions proved analytically, not inferred from finite tests."
+}
