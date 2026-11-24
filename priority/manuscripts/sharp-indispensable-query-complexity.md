@@ -1,6 +1,6 @@
 # Sharp Multiplication-Table Query Complexity for Indispensable Elements in Finite Monoids
 
-**Research manuscript, version 1.13 — 24 November 2026**
+**Research manuscript, version 1.14 — 24 November 2026**
 
 Relational Primality research project. Draft for mathematical review; author list, affiliations and contribution statement to be confirmed before public submission. Not externally refereed.
 
@@ -8,7 +8,7 @@ Relational Primality research project. Draft for mathematical review; author lis
 
 ## Abstract
 
-Let $M$ be a finite labelled monoid of order $n$. An element is indispensable if it belongs to every subset generating $M$ by nonempty products. We study the deterministic multiplication-table query complexity of deciding whether indispensable elements exist and of counting them. The supplied side data consist of a designated nonempty proper ideal, its labelled Rees quotient, every product involving the ideal, all labelled principal left and right ideals, and the rank and number of minimum-cardinality generating subsets. Computation on these data is unrestricted. We prove that the worst-case query complexities of both tasks, adaptive and nonadaptive, are $n^2/16+o(n^2)$. The upper bound combines an invariant local generating-set decomposition with a prime-factor-count identity, regular localization of witnesses for nonregular Green classes, and a weighted graph inequality that accounts for the interior target classes. The lower bound uses two rectangular bands and a null ideal with target class sizes $1,4,2,2$. Two promised families have identical side data and complete inclusion-minimal generating-set size enumerators but opposite emptiness verdicts. A padding construction yields lower bounds at every sufficiently large order. More generally we give an upper bound for recovering the presence statuses of selected nonregular classes of prescribed minimum size. When one, two or three further ordinary generating-set coefficients are supplied, a non-equivariant rectangular-band construction gives matching sharp leading coefficients 1/24, 1/32 and 1/32 respectively (Section 8). For every fixed number of additional coefficients, the cardinality problem has sharp leading coefficient $1/(4s_L)$, where $s_L$ is a finite arithmetic collision threshold (Section 9). The emptiness problem is distinguished from cardinality for the remaining open levels. At L=4,5, grouped-exit compression and refined graph charges prove that the worst-case deterministic emptiness coefficient is strictly smaller than the sharp cardinality coefficient 1/36 (Section 11). For $L=4,5$ the sharp decision coefficient on sequences with sublinear ideal size is $1/40$, obtained by generator-class sweeps (Section 12).
+Let $M$ be a finite labelled monoid of order $n$. An element is indispensable if it belongs to every subset generating $M$ by nonempty products. We study the deterministic multiplication-table query complexity of deciding whether indispensable elements exist and of counting them. The supplied side data consist of a designated nonempty proper ideal, its labelled Rees quotient, every product involving the ideal, all labelled principal left and right ideals, and the rank and number of minimum-cardinality generating subsets. Computation on these data is unrestricted. We prove that the worst-case query complexities of both tasks, adaptive and nonadaptive, are $n^2/16+o(n^2)$. The upper bound combines an invariant local generating-set decomposition with a prime-factor-count identity, regular localization of witnesses for nonregular Green classes, and a weighted graph inequality that accounts for the interior target classes. The lower bound uses two rectangular bands and a null ideal with target class sizes $1,4,2,2$. Two promised families have identical side data and complete inclusion-minimal generating-set size enumerators but opposite emptiness verdicts. A padding construction yields lower bounds at every sufficiently large order. More generally we give an upper bound for recovering the presence statuses of selected nonregular classes of prescribed minimum size. When one, two or three further ordinary generating-set coefficients are supplied, a non-equivariant rectangular-band construction gives matching sharp leading coefficients 1/24, 1/32 and 1/32 respectively (Section 8). For every fixed number of additional coefficients, the cardinality problem has sharp leading coefficient $1/(4s_L)$, where $s_L$ is a finite arithmetic collision threshold (Section 9). The emptiness problem is distinguished from cardinality for the remaining open levels. At L=4,5, grouped-exit compression and refined graph charges prove that the worst-case deterministic emptiness coefficient is strictly smaller than the sharp cardinality coefficient 1/36 (Section 11). For $L=4,5$ the sharp decision coefficient on sequences with sublinear ideal size is $1/40$, obtained by generator-class sweeps (Section 12). A linear small-region sweep charge improves the uniform unrestricted decision bound to $(1-1/15000)^2/36$ and the sublinear-ideal remainder to $O(n^{3/2}\sqrt{|K|})$ (Section 13).
 
 **Keywords:** finite monoids; indispensable generators; Green relations; multiplication-table oracle; generating-set enumerators; deterministic query complexity.
 
@@ -426,6 +426,88 @@ Let $B\to\infty$ slowly when $|K|=o(n)$. The fixed-layer $2\times5$ lower family
 
 The [full report](../reviews/P03-L4-generator-sweeps-sharp-small-ideal-2026-11-24.md) and [executed audit](../experiments/L4-generator-sweep-small-ideal-audit.js) record details, 305 endpoint sweeps and 1,795,624 exact numerical checks. No new literature retrieval or priority claim; the positive-density ideal regime and unrestricted decision coefficient remain open.
 
+## 13. Linear Z-edge charge and a stronger unrestricted upper bound
+
+**Theorem 15 (linear small-region sweep charge).** For $L=4,5$, let $k=|K|$ and $m=|M\setminus(K\cup G)|$, where $G$ is the unit group. For every integer $B\ge132$,
+\[
+D_L(n;\mathrm{metadata})\le m^2\left(\frac1{40}+\frac5{18B}+\frac1{B^2}\right)+\frac{mk(B-1)}{20}.
+\tag{A}
+\]
+The upper algorithm is nonadaptive and uses only reduced side data. In particular, for both deterministic adaptivity regimes and both structural side-data models,
+\[
+\frac1{40}\le \liminf D_L(n)/n^2
+\le\limsup D_L(n)/n^2\le
+\frac{(1-1/15000)^2}{36}<\frac1{36}
+=\lim C_L(n)/n^2.
+\]
+On sequences with $k=o(n)$ the upper bound is $m^2/40+O(n^{3/2}\sqrt{k})$. The unrestricted sharp decision coefficient remains open.
+
+*Proof.* Use the metadata-only pretests of Section 5, the two-plan arithmetic inference of Section 9, and the generator-class sweeps of Theorem 14. The proof follows in four steps.
+
+### Two plans and a weighted target budget
+
+Pretest the fixed indispensable contribution; if nonempty, return immediately. Otherwise the exterior is E-free. Use P8 and P9 from Sections 9–12, including all unresolved targets of size >=10 in both. Each target has precisely one canonical ordered endpoint pair. For an edge e of the union, let w_e=1 if both plans use it, 1/2 if just one does, and t_e be the total size of distinct selected targets assigned to it. Then 10 w_e<=t_e: a single-plan edge has at least one target of size >=8, a common edge either serves a target of size >=10 or distinct targets of sizes 8 and 9. Distinct edges have disjoint target sets. Consequently sum_e w_e<=k/10. This is an amortized target charge for the average of two sufficient plans, not a count of edges in a single plan.
+
+Partition ALL regular exterior nonunits by Green dimensions into X (r>=B,l<B), Y (l>=B,r<B), Z (both <B), and W (both >=B). Write X,Y,Z,W for their masses and R=m-X-Y, so W<=R. Use m rather than n since neither K nor units are needed as oracle factors or nonunit generator classes.
+
+### High-dimension and Z sweep replacement
+
+For every target of either plan with first endpoint l_i>=B or second endpoint r_j>=B, use the dual left or ordinary right sweep of Theorem 14 for that endpoint. If both conditions hold choose either; paying all such endpoints is a valid upper bound. Pay the union as common preprocessing of both plans. By the half-class lemma,
+\[
+\sigma_L\le(X+R)/2+Y/B,\quad
+\sigma_R\le(Y+R)/2+X/B,\quad \sigma_L,\sigma_R\le m/2.
+\]
+Sum the left sweeps over the at most (Y+W)/B left class representatives and right sweeps over at most (X+W)/B right class representatives:
+\[
+H\le [(Y+W)(Y+R)+(X+W)(X+R)]/(2B)
++[(Y+W)X+(X+W)Y]/B^2.
+\]
+Also H<=m^2/B by the global half-class bounds. Using W<=R and X+Y+R=m, the first numerator is <=m^2+R^2-2XY and the second <=m^2/2 (since 2XY+R(X+Y)<=m(X+Y)-(X+Y)^2/2<=m^2/2). Thus
+\[
+H\le (m^2+R^2-2XY)/(2B)+m^2/(2B^2). \tag{B}
+\]
+
+For any remaining edge incident to Z, choose one Z endpoint and replace the canonical block by its sweep, for whichever plan(s) originally contained that edge. All targets assigned to that edge are detected simultaneously, since the sweep detects every surviving target with that canonical endpoint. If both endpoints are in Z choose one; this includes Z-to-Z edges, with no assumption of distinct endpoints. For a Z vertex J, N_J/r_J<=l_J<=B-1 and N_J/l_J<=r_J<=B-1 by Green incidence. The replacement therefore costs <=m(B-1)/2 per edge, with no dependence on the number of targets on that edge. The two-plan average charge is
+\[
+Q_Z\le m(B-1)\sum_e w_e/2\le mk(B-1)/20. \tag{C}
+\]
+Importantly, this sweep is included in just the original plan for single-plan edges, not forced into both. Overlaps between sweeps, high-endpoint queries and remaining canonical representatives can only reduce the actual query union. All positions and plan choices are metadata-defined. Additional detected targets may be ignored. No adaptive tracing of a witness is required.
+
+### Main X-to-Y edges and combined charge
+
+All remaining original edges are X->Y. Let b,d be the Y masses with r=9,1, and C,A the X masses with l=9,1. As in Theorem 14, the right sweep option (all assigned targets with right endpoint in b, common in both plans) bounds average remaining cost by
+\[
+Q_{\rm main}\le XY/10-2Xb/45+Rb/18+Cd/90+bY/(9B).
+\]
+The dual is XY/10-2YC/45+RC/18+Ab/90+CX/(9B). If Xb>=YC and R<=3X/5, use Cd<=YC<=Xb and obtain Q_main<=XY/10+Y^2/(9B); if Xb<YC and R<=3Y/5 obtain the dual. In the complementary cases use the raw average XY/9; from m>8X/5+Y or m>X+8Y/5 obtain Q_main<=5m^2/288. If X=0 or Y=0 there is no main edge.
+
+For either sweep case combine (B) with Q_main, set alpha=1/10-1/B, beta=1/(9B), F=alpha^2/[4(alpha-beta)]. Completing the square gives alpha XY+beta Y^2<=F(X+Y)^2 (and dually). Since B>=132, alpha>beta, F>=alpha/4>=1/(2B), and m^2-(m-R)^2>=R^2. Therefore
+\[
+H+Q_{\rm main}\le [F+1/(2B)+1/(2B^2)]m^2
+\le (1/40+5/(18B)+1/B^2)m^2,
+\]
+where F=(alpha+beta+beta^2/(alpha-beta))/4 and beta^2/[4(alpha-beta)]<=1/(2B^2). In the raw fallback H<=m^2/B and 5/288+1/B<=1/40 for B>=132. The zero-main case is immediate from the same crude H bound. Adding (C), then selecting the cheaper complete nonadaptive plan, proves (A). No assumption on k/n was used.
+
+### Density and finite-size consequences
+
+Choose B=max(132,ceil(sqrt(n/k))) on k=o(n), k>=1. This gives D<=m^2/40+O(n^(3/2)sqrt(k)); for bounded k this is O(n^(3/2)) remainder. Combining (A) with the previous uniform refined surcharge bound (n-k/2)^2/36+O(n^(5/3)), split at epsilon=1/7500. If k/n<=epsilon, take B=208 and m<=n. The resulting coefficient is
+\[
+1/40+5/(18*208)+1/208^2+207/(20*7500)
+=0.02773858399079553\ldots
+<(1-1/15000)^2/36=0.027774074197530862\ldots .
+\]
+Otherwise the previous refined surcharge bound supplies the latter coefficient plus o(1), uniformly. This improves the explicit strict gap to about 3.70358e-6 (previously about 2.77778e-10). The relative gap improvement is >13000, not a 13000-fold reduction in query cost.
+
+For a sequence k/n->rho, the upper coefficient is bounded by the minimum of (1-rho/2)^2/36 and the infimum over integer B>=132 of
+\[
+(1-\rho)^2(1/40+5/(18B)+1/B^2)+\rho(1-\rho)(B-1)/20,
+\]
+using m<=n-k. The old refined bound already implies an upper coefficient <=1/40 if rho>=2(1-sqrt(9/10)) (approximately 0.1026334). This is an upper bound, not a matching lower bound at any prescribed positive density. The remaining obstruction is the intermediate positive-density regime: B large makes the Z sweep charge linear in B but still positive, while B small leaves a nonvanishing high-dimension charge. The new proof does not establish a universal 1/40 or disprove it.
+
+The lower bound and cardinality equality follow from Sections 8–9. $\square$
+
+See the [detailed proof and scoped priority search](../reviews/P03-L4-linear-Z-sweep-positive-density-2026-11-24.md) and [executed exact audit](../experiments/L4-linear-Z-sweep-audit.js) (1,407,900 synthetic mass configurations, 256 target-charge cases, 3,361 Green-size cases, exact BigInt rational comparisons, PASS). No new monoid enumeration, formal certification or independent external refereeing was performed in this round. The absolute gap improvement is small; the explicit guaranteed gap is over 13,000 times the previous guaranteed gap, not a 13,000-fold reduction in queries. The source-evidence correction v1.11 remains controlling.
+
 ## Appendix A. Reproducibility and limitations
 
 The mathematical proofs above do not depend on computation. To check the smallest balanced construction directly, the archived [C++ enumerator](../experiments/independent-generation-enumerator-audit.cpp) computes the closure of every nonempty subset of five order-20 tables ($p=1,q=2$), including one unbalanced baseline, without relying on formulas for generating sets. Its exact repository blob (Git SHA-1 0be53a45f024cfc79cf2a27a5ea722fff416e709) was reproduced locally, compiled with the command below and actually executed on 24 November 2026.
@@ -449,7 +531,7 @@ Other repository scripts include [all-orders padding](../experiments/all-orders-
 
 ## References
 
-The following are background references and neighboring work, not a comprehensive priority survey. References and bibliographic details carried over from earlier drafts require independent verification against the source where the original retrieval evidence is unavailable. Directly supported in the available record are the Chang full-text Drive read [5] and the targeted author-manuscript reads of [12] in version 1.5. Pin [13] is an abstract-only lead; no full-text priority verdict is made.
+The following are background references and neighboring work, not a comprehensive priority survey. References and bibliographic details carried over from earlier drafts require independent verification against the source where the original retrieval evidence is unavailable. The controlling v1.11 provenance record identifies the directly supplied Chang [5] and Pin [13] extracted texts and targeted Hall–Munn [20] and East–Higgins [21] excerpts. Earlier unverified source-reading claims below are retained as historical bibliographic leads only. No historical priority verdict is made.
 
 1. J. M. Howie, *Fundamentals of Semigroup Theory*, Clarendon Press, Oxford, 1995, Chapter 2. [Publisher record](https://academic.oup.com/book/53985).
 2. R. D. Gray, The minimal number of generators of a finite semigroup, *Semigroup Forum* **89** (2014), 135–154. [doi:10.1007/s00233-013-9521-8](https://doi.org/10.1007/s00233-013-9521-8).
@@ -491,4 +573,4 @@ The following are background references and neighboring work, not a comprehensiv
 
 ## Editorial status
 
-Internal mathematical manuscript, not a submitted or accepted paper. The user-supplied Pin text is now available; the prior access blocker is removed. The source-evidence correction at the start and the linked provenance record govern all older source-review assertions, including those embedded in references and historical notes. Bibliographic leads are retained for fresh verification, not represented as independently verified reading. The earlier directly supplied Chang text, supplied Pin text, and current Hall–Munn and East–Higgins targeted reads have direct retrieval evidence. No external referee or comprehensive priority certification. The new surjection lemma changes only the proof of size domination, not previously stated query coefficients. The exact general decision coefficient for L=4,5 remains open, but v1.12 proves a strict asymptotic separation of decision from cardinality (Theorem 13). No new literature retrieval or priority claim in v1.12. Version 1.13 proves the sharp sublinear-ideal decision coefficient and improves the explicit unrestricted limsup, while the unrestricted exact coefficient remains open; no new literature retrieval in v1.13. Authorship, AI assistance disclosure, independent proof review and systematic literature comparison must be settled before publication.
+Internal mathematical manuscript, not a submitted or accepted paper. The user-supplied Pin text is now available; the prior access blocker is removed. The source-evidence correction at the start and the linked provenance record govern all older source-review assertions, including those embedded in references and historical notes. Bibliographic leads are retained for fresh verification, not represented as independently verified reading. The earlier directly supplied Chang text, supplied Pin text, and current Hall–Munn and East–Higgins targeted reads have direct retrieval evidence. No external referee or comprehensive priority certification. The new surjection lemma changes only the proof of size domination, not previously stated query coefficients. The exact general decision coefficient for L=4,5 remains open, but v1.12 proves a strict asymptotic separation of decision from cardinality (Theorem 13). No new literature retrieval or priority claim in v1.12. Version 1.13 proves the sharp sublinear-ideal decision coefficient and improves the explicit unrestricted limsup, while the unrestricted exact coefficient remains open; no new literature retrieval in v1.13. Version 1.14 establishes Theorem 15 (linear Z-edge sweep charge, stronger finite-size bound and explicit strict gap); a limited new web search examined result excerpts only, not full papers, and does not change PARTIAL_OVERLAP. Authorship, AI assistance disclosure, independent proof review and systematic literature comparison must be settled before publication.
