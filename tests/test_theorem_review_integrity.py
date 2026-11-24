@@ -32,17 +32,27 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T171_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T175_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,172)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,176)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 171)
+        self.assertEqual(len(registry), 175)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study41_core_encoding(self):
+        study = (ROOT / "docs" / "51-experiment-41-core-encoding.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_core_encoding_study41.json").read_text(encoding="utf-8"))
+        for n in range(172,176):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["choices"], 24)
+        self.assertEqual(data["wordChecks"], 800)
+        self.assertEqual(data["obstructionWords"], 21844)
 
     def test_study40_shared_sources(self):
         study = (ROOT / "docs" / "50-experiment-40-shared-source-necessity.md").read_text(encoding="utf-8")

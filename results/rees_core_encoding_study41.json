@@ -1,0 +1,14 @@
+{
+  "study": 41,
+  "models": 6,
+  "choices": 24,
+  "pairProducts": 48,
+  "anchorChecks": 24,
+  "coreChecks": 72,
+  "recoveryChecks": 96,
+  "complementChecks": 24,
+  "wordChecks": 800,
+  "obstructionWords": 21844,
+  "all_passed": true,
+  "scope": "Finite C3^3 models verify decoding and coverage, not inverse-pair irredundance (finite positive monoids contain inverses). Free-word checks verify ordered noncommutative identities and bounded obstruction; infinite necessity and global coloring proved analytically."
+}

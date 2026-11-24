@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 41 core encoding (Node.js)
+        run: |
+          node experiments/rees_core_encoding.js > /tmp/rees-core-encoding.json
+          diff -u results/rees_core_encoding_study41.json /tmp/rees-core-encoding.json
       - name: Recompute Study 40 shared source necessity (Node.js)
         run: |
           node experiments/rees_shared_source_necessity.js > /tmp/rees-shared-sources.json
