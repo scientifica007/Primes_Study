@@ -139,3 +139,6 @@ E. Ghorbani et al., On the Volumes and Affine Types of Trades, Electronic Journa
 
 ## R36 — القيود المحلية للتوليد (الدراسة 17، 24/11/2026)
 Graham–Graham–Rhodes (1968), https://www.sciencedirect.com/science/article/pii/S0021980068800018 : الملخص يثبت أن مكمل شبه الزمرة الجزئية القصوى ضمن فئة J واحدة وأن الحالة غير المنتظمة تحذف الفئة كلها. Gray (2014), https://doi.org/10.1007/s00233-013-9521-8 ، https://arxiv.org/abs/1307.8280 : دراسة الرتبة والتحليل عبر Rees. Donoven–Mitchell–Wilson (2018), https://doi.org/10.1016/j.jalgebra.2018.01.044 . مرجع حديث لخاصية حاصل ضرب عنصرين في فئة J غير منتظمة: https://doi.org/10.1017/S0004972724000613 . المقارنة الأولية بالملخصات والمقتطفات؛ لم تُحسم أسبقية صيغة T63 أو استحالة T64.
+
+## R37 — تصنيف مكملات أشباه الزمر الجزئية القصوى (الدراسة 18)
+Donoven–Mitchell–Wilson (2018), Computing maximal subsemigroups of a finite semigroup, J. Algebra 505, 559–596، https://arxiv.org/abs/1606.05583 ، https://doi.org/10.1016/j.jalgebra.2018.01.044 . تمت مراجعة الصفحة 3 والقضية 1.4 (b,c) من النص الكامل المتاح، وهي الأساس المباشر لـT68. التصنيف مبني على Graham–Graham–Rhodes (1968). بحث أولي بعبارات three generating sets/intersection/indispensable لم يكشف صياغة T69، ولا يكفي لإثبات الجدة. يلزم تدقيق أسبقية متخصص مستقل.

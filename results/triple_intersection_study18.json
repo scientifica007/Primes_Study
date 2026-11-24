@@ -1,0 +1,162 @@
+{
+  "study": "T66-T70",
+  "rows": [
+    {
+      "family": "all_labelled",
+      "n": 1,
+      "count": 1,
+      "types": {
+        "trivial_line": 1
+      }
+    },
+    {
+      "family": "all_labelled",
+      "n": 2,
+      "count": 2,
+      "types": {
+        "group_two": 1,
+        "trivial_line": 2
+      }
+    },
+    {
+      "family": "all_labelled",
+      "n": 3,
+      "count": 11,
+      "types": {
+        "group_two": 4,
+        "trivial_line": 18,
+        "nonregular": 2,
+        "nontrivial_large": 1
+      }
+    },
+    {
+      "family": "all_labelled",
+      "n": 4,
+      "count": 156,
+      "types": {
+        "group_two": 72,
+        "trivial_line": 316,
+        "nonregular": 78,
+        "nontrivial_large": 10
+      }
+    },
+    {
+      "family": "rees",
+      "a": 1,
+      "b": 2,
+      "g": 1,
+      "n": 4,
+      "count": 1,
+      "types": {
+        "trivial_line": 3
+      }
+    },
+    {
+      "family": "rees",
+      "a": 2,
+      "b": 2,
+      "g": 1,
+      "n": 6,
+      "count": 7,
+      "types": {
+        "trivial_line": 14,
+        "trivial_grid": 7
+      }
+    },
+    {
+      "family": "rees",
+      "a": 2,
+      "b": 3,
+      "g": 1,
+      "n": 8,
+      "count": 25,
+      "types": {
+        "trivial_line": 50,
+        "trivial_grid": 25
+      }
+    },
+    {
+      "family": "rees",
+      "a": 3,
+      "b": 3,
+      "g": 1,
+      "n": 11,
+      "count": 265,
+      "types": {
+        "trivial_line": 530,
+        "trivial_grid": 265
+      }
+    },
+    {
+      "family": "rees",
+      "a": 1,
+      "b": 2,
+      "g": 2,
+      "n": 6,
+      "count": 2,
+      "types": {
+        "trivial_line": 4,
+        "nontrivial_two": 2
+      }
+    },
+    {
+      "family": "rees",
+      "a": 2,
+      "b": 2,
+      "g": 2,
+      "n": 10,
+      "count": 14,
+      "types": {
+        "trivial_line": 28,
+        "nontrivial_two": 14
+      }
+    },
+    {
+      "family": "rees",
+      "a": 2,
+      "b": 2,
+      "g": 3,
+      "n": 14,
+      "count": 21,
+      "types": {
+        "trivial_line": 42,
+        "nontrivial_large": 21
+      }
+    },
+    {
+      "family": "rees",
+      "a": 2,
+      "b": 2,
+      "g": 4,
+      "n": 18,
+      "count": 28,
+      "types": {
+        "trivial_line": 56,
+        "nontrivial_large": 28
+      }
+    },
+    {
+      "family": "full_transformations",
+      "degree": 2,
+      "n": 4,
+      "count": 1,
+      "types": {
+        "group_two": 1,
+        "trivial_line": 1
+      }
+    },
+    {
+      "family": "full_transformations",
+      "degree": 3,
+      "n": 27,
+      "count": 1,
+      "types": {
+        "nontrivial_large": 1,
+        "nontrivial_two": 1,
+        "trivial_line": 1
+      }
+    }
+  ],
+  "total_tables": 535,
+  "note": "Constructed and shrunk three generating sets; exact E cross-check. Labelled tables, not isomorphism classes."
+}
