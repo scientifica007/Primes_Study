@@ -22,6 +22,7 @@ noncomputable def generatorSetsOfSize (k : Nat) : Finset (Finset S) := by
   classical
   exact (Finset.univ.powersetCard k).filter (fun A => Generates arity F (↑A : Set S))
 
+omit [Fintype S] in
 theorem erase_univ_generates_iff (x : S) :
     Generates arity F {y | y ≠ x} ↔ ¬ EFamily arity F x := by
   classical
@@ -165,7 +166,9 @@ theorem binary_generated_iff_word (B : Set M) (x : M) :
               fin_cases j
               · exact Generated.seed a ha
               · exact htail
-            simpa [binaryMul, args] using (Generated.step () args hargs)
+            have hstep : Generated binaryArity (binaryMul : (i : Unit) → (Fin (binaryArity i + 1) → M) → M) B (binaryMul () args) :=
+              Generated.step (arity := binaryArity) (F := binaryMul) (B := B) () args hargs
+            simpa [binaryMul, args] using hstep
     rw [← hp]
     exact aux l hl hB
 
