@@ -233,3 +233,8 @@ The [general-ideal research note](reviews/P03-general-ideal-statistics-2026-11-2
 ## Related one-third bound and joint-statistic omission (24 November 2026)
 
 The [one-third research note](reviews/P03-one-third-joint-sink-bound-2026-11-24.md) strengthens the deterministic universal upper bound in D* to floor(a(a−1)/3) using the geometry of all three charged coordinate blocks of two-cell sinks. With the prescribed statistics, d=1+|J_L| additional sink queries may be omitted (clipped at zero), by equal-cardinality multiset uniqueness under product and moment constraints. The leading coefficient for fixed L is 1/3, not a claim of optimality; L=0 retains the 1/32 lower coefficient along an infinite sequence. Internal proof and reproducible checks, not external review or certified historical priority.
+
+
+## Related Green-saturated three-cell refinement (24 November 2026)
+
+The [three-cell Green-saturation note](reviews/P03-three-cell-green-sink-bound-2026-11-24.md) adds reversible known translations between L-equivalent row coordinates and R-equivalent column coordinates. All two- and three-cell sink SCCs in the augmented graph lie in a common oriented rectangle X×Y with disjoint X,Y, giving the universal geometric bound floor((a(a−1)+floor(a²/4))/4), and the same statistical omission of d=1+|J_L| applies. The leading upper coefficient is now 5/16. An explicit 98-table balanced family for L=0 contains genuine three-cell sinks even after augmentation and under arbitrary exact unary dependencies. The lower coefficient 1/32 remains; global optimality, historical priority and external verification are unresolved. The original manuscript version remains v0.6; this is a linked independent development, not a fully integrated proof.
