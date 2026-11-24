@@ -1,0 +1,56 @@
+{
+  "study": "24",
+  "clifford": [
+    {
+      "layers": 1,
+      "semilattices": 1,
+      "tables": 2,
+      "depth_histogram": {
+        "1": 2
+      },
+      "irredundant_sets": 2
+    },
+    {
+      "layers": 2,
+      "semilattices": 2,
+      "tables": 10,
+      "depth_histogram": {
+        "1": 8,
+        "2": 2
+      },
+      "irredundant_sets": 12
+    },
+    {
+      "layers": 3,
+      "semilattices": 9,
+      "tables": 117,
+      "depth_histogram": {
+        "1": 87,
+        "2": 30
+      },
+      "irredundant_sets": 159
+    },
+    {
+      "layers": 4,
+      "semilattices": 76,
+      "tables": 2660,
+      "depth_histogram": {
+        "1": 1772,
+        "2": 888
+      },
+      "irredundant_sets": 4004
+    }
+  ],
+  "clifford_tables": 2789,
+  "translation": {
+    "semigroup_tables": 278,
+    "j_trivial_tables": 101,
+    "commutative_singleton_regular_tables": 77,
+    "eligible_bases": 277,
+    "certificates": 277,
+    "depth_histogram": {
+      "1": 253,
+      "2": 24
+    }
+  }
+}

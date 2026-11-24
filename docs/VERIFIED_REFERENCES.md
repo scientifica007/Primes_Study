@@ -157,3 +157,6 @@ V. Dlab (1961), On a Characterization of Primary Abelian Groups of Bounded Order
 
 ## R42 — الدراسة 23، العمقان
 Halbeisen, Hamilton, Růžička, Minimal generating sets of groups, rings, and fields، https://doi.org/10.2989/16073600709486205 ، [النص](https://people.math.ethz.ch/~halorenz/publications/pdf/migs.pdf)، ص1–2 (Theorem 2.1؛ توليد زمري لا شبه زمري؛ تمت مراجعة ص2 بصريًا). On the atomic structure of torsion-free monoids، https://doi.org/10.1007/s00233-023-10385-8 ، §2 (التعريفات الذرية والوحدات؛ كلاسيكية). Tarski (1975)، https://doi.org/10.1016/0012-365X(75)90033-3 ، ملخص عن أحجام القواعد. لم يحسم البحث الأولي أسبقية T88–T91؛ لا ادعاء جدة.
+
+## R43 — الدراسة 24
+The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (سجل وملخص، 2008). Inclusive varieties of Clifford semigroups، https://doi.org/10.1007/s00233-025-10593-4، وNearly Complete Generalized Clifford Monoids and Applications، https://doi.org/10.3390/sym17030398 (مقتطفات مسترجعة عن التمثيل الكلاسيكي وخرائط الربط). البحث الأولي لا يحسم أسبقية T93–T97؛ لا قراءة كاملة لهذه المراجع في الدراسة 24. لا ادعاء جدة.
