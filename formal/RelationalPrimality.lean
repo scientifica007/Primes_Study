@@ -4,3 +4,4 @@ import RelationalPrimality.Monoids
 import RelationalPrimality.Generation
 import RelationalPrimality.Counting
 import RelationalPrimality.IntersectionDepth
+import RelationalPrimality.BoundedArity

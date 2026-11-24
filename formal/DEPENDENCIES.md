@@ -27,3 +27,6 @@
 
 ## FV07 — T77
 Generated → generated_finite_support + generated_substitute → finite_generating_subset → fg_refinement → E_iff_all_irredundant_fg وT77_rank_bound. DepthCertificate يقيس عددًا موجبًا من القواعد المتميزة وتقاطعها. essentialPart_exact يربط عدد العناصر الضرورية بـ|E|. يبقى حد المدخلية، واختيار قاعدة من رتبة دنيا/ربط الشهادتين بالحد min.
+
+## FV08
+witnesses_outside_basis + greedy_recovery + fg_refinement → T77_arity_bound؛ exists_minimal_generators + T77_rank_bound + T77_arity_bound → T77. لا فرض انتهاء S. FV07 ناجحة: https://github.com/scientifica007/Primes_Study/actions/runs/45480149433.
