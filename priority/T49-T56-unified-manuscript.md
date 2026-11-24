@@ -228,3 +228,8 @@ The [joint-statistics research note](reviews/P03-joint-statistics-constraints-20
 ## Related general-ideal statistic factorization (24 November 2026)
 
 The [general-ideal research note](reviews/P03-general-ideal-statistics-2026-11-24.md) removes the null-ideal hypothesis from the joint-statistics result: the labelled local generating families of regular J-classes are fixed by the quotient and actions on the ideal. Recover idempotents by squaring representatives of their bitranslations, then recover regular elements using those idempotents. The ordinary and minimal enumerator factorization, exact moment signature, and zero-query support-size criteria extend to arbitrary designated ideals under D*. Class-witness dependency graphs can also be combined with joint count inference. No better universal coefficient than 17/48 is established in this note. Four nonnull-ideal tables are exhaustively checked on 65536 generating-subset candidates; external review and priority remain unresolved.
+
+
+## Related one-third bound and joint-statistic omission (24 November 2026)
+
+The [one-third research note](reviews/P03-one-third-joint-sink-bound-2026-11-24.md) strengthens the deterministic universal upper bound in D* to floor(a(a−1)/3) using the geometry of all three charged coordinate blocks of two-cell sinks. With the prescribed statistics, d=1+|J_L| additional sink queries may be omitted (clipped at zero), by equal-cardinality multiset uniqueness under product and moment constraints. The leading coefficient for fixed L is 1/3, not a claim of optimality; L=0 retains the 1/32 lower coefficient along an infinite sequence. Internal proof and reproducible checks, not external review or certified historical priority.
