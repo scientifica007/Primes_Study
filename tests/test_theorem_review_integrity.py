@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T223_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T227_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,224)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,228)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 223)
+        self.assertEqual(len(registry), 227)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study54_revisable_recovery(self):
+        study = (ROOT / "docs" / "64-experiment-54-revisable-recovery.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "revisable_recovery_study54.json").read_text(encoding="utf-8"))
+        for n in range(224,228):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["paletteCases"], 700)
+        self.assertEqual(data["paletteFeasible"], 36)
+        self.assertEqual(data["uniformTargetChecks"], 2064)
+        self.assertEqual(data["hypergraphPairChecks"], 18444)
 
     def test_study53_protection_limits(self):
         study = (ROOT / "docs" / "63-experiment-53-protection-limits.md").read_text(encoding="utf-8")

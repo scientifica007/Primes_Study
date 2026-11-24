@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 54 revisable recovery (Node.js)
+        run: |
+          node experiments/revisable_recovery.js > /tmp/revisable-recovery.json
+          diff -u results/revisable_recovery_study54.json /tmp/revisable-recovery.json
       - name: Recompute Study 53 protection limits (Node.js)
         run: |
           node experiments/protection_limits.js > /tmp/protection-limits.json
