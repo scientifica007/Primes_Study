@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T203_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T207_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,204)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,208)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 203)
+        self.assertEqual(len(registry), 207)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study49_nongeneration_certificates(self):
+        study = (ROOT / "docs" / "59-experiment-49-non-generation-certificates.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_nongeneration_certificates_study49.json").read_text(encoding="utf-8"))
+        for n in range(204,208):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["bases"], 78)
+        self.assertEqual(data["productChecks"], 9792)
+        self.assertEqual(data["homChecks"], 192096)
+        self.assertEqual(data["A5Size"], 60)
 
     def test_study48_position_coordinate(self):
         study = (ROOT / "docs" / "58-experiment-48-position-coordinate-essentiality.md").read_text(encoding="utf-8")

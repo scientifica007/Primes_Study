@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 48 (24/11/2026)
+## آخر دراسة — الدراسة 49 (24/11/2026)
+[الدراسة 49: شهادات عدم التوليد](docs/59-experiment-49-non-generation-certificates.md) — T204–T207. CI الدراسة 48 ناجح. شهادات خلوية، ملف ضرورة منته، نقل الضرورة بالتشاكل، ومثالان لحدود الشهادات العددية والمنتهية. [التجربة](experiments/rees_nongeneration_certificates.js)، [النتائج](results/rees_nongeneration_certificates_study49.json). لا حسم عام أو ادعاء جدة. تصحيح حالة R60–R67 في سجل المراجع.
+
+## الدراسة 48 (24/11/2026)
 [الدراسة 48: اقتران الموضع بالإحداثي](docs/58-experiment-48-position-coordinate-essentiality.md) — T200–T203. CI الدراسة 47 ناجح. مؤتمت الأعمدة، جهد موضعي، مثال بمونويد معاملات كامل، ومعيار محايدات المحور. [التجربة](experiments/rees_position_coordinate.js)، [النتائج](results/rees_position_coordinate_study48.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 47 (24/11/2026)

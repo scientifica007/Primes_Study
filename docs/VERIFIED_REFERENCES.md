@@ -1,3 +1,7 @@
+<!-- تصحيح الدراسة 49: راجع ملاحظة التحقق التالية قبل استعمال R60–R67. -->
+
+**ملاحظة تحقق مؤرخة 24/11/2026 — R60–R67:** حالة هذه المراجعات **مؤقتة/غير متحققة استقلاليًا**. لم تتوفر في جلسة الدراسة 49 سجلات استرجاع تثبت ادعاءات الاطلاع على مقتطفاتها؛ لا نعتمد على ادعاء تحققها أو غياب التطابق فيها لإثبات الأسبقية. هذه الملاحظة تنسخ أي وصف سابق لها بوصفها مراجعة مؤكدة، مع حفظ السجل التاريخي حتى إعادة الفتح والتوثيق. ليست حكمًا بأن المراجع نفسها غير موجودة. لا إثبات أسبقية من هذه السجلات.
+
 # سجل مراجع تم التحقق من بياناتها — Verified Reference Ledger
 
 **23/11/2026 — نطاق التدقيق:** مراجع أساسية فقط؛ لا تزعم هذه القائمة مراجعة جميع إحالات الدراسات السبع أو نفي وجود أدبيات أخرى. يُفرَّق بين **صحة بيانات المرجع** و**كونه سابقًا مباشرًا لقضية بعينها**.
@@ -232,3 +236,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R67 — الدراسة 48
 بحث مقتطفات فعلي: [Quinn-Gregson](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/mtk.12035)، [GAP](https://docs.gap-system.org/doc/ref/chap51.html)، [Algorithm Engineering of SSSP with Negative Edge Weights](https://drops.dagstuhl.de/storage/00lipics/lipics-vol338-sea2025/html/LIPIcs.SEA.2025.10/LIPIcs.SEA.2025.10.html)، [Sedgewick–Wayne](https://algs4.cs.princeton.edu/44sp/). الجهود وأوزان المسارات معروفة. لا قراءة كاملة أو حسم أسبقية؛ لم نعد التحقق من جميع روابط R60–R66. [الدراسة](58-experiment-48-position-coordinate-essentiality.md).
+
+## R68 — الدراسة 49
+مقتطفات بحث مسترجعة في الجلسة: [Semigroup automata with rational initial and terminal sets](https://www.sciencedirect.com/science/article/pii/S0304397509008019)، [On separability finiteness conditions in semigroups](https://www.cambridge.org/core/journals/journal-of-the-australian-mathematical-society/article/on-separability-finiteness-conditions-in-semigroups/495E096D4B4312909F031D2C3F1F7AC3)، [GAP](https://gap-system.github.io/gap/doc/ref/chap51.html)، [Rational cross-sections, bounded generation, and orders on groups](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/jlms.12920). لا قراءة كاملة أو حسم أسبقية. [الدراسة](59-experiment-49-non-generation-certificates.md).

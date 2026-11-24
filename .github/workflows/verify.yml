@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 49 nongeneration certificates (Node.js)
+        run: |
+          node experiments/rees_nongeneration_certificates.js > /tmp/rees-nongeneration.json
+          diff -u results/rees_nongeneration_certificates_study49.json /tmp/rees-nongeneration.json
       - name: Recompute Study 48 position-coordinate essentiality (Node.js)
         run: |
           node experiments/rees_position_coordinate.js > /tmp/rees-position-coordinate.json

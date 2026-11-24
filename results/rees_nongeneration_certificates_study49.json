@@ -1,0 +1,26 @@
+{
+  "study": 49,
+  "models": 5,
+  "subsets": 12800,
+  "bases": 78,
+  "profileChecks": 1032,
+  "productChecks": 9792,
+  "supportChecks": 1388,
+  "emptyProfileNotGenerated": 12,
+  "cellChecks": 1720108,
+  "liftModels": 8,
+  "homChecks": 192096,
+  "recoveryChecks": 17,
+  "liftClosureChecks": 16,
+  "liftDeletionChecks": 34,
+  "disjointChecks": 8,
+  "A5Size": 60,
+  "A5SingleSizes": [
+    3,
+    5
+  ],
+  "commutatorPairs": 3600,
+  "modularChecks": 100,
+  "all_passed": true,
+  "scope": "Exhaustive subsets in 2x2 Rees matrices over C2/C3; exact profile/support and product checks; finite height lift between different truncations; A5 subgroup and commutator computation; modular illustrations. Infinite shift and no finite quotient theorem proved analytically."
+}
