@@ -1,0 +1,21 @@
+{
+  "study": 42,
+  "freeGaugeCases": 320,
+  "freeProductChecks": 960,
+  "freePositionChecks": 3520,
+  "internalModels": 5,
+  "internalChoices": 20,
+  "internalProducts": 40,
+  "internalClosures": 20,
+  "internalDisjoint": 20,
+  "relativeModels": 3,
+  "relativeChoices": 27,
+  "relativeProducts": 108,
+  "relativeClosures": 27,
+  "relativeTripleChecks": 108,
+  "relativeRecoveryChecks": 108,
+  "donorSubsetChecks": 24,
+  "freeRelativeChecks": 400,
+  "all_passed": true,
+  "scope": "Exact noncommutative free-word gauge checks; finite C3^3 triples (decoding only), C2^5 two upper groups with all three block choices, and exact donor-assisted free-word computations. No finite test establishes infinite positive irredundance or global coloring."
+}

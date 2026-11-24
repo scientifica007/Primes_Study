@@ -211,3 +211,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R60 — الدراسة 41
 بحث مقتطفات عن Rees matrix semigroups / positive monoids / inverse pairs / Nielsen transformations. [Ends of semigroups](https://link.springer.com/article/10.1007/s00233-016-9814-9)، [Generating sets, presentations, and growth of tropical matrix monoids](https://www.tandfonline.com/doi/full/10.1080/00927872.2025.2590188)، [On groups of units of special and one-relator inverse monoids](https://doi.org/10.1017/S1474748023000439). لا قراءة كاملة ولا حسم أسبقية T172–T175. [الدراسة](51-experiment-41-core-encoding.md).
+
+## R61 — الدراسة 42
+بحث مقتطفات عن Rees matrix / positive generating sets / balanced words / relative rank. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280) الرتبة المنتهية؛ [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02) التوليد والتقديم؛ [Ends of semigroups](https://link.springer.com/article/10.1007/s00233-016-9814-9) تمثيل Rees. لا قراءة كاملة أو إثبات أسبقية T176–T179. [الدراسة](52-experiment-42-balanced-blocks.md).
