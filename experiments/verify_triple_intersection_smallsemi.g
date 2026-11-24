@@ -3,7 +3,6 @@
 if LoadPackage("smallsemi") <> true then
   Print("Could not load Smallsemi\n"); QuitGap(1);
 fi;
-SetInfoLevel(InfoSmallSemi,0);
 Close19 := function(tab,X)
   local A,old,a,b;
   A:=Set(X);

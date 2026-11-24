@@ -102,3 +102,6 @@ The finite and associative hypotheses are essential to the proof. No result abou
 6. R. Gray and N. Ruškuc, Generating sets of completely 0-simple semigroups, Communications in Algebra (2005). Bibliographic details to be checked against journal metadata before submission.
 
 **Reproducibility:** [Study 18](../docs/28-experiment-18-triple-intersection-theorem.md), [Study 19 audit](../docs/29-study-19-triple-intersection-referee-audit.md), [GAP Smallsemi independent census](../experiments/verify_triple_intersection_smallsemi.g). The numerical corpus is not used to infer the theorem.
+
+## Addendum: exact depth classification (Study 20)
+A subsequent proof classifies depth three exactly by the existence of a whole group J-class isomorphic to the Klein four-group on which all higher elements that multiply its identity into the class act trivially. All other regular non-group classes admit two local choices with intersection equal to the indispensable part. See [Study 20](../docs/30-experiment-20-intersection-depth-classification.md). This stronger result is not yet integrated into the audited v0.1 theorem; it needs its own independent priority and proof audit.

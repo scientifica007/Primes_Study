@@ -13,6 +13,7 @@ on:
       - 'results/green_smallsemi_order6_audit.json'
       - 'experiments/check_smallsemi_ids_direct.g'
       - 'experiments/verify_triple_intersection_smallsemi.g'
+      - 'experiments/verify_depth_classification_smallsemi.g'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
       - 'results/smallsemi_catalogue_mapping_2026-11-23.json'
@@ -141,3 +142,6 @@ jobs:
 
       - name: Independently verify T69 over every Smallsemi representative of orders 1 through 6
         run: gap -q -b < experiments/verify_triple_intersection_smallsemi.g
+
+      - name: Independently compare the exact depth classification with brute force on Smallsemi
+        run: gap -q -b < experiments/verify_depth_classification_smallsemi.g

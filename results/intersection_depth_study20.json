@@ -1,0 +1,185 @@
+{
+  "study": "20",
+  "study19_gap_observed": {
+    "run": 45344229021,
+    "job": 138274813448,
+    "rows": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        17,
+        1,
+        0
+      ],
+      [
+        116,
+        9,
+        1
+      ],
+      [
+        1100,
+        57,
+        3
+      ],
+      [
+        15341,
+        610,
+        22
+      ]
+    ],
+    "total": 17282,
+    "histogram": [
+      16579,
+      677,
+      26
+    ],
+    "nonfatal_message_configuration_error_removed": true
+  },
+  "constructive_checks": {
+    "study": "T71-T76",
+    "grids": [
+      {
+        "a": 2,
+        "b": 2,
+        "pure": 7,
+        "upper": 38,
+        "types": {
+          "two_by_two": 7
+        },
+        "upper_optional_reduction": 4
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "pure": 25,
+        "upper": 247,
+        "types": {
+          "two_rows_singleton": 12,
+          "two_rows_balanced": 13
+        },
+        "upper_optional_reduction": 6
+      },
+      {
+        "a": 2,
+        "b": 4,
+        "pure": 79,
+        "upper": 0,
+        "types": {
+          "two_rows_singleton": 16,
+          "two_rows_balanced": 63
+        },
+        "upper_optional_reduction": 0
+      },
+      {
+        "a": 3,
+        "b": 3,
+        "pure": 265,
+        "upper": 337,
+        "types": {
+          "cross_cover": 18,
+          "matching3": 247
+        },
+        "upper_optional_reduction": 2
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "pure": 2161,
+        "upper": 0,
+        "types": {
+          "cross_cover": 24,
+          "matching3": 2137
+        },
+        "upper_optional_reduction": 0
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "pure": 2523,
+        "upper": 0,
+        "types": {
+          "matching3": 2522,
+          "cross_cover": 1
+        },
+        "upper_optional_reduction": 0
+      }
+    ],
+    "pure_total": 5060,
+    "upper_total": 622,
+    "pair": [
+      {
+        "n": 29,
+        "rank": 8,
+        "h": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          96,
+          96
+        ],
+        "E": [
+          4,
+          12
+        ],
+        "depth": 3,
+        "local_depths": [
+          2,
+          1,
+          3,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "n": 29,
+        "rank": 8,
+        "h": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          96,
+          96
+        ],
+        "E": [
+          4,
+          12
+        ],
+        "depth": 2,
+        "local_depths": [
+          2,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "new_gap_classification_status": "Added independent script; see run log for execution result."
+}

@@ -145,3 +145,6 @@ Donoven–Mitchell–Wilson (2018), Computing maximal subsemigroups of a finite 
 
 ## R38 — إعادة تدقيق T69 (الدراسة 19)
 Donoven–Mitchell–Wilson [النص الكامل](https://arxiv.org/pdf/1606.05583)، ص 2 و3، Lemma 1.2 وPropositions 1.4–1.5: إعادة فحص بصري في الدراسة 19. استغنى البرهان المباشر عن التصنيف. راجع [سجل البحث والأسبقية](29-study-19-triple-intersection-referee-audit.md). لا ادعاء جدة.
+
+## R39 — دراسة 20، التصنيف
+König (1931), [ترجمة النص الكلاسيكي](https://arxiv.org/abs/2009.03780)؛ تطابق حجم المطابقة وغطاء الرؤوس في الرسم الثنائي (T73). Gray [arXiv:1307.8280](https://arxiv.org/abs/1307.8280)، وأدبيات Graham–Houghton/Gray–Ruškuc؛ البحث الأولي لا يحسم أسبقية T74. راجع الدراسة 20. سجل GAP الدراسة 19: [التشغيل الفعلي](https://github.com/scientifica007/Primes_Study/actions/runs/45344229021/job/138274813448)؛ PASS 17282، مع خطأ تهيئة رسائل غير قاتل أزيل في الدراسة 20.
