@@ -203,3 +203,8 @@ Reproducibility: [parity-extension audit](experiments/t56-parity-extension-audit
 ## Related extremal note (24 November 2026)
 
 The [extension-freedom research note](reviews/P03-extension-freedom-extremal-2026-11-24.md) distinguishes raw fibre cardinality from query complexity. It gives an asymptotically sharp leading-order bound for raw extension capacity, and proves a sharp deterministic upper bound for designated-element membership under labelled extension and principal-ideal metadata. The latter sharpness example does not preserve rank or change emptiness; it therefore does not establish an optimal constant for Theorem 9.2. This is separate, internally checked work with unresolved historical priority.
+
+
+## Related shared-target construction (24 November 2026)
+
+The [shared-target research note](reviews/P03-shared-target-extremal-2026-11-24.md) proves a stronger family with a single shared product rectangle, retaining the prescribed statistics and strengthened ideal-extension metadata. For size parameters S=max(s_i), D=sum(s_i), b=C/2, it has n=2Sp+2q+4S+D+1, exact deterministic cost 2pq-b+1 and optimal randomized worst-case expected cost (1-2ε)(2pq+1)/(b+1). At L=0 the deterministic leading coefficient improves from 1/648 to 1/32 on the respective order sequences. The global optimum is still open. This is a separate internally checked result with historical priority unresolved.
