@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 50 (24/11/2026)
+## آخر دراسة — الدراسة 51 (24/11/2026)
+[الدراسة 51: استقرار التغييرات المنتهية](docs/61-experiment-51-finite-change-synchronization.md) — T212–T215. CI الدراسة 50 ناجح. التزامن للكتل المعدودة تحت الاستقرار المنتهي، تركيب عالمي وحد مشروط، وأمثلة تفصل الاستقرار والتوليد. [التجربة](experiments/finite_change_synchronization.js)، [النتائج](results/finite_change_synchronization_study51.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 50 (24/11/2026)
 [الدراسة 50: البدائل الخاصة والاستبدال الكتلي](docs/60-experiment-50-private-replacements.md) — T208–T211. CI الدراسة 49 ناجح. مثال مضاد لعمومية البديل الخاص، استبدال جماعي مستقل بشروط ومثال أزواج. [التجربة](experiments/rees_private_replacements.js)، [النتائج](results/rees_private_replacements_study50.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 49 (24/11/2026)

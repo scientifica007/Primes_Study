@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 51 finite change synchronization (Node.js)
+        run: |
+          node experiments/finite_change_synchronization.js > /tmp/finite-change-sync.json
+          diff -u results/finite_change_synchronization_study51.json /tmp/finite-change-sync.json
       - name: Recompute Study 50 private replacements (Node.js)
         run: |
           node experiments/rees_private_replacements.js > /tmp/rees-private-replacements.json

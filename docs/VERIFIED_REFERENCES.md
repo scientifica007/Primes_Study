@@ -242,3 +242,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R69 — الدراسة 50
 مقتطفات ظاهرة في البحث: [Maximally Independent Sets, Minimal Generating Sets, and Irreducibles](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/48018/224_2005_Article_BF01762188.pdf?sequence=1)، [Independence algebras](https://www-users.york.ac.uk/~varg1/canada.pdf)، [Generating sets, presentations, and growth of tropical matrix monoids](https://www.tandfonline.com/doi/abs/10.1080/00927872.2025.2590188). لم تحلل ملفات PDF كاملة. لا حسم للأسبقية ولا تأكيد جديد لـR60–R67. [الدراسة](60-experiment-50-private-replacements.md).
+
+## R70 — الدراسة 51
+مقتطفات ويب مسترجعة: [Baire category theorem — Math foundations](https://math.hodapp.com/lectures/foundations/topology/metric-baire.html)، [Hahn–Banach, Baire and the basic theorems on Banach spaces](https://openmaths.org/courses/foundations-of-von-neumann-algebras/hahn-banach-baire-and-the-basic-theorems-on-banach-spaces.html). مبدأ Baire معروف؛ لا قراءة كاملة أو إثبات أسبقية T213–T214. لا تأكيد جديد لـR60–R69. [الدراسة](61-experiment-51-finite-change-synchronization.md).

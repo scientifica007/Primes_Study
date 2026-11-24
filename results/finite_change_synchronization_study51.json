@@ -1,0 +1,19 @@
+{
+  "study": 51,
+  "chainModels": 8,
+  "chainMasks": 1020,
+  "chainRanks": 2040,
+  "parityChecks": 44,
+  "cycleModels": 4,
+  "cycleMasks": 340,
+  "minorChecks": 340,
+  "cycleDeletionChecks": 2504,
+  "finiteReesMixes": 20,
+  "finiteReesDeletions": 72,
+  "requests": 5400,
+  "certificates": 5400,
+  "extensions": 1656,
+  "certificateChecks": 13470,
+  "all_passed": true,
+  "scope": "Finite vector rank and principal-minor checks; exact positive-word Rees closure for paired cycles over F3; finite partial assignments on the natural-number chain with finite telescoping witnesses, without a fixed terminal. Infinite generation/failure, countable-piece decomposition and global Green assembly are analytic."
+}

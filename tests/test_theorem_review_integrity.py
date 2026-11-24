@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T211_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T215_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,212)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,216)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 211)
+        self.assertEqual(len(registry), 215)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study51_finite_change_synchronization(self):
+        study = (ROOT / "docs" / "61-experiment-51-finite-change-synchronization.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "finite_change_synchronization_study51.json").read_text(encoding="utf-8"))
+        for n in range(212,216):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["chainMasks"], 1020)
+        self.assertEqual(data["minorChecks"], 340)
+        self.assertEqual(data["finiteReesDeletions"], 72)
+        self.assertEqual(data["certificates"], 5400)
 
     def test_study50_private_replacements(self):
         study = (ROOT / "docs" / "60-experiment-50-private-replacements.md").read_text(encoding="utf-8")
