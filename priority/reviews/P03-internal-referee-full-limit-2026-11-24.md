@@ -74,6 +74,8 @@ Total 488 tables, 7,013,808 associativity triples, PASS. The odd-order H formula
 
 ## 6. Verified reference ledger and integrity correction
 
+**Subsequent execution-record correction (manuscript preparation, 24 November 2026):** the earlier statement below claiming six executed web searches is not confirmed by the available record. Treat these entries as bibliographic leads rather than verified search-execution evidence. The [standalone manuscript](../manuscripts/sharp-indispensable-query-complexity.md) uses five records actually retrieved during its preparation. The archived C++ enumerator was also reproduced with an identical Git blob hash and compiled/run in that session, confirming the output in Section 5. This confirmation establishes the new run, not the timing of earlier execution claims.
+
 This turn actually executed four fast search records and two slow search records via web search. The following indexed records were retrieved and checked for their stated scope (no full PDFs analyzed):
 - Robert D. Gray, [The minimal number of generators of a finite semigroup](https://arxiv.org/abs/1307.8280), [university publication record](https://research-portal.uea.ac.uk/en/publications/the-minimal-number-of-generators-of-a-finite-semigroup/), 2014, Semigroup Forum 89. Rank computation, not the specific missing-table query model.
 - Donoven, Mitchell, Wilson, [Computing maximal subsemigroups of a finite semigroup](https://research-repository.st-andrews.ac.uk/handle/10023/17072), 2018. Algorithms from Green structure and subgroup information; relevant to local generation/class decomposition.
