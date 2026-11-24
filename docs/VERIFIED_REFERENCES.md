@@ -229,3 +229,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R66 — الدراسة 47
 بحث مقتطفات عن Rees matrix / relative rank / positive irredundant generators. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02). لا قراءة كاملة أو إثبات أسبقية. [الدراسة](57-experiment-47-positive-essentiality.md).
+
+## R67 — الدراسة 48
+بحث مقتطفات فعلي: [Quinn-Gregson](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/mtk.12035)، [GAP](https://docs.gap-system.org/doc/ref/chap51.html)، [Algorithm Engineering of SSSP with Negative Edge Weights](https://drops.dagstuhl.de/storage/00lipics/lipics-vol338-sea2025/html/LIPIcs.SEA.2025.10/LIPIcs.SEA.2025.10.html)، [Sedgewick–Wayne](https://algs4.cs.princeton.edu/44sp/). الجهود وأوزان المسارات معروفة. لا قراءة كاملة أو حسم أسبقية؛ لم نعد التحقق من جميع روابط R60–R66. [الدراسة](58-experiment-48-position-coordinate-essentiality.md).

@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 47 (24/11/2026)
+## آخر دراسة — الدراسة 48 (24/11/2026)
+[الدراسة 48: اقتران الموضع بالإحداثي](docs/58-experiment-48-position-coordinate-essentiality.md) — T200–T203. CI الدراسة 47 ناجح. مؤتمت الأعمدة، جهد موضعي، مثال بمونويد معاملات كامل، ومعيار محايدات المحور. [التجربة](experiments/rees_position_coordinate.js)، [النتائج](results/rees_position_coordinate_study48.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 47 (24/11/2026)
 [الدراسة 47: الضرورة المونويدية الموجبة](docs/57-experiment-47-positive-essentiality.md) — T196–T199. CI الدراسة 46 ناجح. رفع أحادي، ترميز بخارج قسمة حر أبلي، استخراج موجب متسلسل، ومثال بمصادر منتهية وزمرة معاملات كاملة. [التجربة](experiments/rees_positive_essentiality.js)، [النتائج](results/rees_positive_essentiality_study47.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 46 (24/11/2026)
