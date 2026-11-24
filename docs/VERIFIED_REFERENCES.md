@@ -205,3 +205,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R58 — الدراسة 39
 بحث مقتطفات عن irredundant generating sets / relative generation / Rees translations. [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02) التوليد والتقديم المنتهي؛ [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676) رتبة منتهية؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees؛ [GAP Semigroups §18](https://fossies.org/linux/gap/pkg/semigroups/doc/chap18.html) linked translations. لا قراءة كاملة ولا حسم أسبقية T165–T167. [الدراسة](49-experiment-39-distributed-recovery.md).
+
+## R59 — الدراسة 40
+بحث مقتطفات عن Rees matrix / irredundant generating sets / relative rank. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray](https://arxiv.org/abs/1307.8280) الرتبة المنتهية؛ [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02) التوليد والتقديم المنتهي؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) التمثيل والتطبيع. لا قراءة كاملة ولا حسم أسبقية T168–T171. [الدراسة](50-experiment-40-shared-source-necessity.md).

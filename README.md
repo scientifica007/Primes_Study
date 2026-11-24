@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 39 (24/11/2026)
+## آخر دراسة — الدراسة 40 (24/11/2026)
+[الدراسة 40: توزيع الضرورة](docs/50-experiment-40-shared-source-necessity.md) — T168–T171. CI الدراسة 39 ناجح. استرجاع الذيل بمعكوس موجب، نواة على المصادر المتبقية وحد 3 بشروط احتياطي النواة ودعمها المنتهي. [التجربة](experiments/rees_shared_source_necessity.js)، [النتائج](results/rees_shared_source_necessity_study40.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 39 (24/11/2026)
 [الدراسة 39: الاسترجاع الموزع](docs/49-experiment-39-distributed-recovery.md) — T165–T167. CI الدراسة 38 ناجح. نجمة تحفظ مواضع الذيل، حد 3 مع مانحين موزعين ودعم نواة منته، ومثال ذيل غير قابل للاسترجاع الداخلي. [التجربة](experiments/rees_distributed_recovery.js)، [النتائج](results/rees_distributed_recovery_study39.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 38 (24/11/2026)

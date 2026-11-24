@@ -1,0 +1,14 @@
+{
+  "study": 40,
+  "models": 24,
+  "choices": 720,
+  "deletions": 5808,
+  "complements": 720,
+  "anchorChecks": 720,
+  "sharedSourceRecoveries": 2016,
+  "tailRecoveries": 1008,
+  "properInternal": 144,
+  "freeWordChecks": 200,
+  "all_passed": true,
+  "scope": "Finite capacity analogues C4,S3,C2^3, with and without extra missing column sources, three normalized sandwich patterns, and a proper internal monoid case; exact free-word computations for donor-assisted inverse recovery. No exhaustive enumeration of infinite semigroups."
+}
