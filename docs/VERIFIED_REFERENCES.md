@@ -248,3 +248,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R71 — الدراسة 52
 مقتطفات بحث مسترجعة عن تحويلات Nielsen: [Direct Products of Free Groups in Aut(F_N)](https://doi.org/10.1007/s00039-024-00688-5)، [Folding free-group automorphisms](https://arxiv.org/abs/1111.6794)، [The Abelian Case of Solitar's Conjecture on Infinite Nielsen Transformations](https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/abelian-case-of-solitar-s-conjecture-on-infinite-nielsen-transformations/D56533F165C3C87C7C056C9411346083). الأدوات معروفة، لا قراءة كاملة أو إثبات أسبقية، لا تحقق جديد لـR60–R70. [الدراسة](62-experiment-52-protected-replacement.md).
+
+## R72 — الدراسة 53
+مقتطفات بحث ظاهرة: [Homogeneous completely simple semigroups](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/mtk.12035)، [An Elementary Proof of a Theorem of Graham on Finite Semigroups](https://www.mdpi.com/2227-7390/8/1/105)، [Finite Groups with Independent Generating Sets of Only Two Sizes](https://www.cambridge.org/core/journals/bulletin-of-the-australian-mathematical-society/article/finite-groups-with-independent-generating-sets-of-only-two-sizes/1E5F3359FFAD676959597FFC2E0BF5DC). سياق عام فقط؛ لا قراءة كاملة أو إثبات أسبقية. لم نعد تدقيق R68–R71؛ R60–R67 مؤقتة وفق التصحيح السابق. [الدراسة](63-experiment-53-protection-limits.md).

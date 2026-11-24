@@ -1,0 +1,17 @@
+{
+  "study": 53,
+  "freeWordChecks": 568,
+  "intersectionChecks": 2,
+  "freeRecoveryChecks": 5,
+  "reservoirCases": 162,
+  "reservoirIdentityChecks": 5346,
+  "reservoirInjectionChecks": 324,
+  "reservoirAvoidanceChecks": 162,
+  "nonzeroPowerChecks": 576,
+  "complementChecks": 456,
+  "flexibleCases": 2156,
+  "flexibleChecks": 6468,
+  "strictFailures": 672,
+  "all_passed": true,
+  "scope": "Bounded exact free-product normal forms; exact noncommutative Rees local-group identities over S3 x Z; positive words forcing redundancy of protected signs and factorization avoiding a finite set; exhaustive finite F2^3 algebraic-closure flexible repair examples. Infinite claims proved analytically, not by truncation."
+}

@@ -32,17 +32,28 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T219_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T223_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,220)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,224)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 219)
+        self.assertEqual(len(registry), 223)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study53_protection_limits(self):
+        study = (ROOT / "docs" / "63-experiment-53-protection-limits.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "protection_limits_study53.json").read_text(encoding="utf-8"))
+        for n in range(220,224):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["strictFailures"], 672)
+        self.assertEqual(data["reservoirIdentityChecks"], 5346)
+        self.assertEqual(data["nonzeroPowerChecks"], 576)
+        self.assertEqual(data["flexibleCases"], 2156)
 
     def test_study52_protected_replacement(self):
         study = (ROOT / "docs" / "62-experiment-52-protected-replacement.md").read_text(encoding="utf-8")
