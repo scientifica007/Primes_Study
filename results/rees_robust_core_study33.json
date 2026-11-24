@@ -1,0 +1,16 @@
+{
+  "finite_fixtures": 12,
+  "relative_bases_checked": 192,
+  "skipped_fixtures_or_large_tails": 0,
+  "tail_members": 119,
+  "mixed_template_checks": 372,
+  "core_searches": 3922,
+  "robust_basis_checks": 596,
+  "frozen_tail_members": 45,
+  "bases_with_nonempty_freeze": 39,
+  "examples_different_core_sizes": 0,
+  "infinite_chain_positive_words": 4000,
+  "infinite_chain_associativity_samples": 300,
+  "finite_donor_fresh_direction_checks": 360,
+  "scope": "Sampled finite Rees fixtures; actual positive words in an infinite strong semilattice of rectangular groups; no exhaustive infinite verification."
+}

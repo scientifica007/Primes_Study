@@ -184,3 +184,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R51 — الدراسة 32
 [Solvable and (super)nilpotent semigroups with completely simple ideal and (super)nilpotent monoids](https://link.springer.com/article/10.1007/s00233-026-10627-5)، §3، المعادلة (3.2) والبرهان (HTML): توافق N العادية داخل المثالي البسيط كليًا مع العوامل الخارجية معروف؛ [GAP Semigroups manual، §16.6](https://mtorpey.github.io/Semigroups/doc/chap16.html) عن linked triples، Howie §3.5؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) نتيجة بحث عن Rees. قرأنا المقاطع المعنية من المرجعين الأولين، لا النصوص الكاملة. لا ندعي أسبقية التوافق؛ أسبقية T137–T140 غير محسومة.
+
+## R52 — الدراسة 33
+بحث مقتطفات عن infinite completely simple semigroups / irredundant generating sets / Rees normal congruences: [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676) الرتبة المنتهية؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) تمثيل Rees؛ [Solvable and (super)nilpotent semigroups](https://link.springer.com/article/10.1007/s00233-026-10627-5) توافق النواة السابق R51؛ [GAP Semigroups §13](https://mtorpey.github.io/Semigroups/doc/chap13.html) التمييز بين minimum وirredundant؛ [Random ubiquitous transformation semigroups](https://link.springer.com/article/10.1007/s00233-018-09992-7) أحجام القواعد. لم نقرأ النصوص الكاملة في هذه المراجعة ولم نحسم أسبقية T141–T145.
