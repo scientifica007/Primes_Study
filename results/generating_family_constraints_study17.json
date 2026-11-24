@@ -1,0 +1,137 @@
+{
+  "study": "T61-T65",
+  "monoids": [
+    {
+      "n": 1,
+      "count": 1,
+      "group_regular_classes": 1,
+      "has_nonregular_class": 0,
+      "intersection_depth_histogram": {
+        "1": 1
+      },
+      "qualified_histogram": {
+        "1": 1
+      },
+      "E_empty": 0,
+      "E_empty_nongroups_with_rectangle": 0
+    },
+    {
+      "n": 2,
+      "count": 2,
+      "group_regular_classes": 2,
+      "has_nonregular_class": 0,
+      "intersection_depth_histogram": {
+        "1": 2
+      },
+      "qualified_histogram": {
+        "1": 2
+      },
+      "E_empty": 0,
+      "E_empty_nongroups_with_rectangle": 0
+    },
+    {
+      "n": 3,
+      "count": 11,
+      "group_regular_classes": 9,
+      "has_nonregular_class": 2,
+      "intersection_depth_histogram": {
+        "1": 10,
+        "2": 1
+      },
+      "qualified_histogram": {
+        "1": 8,
+        "2": 1
+      },
+      "E_empty": 1,
+      "E_empty_nongroups_with_rectangle": 0
+    },
+    {
+      "n": 4,
+      "count": 156,
+      "group_regular_classes": 106,
+      "has_nonregular_class": 69,
+      "intersection_depth_histogram": {
+        "1": 134,
+        "2": 21,
+        "3": 1
+      },
+      "qualified_histogram": {
+        "1": 90,
+        "2": 15,
+        "3": 1
+      },
+      "E_empty": 4,
+      "E_empty_nongroups_with_rectangle": 0
+    }
+  ],
+  "rees": [
+    {
+      "rows": 1,
+      "columns": 2,
+      "order": 4,
+      "regular_support_matrices": 1,
+      "depth_histogram": {
+        "1": 1
+      },
+      "max_irredundant_sets": 1
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "order": 6,
+      "regular_support_matrices": 7,
+      "depth_histogram": {
+        "1": 2,
+        "2": 5
+      },
+      "max_irredundant_sets": 2
+    },
+    {
+      "rows": 2,
+      "columns": 3,
+      "order": 8,
+      "regular_support_matrices": 25,
+      "depth_histogram": {
+        "2": 25
+      },
+      "max_irredundant_sets": 6
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "order": 11,
+      "regular_support_matrices": 265,
+      "depth_histogram": {
+        "2": 265
+      },
+      "max_irredundant_sets": 15
+    }
+  ],
+  "restricted_cyclic_realization": [
+    {
+      "vertices": 1,
+      "clutters": 1,
+      "seed_subsets_checked": 2,
+      "max_cyclic_order": 34
+    },
+    {
+      "vertices": 2,
+      "clutters": 4,
+      "seed_subsets_checked": 16,
+      "max_cyclic_order": 102
+    },
+    {
+      "vertices": 3,
+      "clutters": 18,
+      "seed_subsets_checked": 144,
+      "max_cyclic_order": 510
+    },
+    {
+      "vertices": 4,
+      "clutters": 166,
+      "seed_subsets_checked": 2656,
+      "max_cyclic_order": 510510
+    }
+  ],
+  "note": "Labelled finite monoids and support matrices; restricted CRT realization is not unrestricted."
+}

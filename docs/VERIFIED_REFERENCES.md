@@ -136,3 +136,6 @@
 
 ## R35 — حد حجم trades (الدراسة 16، 24/11/2026)
 E. Ghorbani et al., On the Volumes and Affine Types of Trades, Electronic Journal of Combinatorics 27(1), 2020, DOI:10.37236/8367، https://www.combinatorics.org/ojs/index.php/eljc/article/view/v27i1p29 ، https://arxiv.org/abs/1810.02296 . الملخص يصرح بأن أصغر حجم [t]-trade غير خال هو 2^t. هذا يسبق لمّة الحجم في T59؛ لم نفحص النص الكامل. لا يُنسب الحد التوافقي أو بناء التكافؤ إلى المشروع على أنه اكتشاف. مثال المونويدات T58 يحتاج مراجعة أسبقية خاصة.
+
+## R36 — القيود المحلية للتوليد (الدراسة 17، 24/11/2026)
+Graham–Graham–Rhodes (1968), https://www.sciencedirect.com/science/article/pii/S0021980068800018 : الملخص يثبت أن مكمل شبه الزمرة الجزئية القصوى ضمن فئة J واحدة وأن الحالة غير المنتظمة تحذف الفئة كلها. Gray (2014), https://doi.org/10.1007/s00233-013-9521-8 ، https://arxiv.org/abs/1307.8280 : دراسة الرتبة والتحليل عبر Rees. Donoven–Mitchell–Wilson (2018), https://doi.org/10.1016/j.jalgebra.2018.01.044 . مرجع حديث لخاصية حاصل ضرب عنصرين في فئة J غير منتظمة: https://doi.org/10.1017/S0004972724000613 . المقارنة الأولية بالملخصات والمقتطفات؛ لم تُحسم أسبقية صيغة T63 أو استحالة T64.
