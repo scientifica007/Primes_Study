@@ -133,3 +133,6 @@
 - **R34:** Pasini (1975)، *On the Frattini subalgebra Φ(A) of an algebra A*، Boll. UMI Ser. IV 12، 37–40؛ **إحالة ثانوية** من Schmid [18]، لم يقرأ النص الأصلي.
 
 [جدول المطابقة والتدقيق التحكيمي](23-berman-bordalo-schmid-referee-audit.md). لا ادعاء أصالة تاريخية.
+
+## R35 — حد حجم trades (الدراسة 16، 24/11/2026)
+E. Ghorbani et al., On the Volumes and Affine Types of Trades, Electronic Journal of Combinatorics 27(1), 2020, DOI:10.37236/8367، https://www.combinatorics.org/ojs/index.php/eljc/article/view/v27i1p29 ، https://arxiv.org/abs/1810.02296 . الملخص يصرح بأن أصغر حجم [t]-trade غير خال هو 2^t. هذا يسبق لمّة الحجم في T59؛ لم نفحص النص الكامل. لا يُنسب الحد التوافقي أو بناء التكافؤ إلى المشروع على أنه اكتشاف. مثال المونويدات T58 يحتاج مراجعة أسبقية خاصة.
