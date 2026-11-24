@@ -42,9 +42,10 @@ theorem T12 {S : Type u} {I : Type v} (arity : I → Nat)
   · intro h hg
     exact generated_avoids arity F x {y | y ≠ x} h (fun _ hz => hz) x hg rfl
   · intro h i a ha he
-    apply h
-    rw [← he]
-    exact Generated.step i a (fun j => Generated.seed (a j) (ha j))
+    have hg : Generated arity F {y | y ≠ x} (F i a) :=
+      Generated.step i a (fun j => Generated.seed (a j) (ha j))
+    rw [he] at hg
+    exact h hg
 
 /-- A derived operation has a finite derivation from its arguments, with no new constants.
     This hypothesis is implied by any fixed term over the original operations. -/
