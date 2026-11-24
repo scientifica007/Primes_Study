@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 43 overlapping relations (Node.js)
+        run: |
+          node experiments/rees_overlapping_relations.js > /tmp/rees-overlapping.json
+          diff -u results/rees_overlapping_relations_study43.json /tmp/rees-overlapping.json
       - name: Recompute Study 42 balanced blocks (Node.js)
         run: |
           node experiments/rees_balanced_blocks.js > /tmp/rees-balanced-blocks.json

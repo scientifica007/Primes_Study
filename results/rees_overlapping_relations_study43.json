@@ -1,0 +1,14 @@
+{
+  "study": 43,
+  "graphModels": 25,
+  "assignments": 1166400,
+  "solutions": 50,
+  "wordChecks": 110,
+  "componentCountChecks": 25,
+  "partitions": 22076,
+  "balancedSelections": 1722,
+  "rankChecks": 5060,
+  "finiteSupportChecks": 245,
+  "all_passed": true,
+  "scope": "Exhaustive S3 port assignments for 25 labeled word systems (including repeated letters); exact enumeration of partitions of 5,7,9 generators with block multiplicities 0..2; finite integer checks of the untouched-pair obstruction. Infinite proofs are analytical. No exhaustive general semigroup claim."
+}

@@ -32,17 +32,27 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T179_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T183_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,180)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,184)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 179)
+        self.assertEqual(len(registry), 183)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study43_overlapping_relations(self):
+        study = (ROOT / "docs" / "53-experiment-43-overlapping-relations.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_overlapping_relations_study43.json").read_text(encoding="utf-8"))
+        for n in range(180,184):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["assignments"], 1166400)
+        self.assertEqual(data["partitions"], 22076)
+        self.assertEqual(data["wordChecks"], 110)
 
     def test_study42_balanced_blocks(self):
         study = (ROOT / "docs" / "52-experiment-42-balanced-blocks.md").read_text(encoding="utf-8")

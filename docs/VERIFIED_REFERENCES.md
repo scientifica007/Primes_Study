@@ -214,3 +214,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R61 — الدراسة 42
 بحث مقتطفات عن Rees matrix / positive generating sets / balanced words / relative rank. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280) الرتبة المنتهية؛ [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02) التوليد والتقديم؛ [Ends of semigroups](https://link.springer.com/article/10.1007/s00233-016-9814-9) تمثيل Rees. لا قراءة كاملة أو إثبات أسبقية T176–T179. [الدراسة](52-experiment-42-balanced-blocks.md).
+
+## R62 — الدراسة 43
+بحث ويب عن Rees / relative rank / graph cycle consistency. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [cycle consistency](https://geometry.stanford.edu/lgl_2024/papers/bgtg-qps-21/bgtg-qps-21.pdf) مقتطفات فقط. لا حسم للأسبقية. [الدراسة](53-experiment-43-overlapping-relations.md).
