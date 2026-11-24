@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the specific commit or release used. Exploratory research; not a peer-reviewed publication or a verified claim of scientific priority."
+title: "Relational Primality — Primes_Study"
+type: software
+authors:
+  - family-names: "scientifica007"
+repository-code: "https://github.com/scientifica007/Primes_Study"
+url: "https://github.com/scientifica007/Primes_Study"
