@@ -181,6 +181,23 @@ jobs:
           print('PASS: Clifford theorem, nine-element pair and 176 linked systems.')
           PY
 
+      - name: Reproduce study twelve oracle query bounds and adversary blocks
+        run: |
+          python3 experiments/layered_oracle_decision.py --output /tmp/layered-oracle.json
+          cat /tmp/layered-oracle.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/layered-oracle.json').read_text())
+          assert sum(x['monoids'] for x in d['labelled_small_monoids'])==170
+          assert all(x['all_predictions_match'] for x in d['labelled_small_monoids'])
+          assert all(x['all_changed_variants_E_empty'] for x in d['hard_family'])
+          assert all(x['base_orbit_queries']>=x['independent_blocks'] for x in d['hard_family'])
+          if Path('results/layered_oracle_study12.json').exists():
+              assert d==json.loads(Path('results/layered_oracle_study12.json').read_text())
+          print('PASS: exact layered decision and quadratic query lower-bound fixtures.')
+          PY
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
