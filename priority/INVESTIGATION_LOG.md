@@ -5,6 +5,12 @@
 - تُستورد المراجعات السابقة بوصفها أدلة تاريخية لا كأحكام نهائية: [تدقيق الأسبقية T09](../docs/13-priority-T09-literature-review.md)، [المراجع](../docs/VERIFIED_REFERENCES.md)، [مسودة T49](../papers/T49-query-lower-bound.md)، [مسودة T69](../papers/T69-triple-intersection-theorem.md)، [مسودة T77](../papers/T77-bounded-arity-intersections.md).
 - التحقيق التالي: P01، T69/T74، بدءاً بتثبيت صيغة كل مبرهنة ومقارنة الصيغ المكافئة في أدبيات التوليد وأشباه الزمر القصوى.
 
+## 24/11/2026 — P01، الجولة الأولى
+- [تقرير التحقيق والأدلة](reviews/P01-2026-11-24.md).
+- Cameron et al (2023)، §5 والشكل 4: تعريف generating hypergraph ومثال V4 مسبوقان؛ حدة 3 مستلزمة من المثال.
+- T69 العام وT74: NO_MATCH_YET في النطاق المفحوص فقط. P01: PARTIAL_OVERLAP. لم يُثبت سبق التصنيف أو جدته. لا تحكيم خارجي.
+- الخطوة التالية P02/T77، مع استكمال قراءة المراجع المتخصصة لـT74.
+
 ## قالب تقرير مستقل لكل محور
 مسار الملف: priority/reviews/Pxx-YYYY-MM-DD.md
 
