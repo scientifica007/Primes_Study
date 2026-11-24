@@ -223,3 +223,8 @@ The [two-sided dependency research note](reviews/P03-two-sided-scc-upper-bound-2
 ## Related joint-statistics and composite-modulus refinement (24 November 2026)
 
 The [joint-statistics research note](reviews/P03-joint-statistics-constraints-2026-11-24.md) proves a necessary-and-sufficient moment signature of generating counts in the null-ideal setting, zero-query recovery criteria for the number of missing singleton classes, and a joint query/inference rule using integer-matrix column bases. It generalizes shared targets to sizes dividing any common modulus S and computes the least such balancing modulus for L=0..10. The leading lower coefficient at L=6 improves from 1/512 to 1/192, while L=0 remains 1/32. These conditional results do not improve the general 17/48 upper bound, and their historical priority and external verification remain open.
+
+
+## Related general-ideal statistic factorization (24 November 2026)
+
+The [general-ideal research note](reviews/P03-general-ideal-statistics-2026-11-24.md) removes the null-ideal hypothesis from the joint-statistics result: the labelled local generating families of regular J-classes are fixed by the quotient and actions on the ideal. Recover idempotents by squaring representatives of their bitranslations, then recover regular elements using those idempotents. The ordinary and minimal enumerator factorization, exact moment signature, and zero-query support-size criteria extend to arbitrary designated ideals under D*. Class-witness dependency graphs can also be combined with joint count inference. No better universal coefficient than 17/48 is established in this note. Four nonnull-ideal tables are exhaustively checked on 65536 generating-subset candidates; external review and priority remain unresolved.
