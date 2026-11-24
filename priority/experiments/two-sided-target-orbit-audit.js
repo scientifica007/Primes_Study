@@ -15,8 +15,9 @@ function audit(){
   const W=[];
   for(let mode=0;mode<2;mode++){let active=Array.from({length:b},(_,i)=>i+mode*b);
    if(exhaustive){function rec(a){if(a.length===m){if(active.every(l=>a.includes(l)))W.push({mode,a});return;}for(let l of [-1,...active])rec([...a,l])}rec([]);}
-   else{for(let j=0;j<3;j++){let a=Array(m).fill(-1);for(let i=0;i<b;i++)a[(i+j)%m]=active[(i+j)%b];W.push({mode,a})}}
+   else{for(let j=0;j<3;j++){let a=Array(m).fill(-1);for(let i=0;i<b;i++)a[(i+j)%m]=active[i];W.push({mode,a})}}
   }
+  ok(new Set(W.map(w=>w.a.join())).size===W.length,"distinct arrays");
   function table(w){return I.map(i=>I.map(j=>{let x=S[i],y=S[j];if(i===z||j===z)return z;
    if(x.type==="G"&&y.type==="G")return get("G",0,(x.c+y.c)%g);
    if(x.type==="G"){if(y.type==="A")return get("A",y.i,(y.c+x.c)%U);if(y.type==="T")return get("T",y.i,(y.c+x.c)%split[y.i][0],y.d);return j;}
