@@ -30,3 +30,6 @@ lake build
 lake env lean RelationalPrimality/Foundations.lean
 ```
 ملف lake-manifest.json لم يولّد بعد؛ يثبت بعد أول حل ناجح للتبعيات. انظر [سجل القضايا](THEOREM_STATUS.csv) و[سير العمل](../.github/workflows/formal-verification.yml).
+
+## FV03
+[الدفعة الثالثة](reviews/FV03-2026-11-24.md): أساس التوليد والمجموعات الدنيا بالاحتواء، وجسر T13 للعمليات الحدية، والشق المنطقي من T53. هذه مسودات غير معتمدة حتى نجاح CI والمراجعة. سجل T53 لا يعلن إثباته كاملا.
