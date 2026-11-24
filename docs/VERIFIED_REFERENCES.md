@@ -178,3 +178,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R49 — الدراسة 30
 [Quinn-Gregson (2020)](https://doi.org/10.1112/mtk.12035)، Theorem 4.3 وLemma 5.1 (نص HTML؛ التطبيع وشرط التوليد المنتهي المعروف)؛ [Encyclopedia of Mathematics](https://encyclopediaofmath.org/wiki/Completely-simple_semi-group) (مقتطف؛ تمثيل Rees)؛ [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676) (ملخص؛ الرتبة المنتهية)؛ [On transitive Cayley graphs of groups and semigroups](https://doi.org/10.1016/S0195-6698(02)00120-8) (مقتطف محرك بحث؛ فتح النص الكامل فشل؛ خاصية الزمر الجزئية الدورية). البحث الأولي عن infinite Rees matrix irredundant generating sets وperiodic groups لم يحسم أسبقية T126–T130. لم نقرأ جميع النصوص كاملة.
+
+## R50 — الدراسة 31
+[Quinn-Gregson، Homogeneous completely simple semigroups](https://doi.org/10.1112/mtk.12035)؛ [GAP reference chapter 51](https://docs.gap-system.org/doc/ref/chap51_mj.html)؛ [On Cayley graphs of rectangular groups](https://www.sciencedirect.com/science/article/pii/S0012365X09004518). مقتطفات بحث عن تمثيل Rees والتطبيع والضرب المباشر للزمرة والمستطيل؛ لم نقرأ النصوص الكاملة. لم يحسم البحث الأولي أسبقية T131–T135. لا ادعاء جدة.

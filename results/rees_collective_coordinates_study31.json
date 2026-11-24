@@ -1,0 +1,9 @@
+{
+  "finite_models": 9,
+  "subsets_examined": 21504,
+  "conditional_criterion_checks": 33691,
+  "shift_invariance_checks": 2816,
+  "actual_infinite_positive_words": 6912,
+  "independent_block_words": 3905,
+  "scope": "Finite cyclic fixtures and upper actions; genuine infinite free abelian and free groups with finite-rank nonconstant sandwich; bounded obstruction words. No exhaustive infinite validation."
+}
