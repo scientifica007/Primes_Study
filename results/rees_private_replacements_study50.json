@@ -1,0 +1,17 @@
+{
+  "study": 50,
+  "models": 8,
+  "generationChecks": 184,
+  "seedPotentialChecks": 852,
+  "productPotentialChecks": 16556,
+  "actionChecks": 99336,
+  "liftChecks": 1196,
+  "obstructionChecks": 1128,
+  "rootMultiplicityChecks": 528,
+  "blockWordChecks": 32,
+  "blockClosureChecks": 2,
+  "mixChecks": 4,
+  "blockDeletionChecks": 16,
+  "all_passed": true,
+  "scope": "Exact integer-vector positive identities and potentials in finite prefixes (not full infinite closure); bounded candidate lift and multiplicity checks; exact finite C3^4 Rees block closures and all four mixtures. Infinite no-private-lift theorem and block criterion proved analytically."
+}

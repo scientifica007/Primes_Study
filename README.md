@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 49 (24/11/2026)
+## آخر دراسة — الدراسة 50 (24/11/2026)
+[الدراسة 50: البدائل الخاصة والاستبدال الكتلي](docs/60-experiment-50-private-replacements.md) — T208–T211. CI الدراسة 49 ناجح. مثال مضاد لعمومية البديل الخاص، استبدال جماعي مستقل بشروط ومثال أزواج. [التجربة](experiments/rees_private_replacements.js)، [النتائج](results/rees_private_replacements_study50.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 49 (24/11/2026)
 [الدراسة 49: شهادات عدم التوليد](docs/59-experiment-49-non-generation-certificates.md) — T204–T207. CI الدراسة 48 ناجح. شهادات خلوية، ملف ضرورة منته، نقل الضرورة بالتشاكل، ومثالان لحدود الشهادات العددية والمنتهية. [التجربة](experiments/rees_nongeneration_certificates.js)، [النتائج](results/rees_nongeneration_certificates_study49.json). لا حسم عام أو ادعاء جدة. تصحيح حالة R60–R67 في سجل المراجع.
 
 ## الدراسة 48 (24/11/2026)

@@ -239,3 +239,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R68 — الدراسة 49
 مقتطفات بحث مسترجعة في الجلسة: [Semigroup automata with rational initial and terminal sets](https://www.sciencedirect.com/science/article/pii/S0304397509008019)، [On separability finiteness conditions in semigroups](https://www.cambridge.org/core/journals/journal-of-the-australian-mathematical-society/article/on-separability-finiteness-conditions-in-semigroups/495E096D4B4312909F031D2C3F1F7AC3)، [GAP](https://gap-system.github.io/gap/doc/ref/chap51.html)، [Rational cross-sections, bounded generation, and orders on groups](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/jlms.12920). لا قراءة كاملة أو حسم أسبقية. [الدراسة](59-experiment-49-non-generation-certificates.md).
+
+## R69 — الدراسة 50
+مقتطفات ظاهرة في البحث: [Maximally Independent Sets, Minimal Generating Sets, and Irreducibles](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/48018/224_2005_Article_BF01762188.pdf?sequence=1)، [Independence algebras](https://www-users.york.ac.uk/~varg1/canada.pdf)، [Generating sets, presentations, and growth of tropical matrix monoids](https://www.tandfonline.com/doi/abs/10.1080/00927872.2025.2590188). لم تحلل ملفات PDF كاملة. لا حسم للأسبقية ولا تأكيد جديد لـR60–R67. [الدراسة](60-experiment-50-private-replacements.md).
