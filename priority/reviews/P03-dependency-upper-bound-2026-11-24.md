@@ -1,0 +1,63 @@
+# Dependency graph upper bounds for emptiness of indispensable elements
+24/11/2026. Internal research note continuing [extension-freedom bounds](P03-extension-freedom-extremal-2026-11-24.md) and [shared-target construction](P03-shared-target-extremal-2026-11-24.md). No external referee or formal verification; no historical priority claim. No new T number, no modification of main.
+
+## 1. Model and statement
+Use D* of the previous notes: labelled finite monoid carrier, identity, units and their actions, labelled principal ideals, internal multiplication of all proper principal ideals, a designated nonempty proper ideal K, its labelled Rees quotient with quotient map, and all products with at least one factor in K. Further structural data and prescribed generating statistics may be supplied, including all data of T56. Arbitrary computation on the finite set of compatible tables is free, each multiplication query costs one. All generation uses nonempty words. 
+Let G be the units, A=M\(G∪K), a=|A|. The target is the emptiness of E, the set of elements without a factorization using two elements distinct from themselves.
+
+**Theorem A (universal deterministic upper bound).** Under D*, emptiness of E can be decided with at most floor(a(a−1)/2) queries. If there are c ambiguous targets in K after the zero-query tests below, the finer upper bound is
+\[
+\left\lfloor\frac{\min\{a(a-1),\,c\lfloor a^2/4\rfloor\}}{2}\right\rfloor.
+\]
+No claim of optimality for c≥2 or for the fixed-statistic setting. If a compatible table has E empty, the group of units has order at least 3; if |K|=1 all products are fixed. Therefore a uniform worst-case upper bound in terms of n is max(0,floor((n−5)(n−6)/2)) for n≥5, with zero queries for n<5 (for n=5 or 6 the formula is zero). This bound uses a≤n−5 in all nontrivial instances; it is not a statement that the maximum is attained for every n. 
+
+**Theorem B (one target, no indispensable elements outside K).** In the same model, if E∩(M\K)=∅, a designated t∈K can be tested with at most floor(a²/8) queries. This coefficient is sharp, even when E is either empty or {t}, without the requirement that rank/generator counts coincide: the parity-refined T49 family of v0.6 attains 2pq at a=2(p+q), and p=q gives a²/8. No claim of a sharp value for every a or with rank fixed.
+
+## 2. Basic dependency lemma
+Let F be the nonempty set of labelled tables compatible with all given metadata and promises. Enumeration of F is permitted in the information-query model (not a polynomial-time claim). Every product with output outside K is determined by the nonzero quotient output; whether a given product lies in K is also known. Products with factors in K or G are fixed. Consequently E∩(M\K) is computable without a query. If it is nonempty, the emptiness answer is immediately negative. In the remaining case, every x∈A admits a known factorization x=uv with u,v≠x; both u,v lie outside K, since K is an ideal. This witness is valid throughout F. 
+Call a cell variable if its output differs among tables in F. Every variable cell (x,y) has x,y∈A, and x≠y (within the proper principal ideal of x the product is known). Indeed the two J-classes are incomparable. Fix one known witness x=uv for each x∈A. By associativity xy=u(vy).
+- If vy has nonzero quotient output, let w be its known lift. Then xy=uw. Depend on cell (u,w) with identity output map.
+- If vy lies in K, then xy=L_u(vy), where L_u:K→K is fully supplied. Depend on cell (v,y) with output map L_u.
+In either case the new cell is different (u≠x or v≠x), and is variable, since otherwise xy would be fixed throughout F. These equations hold in every table. Each variable cell has an outgoing arrow to another variable cell, labelled by a known function which recovers the source output from the destination output.
+Choose one such arrow per cell, making a finite functional digraph without loops. Each weak component has one directed cycle, length at least 2. Query one vertex of every cycle, then propagate known values backwards along the arrows. Each cell reaches its component's cycle, so every value is recovered. The number of cycles is at most floor(number of variable cells/2). In particular the entire table can be recovered when E outside K is empty with at most floor(a(a−1)/2) queries; if exterior E is nonempty the algorithm instead stops immediately for the emptiness problem.
+One may also retain all valid dependency arrows, and query one vertex of each sink strongly connected component: every vertex reaches a sink and each vertex in a sink reaches its queried representative. This can improve the count in particular instances; not needed for the bound. 
+
+## 3. Restriction to relevant witness cells
+If some element belongs to E in every compatible table, emptiness is known negative. If no element can belong to E, it is known positive. Otherwise all potentially indispensable elements are in K, and those relevant to the decision are ambiguous: each t∈T belongs to E in at least one table and fails to belong in another. Let c=|T|. Let U be the set of cells (x,y) with x,y∈A for which some compatible table has xy=t for a t∈T. Such cells are variable: t is indispensable in some table, and x,y are outside K. All known cells cannot be witnesses against such a t. In the actual table, t is dispensable iff some cell of U has output t. This follows directly from the definition of E, since any alternative factorization with a factor in G or K would already be fixed and make t dispensable everywhere.
+The same dependency construction stays in U. For a cell in U with possible output t, if the dependency map is identity this is immediate. Otherwise xy=L_u(vy) with u outside K. Choose a compatible table with t indispensable. The supplied map L_u cannot send any z∈K\{t} to t, because uz=t would be an alternative factorization in that table. As xy=t is possible, L_u(t)=t and vy=t in a table with xy=t. The dependent cell therefore also lies in U. Thus query one vertex per cycle in the functional graph on U, reconstruct all values in U, and decide emptiness or individual target membership. Cost at most floor(|U|/2).
+The argument is valid for an arbitrary prescribed subset of ambiguous targets, even if some other element of K is always indispensable, when the task is to test that subset rather than emptiness. In particular it applies to a designated t with E∩(M\K)=∅.
+
+## 4. Bounding U using witness rectangles
+For each ambiguous t, the previous note proves that possible witness cells lie in
+(P_t\Q_t)×(Q_t\P_t), P_t={x∈A:xt=t}, Q_t={x∈A:tx=t}.
+Recall the proof: if xy=t in one table and t indispensable in another, the principal ideals force xt=t and ty=t in both. In the indispensable table xy=z∈K with z≠t; the given translations on K and associativity imply z and t have the same two translations, so z²=t². If t²=t this contradicts indispensability. In the witness table, yt=t would imply t²=(xy)t=x(yt)=t; likewise tx=t would imply t²=t. Thus the two sets are disjoint. Each rectangle has size ≤floor(a²/4). Hence
+\[
+|U|\le \min\{a(a-1), \sum_{t\in T}|P_t\setminus Q_t|\,|Q_t\setminus P_t|\}
+\le\min\{a(a-1),c\lfloor a^2/4\rfloor\}.
+\]
+Combining with the cycle bound proves Theorems A and B. Every idempotent in K is unambiguous by the same translation argument; a finite nonempty K contains an idempotent, hence c≤|K|−1. In particular for |K|=2 the coefficient 1/8 applies to emptiness, for |K|=3 the upper coefficient is 1/4. A group with one unit makes the identity indispensable, and one with two units makes its nonidentity indispensable (nonunits cannot produce units). Thus in nontrivial emptiness instances |G|≥3 and |K|≥2, yielding the n-bound above. 
+For a fixed L and full T56 data, the shared-target lower coefficient 1/(8S) remains as proved in the previous note (S=4 for L=0, hence 1/32). The universal upper coefficient now is 1/2 rather than 1. The optimal global coefficient remains open. In the shared-target family, all ambiguous indispensable targets are singleton layers; at L=0 there is exactly one, so its instance also satisfies the refined 1/8 upper coefficient in terms of a. This does not imply that all T56 fibres have only one ambiguous target.
+
+## 5. Counterexample to a naive common rectangle
+Take G=C3 acting trivially, two disjoint rectangular bands X,Y each 2×2, and K={t,u,z} with null multiplication z. On X×Y allow independent t/z outputs indexed by (column of x,row of y). On Y×X allow independent u/z outputs indexed by (column of y,row of x). X fixes t on the left and u on the right; Y fixes u on the left and t on the right; all other nonunit mixed products with K are z. Units fix every nonunit. 
+Associativity: within each band use (i,j)(k,l)=(i,l). Triples of the same band followed or preceded by the other preserve the relevant column/row. Alternating triples give z on both bracketings. Triples with a K factor follow the indicated left/right projection actions (commute, preserve within-band products, and opposite bands compose to zero); two K factors give z. Thus all eight bits are independent. Fixed actions ensure both left/right principal ideals and proper principal internal tables, K, quotient and unit actions are common. Every band element has an alternative factorization in its band (two other cells), all units dispensable, z=tt, and t or u is indispensable exactly if its corresponding array is zero. 
+Both X×Y and Y×X are relevant witness rectangles of 16 cells each, with a=8. Their union of 32 cells exceeds floor(a²/4)=16. Hence the single-target rectangle bound cannot simply be applied to the union. This does NOT disprove a possible better universal query upper bound, since the cells have dependencies (in fact each bit here controls four cells). Also rank varies in the family; not a fixed-statistic lower bound. 
+
+## 6. Computation
+[Executable JavaScript audit](../experiments/dependency-query-upper-bound-audit.js), run during this turn. It enumerates the specified finite promise families, obtains variable cells and ambiguous targets by comparison across each family (not enumeration of all possible compatible tables), checks common quotient and extension actions, labelled principal ideals/internal tables, full associativity, and the proposed functional dependencies. Then queries a representative of each cycle in the chosen functional graph and reconstructs all relevant cells on every table, checking equality with actual values. The chosen arrows are just one per vertex, not optimized. 
+| Family | Tables | n | a | targets | relevant cells | cycle queries |
+|---|---:|---:|---:|---:|---:|---:|
+| Parity 1×1 | 4 | 10 | 4 | 1 | 4 | 2 |
+| Parity 1×2 | 16 | 12 | 6 | 1 | 8 | 4 |
+| Parity 2×1 | 16 | 12 | 6 | 1 | 8 | 4 |
+| Parity 2×2 | 256 | 14 | 8 | 1 | 16 | 8 |
+| Opposite rectangles | 256 | 14 | 8 | 2 | 32 | 16 |
+548 tables PASS. In the last family the algorithm uses 16 queries with its arbitrary dependency choices, but querying eight independent bits suffices; 16 is not claimed optimal. Checks do not replace the universal proof. No GAP/CI/Lean run.
+
+## 7. Literature scope and status
+Web searches performed in this turn:
+- semigroup multiplication table oracle reconstruct from generators query complexity Chang monoids associativity
+- semigroup ideal extensions multiplication determined by translations weakly reductive Grillet Petrich
+- finite semigroup oracle "irreducible" elements query complexity principal ideals
+Relevant indexed excerpts only: Grillet–Petrich 1968 (https://msp.org/pjm/1968/26-3/pjm-v26-n3-p09-s.pdf), Encyclopedia of Mathematics, Extension of a semi-group (https://encyclopediaofmath.org/wiki/Extension_of_a_semi-group), GAP Semigroups Chapter 18 (https://semigroups.github.io/Semigroups/doc/chap18_mj.html), Renshaw–Warhurst (https://link.springer.com/article/10.1007/s00233-024-10447-5), and Fleischer 2018 (https://doi.org/10.4230/LIPIcs.CCC.2018.25). Prior reading of Chang 2014 documented in Study 22 concerns recovering group tables via known generator columns; not a new full-text check in this turn. Classical ideal-extension theory, translations, associativity and functional-graph propagation are not claimed new. No direct statement of the upper bound for this precise metadata and emptiness query model appeared in the limited snippets; NO_MATCH_YET, not proof of historical novelty. No direct MathSciNet/zbMATH search, no new PDF analysis. 
+Next: investigate optimizing the dependency digraph (all available equations, sink SCCs, and lower bounds on their sizes), exploit rank/enumerator constraints, and compare against more specialized table-reconstruction literature. Keep separate from publication draft v0.6 until independent review.
