@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 38 (24/11/2026)
+## آخر دراسة — الدراسة 39 (24/11/2026)
+[الدراسة 39: الاسترجاع الموزع](docs/49-experiment-39-distributed-recovery.md) — T165–T167. CI الدراسة 38 ناجح. نجمة تحفظ مواضع الذيل، حد 3 مع مانحين موزعين ودعم نواة منته، ومثال ذيل غير قابل للاسترجاع الداخلي. [التجربة](experiments/rees_distributed_recovery.js)، [النتائج](results/rees_distributed_recovery_study39.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 38 (24/11/2026)
 [الدراسة 38: التحرير من القيود المصدرية](docs/48-experiment-38-source-support-obstruction.md) — T162–T164. CI الدراسة 37 ناجح. إغلاق نسبي مستطيلي واسترجاع موجب؛ حد 3 مع دعم أعلى منته دون قيد مواضع الأصل؛ مثال مضاد لإعادة التشكيل العام إلى المصادر. [التجربة](experiments/rees_source_support_obstruction.js)، [النتائج](results/rees_source_support_obstruction_study38.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 37 (24/11/2026)

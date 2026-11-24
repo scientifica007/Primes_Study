@@ -32,17 +32,27 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T164_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T167_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,165)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,168)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 164)
+        self.assertEqual(len(registry), 167)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study39_distributed_recovery(self):
+        study = (ROOT / "docs" / "49-experiment-39-distributed-recovery.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_distributed_recovery_study39.json").read_text(encoding="utf-8"))
+        for n in range(165,168):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["choices"], 512)
+        self.assertEqual(data["donorRecoveries"], 768)
+        self.assertEqual(data["deleteChecks"], 4352)
 
     def test_study38_source_support(self):
         study = (ROOT / "docs" / "48-experiment-38-source-support-obstruction.md").read_text(encoding="utf-8")

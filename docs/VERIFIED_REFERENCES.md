@@ -202,3 +202,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R57 — الدراسة 38
 بحث مقتطفات عن relative rank / irredundant generation / Rees translations: [GAP Semigroups §18](https://semigroups.github.io/Semigroups/doc/chap18_mj.html) الترجمات؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees؛ [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280) الرتبة المنتهية؛ [Random ubiquitous transformation semigroups](https://link.springer.com/article/10.1007/s00233-018-09992-7) عدم الزيادة. لا قراءة كاملة ولا حسم أسبقية T162–T164. [الدراسة](48-experiment-38-source-support-obstruction.md).
+
+## R58 — الدراسة 39
+بحث مقتطفات عن irredundant generating sets / relative generation / Rees translations. [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02) التوليد والتقديم المنتهي؛ [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676) رتبة منتهية؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees؛ [GAP Semigroups §18](https://fossies.org/linux/gap/pkg/semigroups/doc/chap18.html) linked translations. لا قراءة كاملة ولا حسم أسبقية T165–T167. [الدراسة](49-experiment-39-distributed-recovery.md).
