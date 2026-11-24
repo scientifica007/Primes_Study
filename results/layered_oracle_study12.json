@@ -1,0 +1,101 @@
+{
+  "study": "T43-T46: orbit and Cayley compression, quadratic oracle lower bound",
+  "original_definition_unchanged": true,
+  "labelled_small_monoids": [
+    {
+      "size": 1,
+      "monoids": 1,
+      "baseline_queries": 1,
+      "nonunit_pair_bound_sum": 0,
+      "orbit_preprocessing_queries": 0,
+      "orbit_only_queries_with_precomputed_metadata": 0,
+      "orbit_and_Green_queries_with_precomputed_metadata": 0,
+      "orbit_only_total_excluding_discovery_of_units": 0,
+      "Green_metadata_cost_not_counted": true,
+      "all_predictions_match": true
+    },
+    {
+      "size": 2,
+      "monoids": 2,
+      "baseline_queries": 8,
+      "nonunit_pair_bound_sum": 1,
+      "orbit_preprocessing_queries": 0,
+      "orbit_only_queries_with_precomputed_metadata": 0,
+      "orbit_and_Green_queries_with_precomputed_metadata": 0,
+      "orbit_only_total_excluding_discovery_of_units": 0,
+      "Green_metadata_cost_not_counted": true,
+      "all_predictions_match": true
+    },
+    {
+      "size": 3,
+      "monoids": 11,
+      "baseline_queries": 99,
+      "nonunit_pair_bound_sum": 34,
+      "orbit_preprocessing_queries": 4,
+      "orbit_only_queries_with_precomputed_metadata": 16,
+      "orbit_and_Green_queries_with_precomputed_metadata": 12,
+      "orbit_only_total_excluding_discovery_of_units": 20,
+      "Green_metadata_cost_not_counted": true,
+      "all_predictions_match": true
+    },
+    {
+      "size": 4,
+      "monoids": 156,
+      "baseline_queries": 2496,
+      "nonunit_pair_bound_sum": 1164,
+      "orbit_preprocessing_queries": 156,
+      "orbit_only_queries_with_precomputed_metadata": 930,
+      "orbit_and_Green_queries_with_precomputed_metadata": 498,
+      "orbit_only_total_excluding_discovery_of_units": 1086,
+      "Green_metadata_cost_not_counted": true,
+      "all_predictions_match": true
+    }
+  ],
+  "hard_family": [
+    {
+      "k": 1,
+      "size": 8,
+      "independent_blocks": 1,
+      "base_E": [
+        6
+      ],
+      "all_changed_variants_E_empty": true,
+      "orbit_bound": 9,
+      "base_orbit_queries": 4
+    },
+    {
+      "k": 2,
+      "size": 11,
+      "independent_blocks": 4,
+      "base_E": [
+        9
+      ],
+      "all_changed_variants_E_empty": true,
+      "orbit_bound": 16,
+      "base_orbit_queries": 9
+    },
+    {
+      "k": 3,
+      "size": 14,
+      "independent_blocks": 9,
+      "base_E": [
+        12
+      ],
+      "all_changed_variants_E_empty": true,
+      "orbit_bound": 25,
+      "base_orbit_queries": 16
+    },
+    {
+      "k": 4,
+      "size": 17,
+      "independent_blocks": 16,
+      "base_E": [
+        15
+      ],
+      "all_changed_variants_E_empty": true,
+      "orbit_bound": 36,
+      "base_orbit_queries": 25
+    }
+  ],
+  "note": "Counts exclude supplied metadata unless preprocessing is explicitly reported."
+}
