@@ -1,0 +1,21 @@
+{
+  "models": 2634,
+  "by_shape": {
+    "chain1": 12,
+    "chain2": 1538,
+    "chain3": 994,
+    "diamond": 90
+  },
+  "histogram": {
+    "1": 28,
+    "2": 1796,
+    "3": 810
+  },
+  "exhaustive_models": 360,
+  "seed_subsets": 99578,
+  "bases_checked": 7149,
+  "translated_classes": 7443,
+  "dependent_edges": 952,
+  "nonnormal_image_models": 140,
+  "unsupported_klein_models": 810
+}

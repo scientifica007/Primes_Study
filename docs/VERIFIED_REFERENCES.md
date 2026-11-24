@@ -160,3 +160,6 @@ Halbeisen, Hamilton, Růžička, Minimal generating sets of groups, rings, and f
 
 ## R43 — الدراسة 24
 The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (سجل وملخص، 2008). Inclusive varieties of Clifford semigroups، https://doi.org/10.1007/s00233-025-10593-4، وNearly Complete Generalized Clifford Monoids and Applications، https://doi.org/10.3390/sym17030398 (مقتطفات مسترجعة عن التمثيل الكلاسيكي وخرائط الربط). البحث الأولي لا يحسم أسبقية T93–T97؛ لا قراءة كاملة لهذه المراجع في الدراسة 24. لا ادعاء جدة.
+
+## R44 — الدراسة 25
+[Inclusive varieties of Clifford semigroups](https://doi.org/10.1007/s00233-025-10593-4) و[Nearly Complete Generalized Clifford Monoids and Applications](https://doi.org/10.3390/sym17030398): نتائج بحث مسترجعة تؤكد التمثيل الكلاسيكي؛ لا قراءة كاملة في هذه الجلسة. بحث periodic Clifford / strong semilattice / relative generating sets لم يحسم أسبقية T98–T101. تلوين الغابة وعد الأسس أدوات كلاسيكية؛ لا ادعاء جدة تاريخية.

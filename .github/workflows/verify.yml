@@ -15,6 +15,10 @@ jobs:
           python-version: "3.11"
       - name: Run reproducibility tests
         run: python3 -m unittest discover -s tests -v
+      - name: Recompute Study 25 periodic Clifford certificates (Node.js)
+        run: |
+          node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
+          diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
       - name: Recompute finite-system statistics
         run: python3 experiments/finite_binary_systems.py --max-size 4 --output /tmp/finite-recomputed.json
       - name: Check first checked-in result

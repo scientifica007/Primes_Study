@@ -108,3 +108,6 @@ A subsequent proof classifies depth three exactly by the existence of a whole gr
 
 ## Addendum (Study 21): stronger arity theorem and shorter proof
 The bound three now follows without Green/Rees theory or associativity: for positive-arity operations of arity at most d and finite generation, d+1 inclusion-minimal generating sets suffice; without finite generation, d+1 ordinary generating sets suffice (ZFC). See [the direct general proof](T77-bounded-arity-intersections.md). Thus the bound itself is not specific to semigroups. The exact finite-semigroup classification T74 remains separate. The new result and its simpler proof require their own priority audit; this historical draft has not been submitted.
+
+## Addendum (Study 25): periodic Clifford semigroups
+For arbitrary strong semilattices of torsion groups with an irredundant positive-semigroup generating set, the exact depth-three obstruction is again a whole local Klein four-group with trivial subgroup of images from strictly higher groups. A simultaneous left-translation construction uses a forest of donor classes and never assumes a normal incoming subgroup, reverse well-foundedness, or refinement. The ordinary and irredundant depths agree. See [Study 25](../docs/35-experiment-25-periodic-clifford-depth.md). This is not a theorem for all infinite semigroups.
