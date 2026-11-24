@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 36 relative structural irredundance (Node.js)
+        run: |
+          node experiments/rees_relative_sources.js > /tmp/rees-relative-recomputed.json
+          diff -u results/rees_relative_sources_study36.json /tmp/rees-relative-recomputed.json
       - name: Recompute Study 35 transition cycles and cardinal core (Node.js)
         run: |
           node experiments/rees_transition_cardinal.js > /tmp/rees-transition-recomputed.json

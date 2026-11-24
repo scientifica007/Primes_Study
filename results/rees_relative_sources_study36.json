@@ -1,0 +1,16 @@
+{
+  "study": 36,
+  "graph_models": 4096,
+  "graph_seed_cases": 65536,
+  "graph_subset_cases": 1048576,
+  "minimal_covers": 74197,
+  "relative_rees_models": 24,
+  "stars": 48,
+  "irredundance_deletions": 192,
+  "anchors_removed": 48,
+  "associativity_triples": 1000000,
+  "min_action_truncations": 8,
+  "non_top_non_anchor_rows_reachable_from_top": 44,
+  "all_passed": true,
+  "scope": "All loop-free directed graphs on 4 labelled vertices; cyclic groups C4,C6,C8, three row orbits, two column orbits, two phases each, four block-constant normalized sandwich matrices and two upper twists. Finite capacity analogue of cardinal star; not exhaustive over semigroups, nonabelian groups or infinite cardinals. Min-action test is reachability only."
+}

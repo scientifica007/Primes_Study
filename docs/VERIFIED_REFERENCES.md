@@ -193,3 +193,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R54 — الدراسة 35
 مراجعة مقتطفات البحث: [Gray–Ruškuc، Generating Sets of Completely 0-Simple Semigroups](https://doi.org/10.1080/00927870500276676) الرتبة المنتهية؛ [On the rank of completely 0-simple semigroups](https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/on-the-rank-of-completely-0simple-semigroups/ACCF9BDBEC950334118D5C7FE4772E895) الرتبة وزمرة معاملات؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees والرسم الثنائي. لم تُقرأ النصوص كاملة؛ أسبقية T151–T155 غير محسومة، وأدوات المسارات والأوزان معروفة في الأدبيات القريبة.
+
+## R55 — الدراسة 36
+بحث مقتطفات عن irredundant/minimal generating sets of infinite completely simple semigroups, disjoint generating sets, relative rank, positive generation, Graham–Houghton graphs. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280) رتبة منتهية؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) تمثيل Rees اللانهائي المتجانس؛ [Random ubiquitous transformation semigroups](https://link.springer.com/article/10.1007/s00233-018-09992-7) أحجام القواعد غير الزائدة. لا قراءة كاملة ولا تطابق صريح مسترجع مع T154/T157، ولا ادعاء أسبقية. [الدراسة](46-experiment-36-relative-structural-irredundance.md).

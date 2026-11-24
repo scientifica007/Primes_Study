@@ -32,17 +32,30 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T155_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T158_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,156)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,159)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 155)
+        self.assertEqual(len(registry), 158)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study36_relative_sources(self):
+        study = (ROOT / "docs" / "46-experiment-36-relative-structural-irredundance.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "rees_relative_sources_study36.json").read_text(encoding="utf-8"))
+        for n in range(156,159):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["graph_models"], 4096)
+        self.assertEqual(data["graph_subset_cases"], 1048576)
+        self.assertEqual(data["relative_rees_models"], 24)
+        import hashlib
+        raw = (ROOT / "docs" / "00-original-formulation.md").read_bytes()
+        self.assertEqual(hashlib.sha1(f"blob {len(raw)}\0".encode()+raw).hexdigest(), "77efa7c5687302ebbd020a9c39f7099876eebe90")
 
     def test_new_T28_has_full_study_and_reproducible_census(self):
         import json
