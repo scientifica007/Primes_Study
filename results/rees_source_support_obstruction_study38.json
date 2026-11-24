@@ -1,0 +1,15 @@
+{
+  "study": 38,
+  "models": 16,
+  "closedDonorCases": 5440,
+  "rectangleCases": 5440,
+  "properMonoidCases": 208,
+  "inverseChecks": 31936,
+  "crossUpperProducts": 115952,
+  "assocTriples": 287496,
+  "restrictedPairs": 23490,
+  "restrictedClosureCases": 15,
+  "reachCases": 30,
+  "all_passed": true,
+  "scope": "Finite Rees ideal with two incomparable upper groups mapping into distinct local cells; all inversion-closed donor subsets for C3,C4,C6,S3 and four sandwich patterns. Truncated row-map example checks the invariant only; the imposed top restriction is not the source condition of a finite chain. No exhaustive test of infinite groups."
+}

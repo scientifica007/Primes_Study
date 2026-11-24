@@ -199,3 +199,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R56 — الدراسة 37
 بحث فعلي عن independent replacements / irredundant generating sets / infinite Rees matrix. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676) رتبة المنتهي؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) تمثيل Rees؛ [Random ubiquitous transformation semigroups](https://link.springer.com/article/10.1007/s00233-018-09992-7) أحجام القواعد؛ [On Independence and Minimal Generating Set in Semigroups and Countable Systems of Semigroups](https://journal.tnsmb.org/index.php/ijmam/article/view/89) ملخص عن الاستقلالية والخوارزميات. مقتطفات/ملخصات، لا قراءة كاملة ولا حسم للأسبقية T159–T161. [الدراسة](47-experiment-37-cardinal-star-flexibility.md).
+
+## R57 — الدراسة 38
+بحث مقتطفات عن relative rank / irredundant generation / Rees translations: [GAP Semigroups §18](https://semigroups.github.io/Semigroups/doc/chap18_mj.html) الترجمات؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees؛ [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280) الرتبة المنتهية؛ [Random ubiquitous transformation semigroups](https://link.springer.com/article/10.1007/s00233-018-09992-7) عدم الزيادة. لا قراءة كاملة ولا حسم أسبقية T162–T164. [الدراسة](48-experiment-38-source-support-obstruction.md).

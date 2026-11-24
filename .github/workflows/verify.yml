@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 38 source-support obstruction (Node.js)
+        run: |
+          node experiments/rees_source_support_obstruction.js > /tmp/rees-source-support.json
+          diff -u results/rees_source_support_obstruction_study38.json /tmp/rees-source-support.json
       - name: Recompute Study 37 flexible cardinal stars (Node.js)
         run: |
           node experiments/rees_star_flexibility.js > /tmp/rees-star-flexibility.json
