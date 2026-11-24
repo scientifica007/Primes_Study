@@ -163,3 +163,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R44 — الدراسة 25
 [Inclusive varieties of Clifford semigroups](https://doi.org/10.1007/s00233-025-10593-4) و[Nearly Complete Generalized Clifford Monoids and Applications](https://doi.org/10.3390/sym17030398): نتائج بحث مسترجعة تؤكد التمثيل الكلاسيكي؛ لا قراءة كاملة في هذه الجلسة. بحث periodic Clifford / strong semilattice / relative generating sets لم يحسم أسبقية T98–T101. تلوين الغابة وعد الأسس أدوات كلاسيكية؛ لا ادعاء جدة تاريخية.
+
+## R45 — الدراسة 26
+بحث ويب فعلي: infinite acyclic directed graph finite outdegree two coloring no infinite monochromatic directed path؛ strong semilattice of groups semigroup generating set positive generation Clifford semigroup rank infinite. https://doi.org/10.1007/s00233-025-10593-4 وhttps://doi.org/10.3390/sym17030398 (مقتطفات تؤكد التمثيل الكلاسيكي). https://www.sciencedirect.com/science/article/pii/0095895682900478 (تلوين حواف لا رؤوس) وhttps://escholarship.org/uc/item/7w93q45v (سجل عن measurable directed graph colouring). لم تظهر صيغة T104/T105 نفسها في النتائج المسترجعة، لا إثبات أسبقية ولا قراءة كاملة للنصوص المذكورة.

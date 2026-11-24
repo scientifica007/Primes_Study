@@ -1,0 +1,83 @@
+{
+  "study": 26,
+  "dag_census": [
+    {
+      "vertices": 1,
+      "graphs": 1,
+      "layering_checks": 3,
+      "max_outdegree": 0
+    },
+    {
+      "vertices": 2,
+      "graphs": 2,
+      "layering_checks": 6,
+      "max_outdegree": 1
+    },
+    {
+      "vertices": 3,
+      "graphs": 8,
+      "layering_checks": 24,
+      "max_outdegree": 2
+    },
+    {
+      "vertices": 4,
+      "graphs": 64,
+      "layering_checks": 192,
+      "max_outdegree": 3
+    },
+    {
+      "vertices": 5,
+      "graphs": 1024,
+      "layering_checks": 3072,
+      "max_outdegree": 4
+    },
+    {
+      "vertices": 6,
+      "graphs": 32768,
+      "layering_checks": 98304,
+      "max_outdegree": 5
+    }
+  ],
+  "dag_total": 33867,
+  "layering_checks": 101601,
+  "integer_chain_census": [
+    {
+      "layers": 1,
+      "models": 1,
+      "bases_checked": 4,
+      "dependency_edges": 0,
+      "max_inverse_word_length": 0
+    },
+    {
+      "layers": 2,
+      "models": 5,
+      "bases_checked": 20,
+      "dependency_edges": 0,
+      "max_inverse_word_length": 4
+    },
+    {
+      "layers": 3,
+      "models": 25,
+      "bases_checked": 100,
+      "dependency_edges": 40,
+      "max_inverse_word_length": 5
+    },
+    {
+      "layers": 4,
+      "models": 125,
+      "bases_checked": 500,
+      "dependency_edges": 544,
+      "max_inverse_word_length": 6
+    },
+    {
+      "layers": 5,
+      "models": 625,
+      "bases_checked": 2500,
+      "dependency_edges": 4852,
+      "max_inverse_word_length": 7
+    }
+  ],
+  "integer_models": 781,
+  "integer_bases": 3124,
+  "note": "Integer local groups are infinite; generation checks use the exact gcd-and-sign criterion, not finite quotients. Finite layer counts only; arbitrary carriers follow from proof."
+}
