@@ -18,11 +18,12 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Resolve pinned Mathlib and get cached builds
+      - name: Use locked Mathlib dependencies and get cached builds
         run: |
           lean --version
-          lake update
+          echo '81a1d1b081d2bf0119c0ec23caed9090145aa2e4a52d33b3c451b970ff66f85d  lake-manifest.json' | sha256sum --check
           lake exe cache get
+          git diff --exit-code -- lake-manifest.json
       - name: Check local proof sources for prohibited placeholders
         run: |
           if grep -REn '\b(sorry|admit|sorryAx|axiom|unsafe)\b' --include='*.lean' RelationalPrimality RelationalPrimality.lean; then

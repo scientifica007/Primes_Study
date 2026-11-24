@@ -24,12 +24,11 @@
 ## التشغيل
 Lean وMathlib مثبتان على إصدار v4.19.0 المتوافق؛ ليس ادعاء بأنه الأحدث. من مجلد formal/:
 ```sh
-lake update
 lake exe cache get
 lake build
 lake env lean RelationalPrimality/Foundations.lean
 ```
-ملف lake-manifest.json وُلّد في CI، لكن رفعه فشل بسبب حصة التخزين؛ سيُسترجع من سجل التشغيل الجديد لتثبيته في Git. لم يُثبّت بعد. انظر [سجل القضايا](THEOREM_STATUS.csv) و[سير العمل](../.github/workflows/formal-verification.yml).
+استُرجع ملف lake-manifest.json من سجل CI الناجح FV06 وثُبّت في Git؛ يفحص CI بصمته الرقمية قبل البناء. لا يُشغّل lake update إلا عند تحديث التبعيات عمدًا. انظر [سجل القضايا](THEOREM_STATUS.csv) و[سير العمل](../.github/workflows/formal-verification.yml).
 
 ## FV03
 [الدفعة الثالثة](reviews/FV03-2026-11-24.md): أساس التوليد والمجموعات الدنيا بالاحتواء، وجسر T13 للعمليات الحدية، والشق المنطقي من T53. هذه مسودات غير معتمدة حتى نجاح CI والمراجعة. سجل T53 لا يعلن إثباته كاملا.
@@ -42,3 +41,6 @@ lake env lean RelationalPrimality/Foundations.lean
 
 ## FV06
 [شهادة التحقق وإصلاح التخزين](reviews/FV06-2026-11-24.md): سبع قضايا مغطاة، 19 تصريحا مدققا، لا مسلمات غير قياسية. لا إضافة براهين جديدة؛ إصلاح الأرشفة دون المساس بالتدقيق.
+
+## تثبيت التبعيات — 24/11/2026
+[تشغيل FV06 الناجح](https://github.com/scientifica007/Primes_Study/actions/runs/45475937337)؛ استُرجع manifest ذو 9 حزم، وتحقق التشغيل التالي من مطابقة بصمة SHA256 المسجلة شرطًا قبل البناء. لا تغيير في البراهين.
