@@ -284,11 +284,48 @@ def report():
             "note":"Counts exclude supplied metadata unless preprocessing is explicitly reported."}
 
 
+def catalogue_report():
+    from tempfile import TemporaryDirectory
+    from urllib.request import urlopen
+    from match_smallsemi_catalogue import (
+        UPSTREAM_URL, EXPECTED_SHA256, catalogue_details, tables_to_flat,
+    )
+    with TemporaryDirectory() as tmp:
+        p=Path(tmp)/"catalogue.json"
+        with urlopen(UPSTREAM_URL,timeout=120) as response:
+            p.write_bytes(response.read())
+        data,_=catalogue_details(p)
+    rows=[]
+    e_empty=0
+    no_queries={"orbit_only":0,"orbit_and_Green":0}
+    for rec in data["semigroups"]:
+        table=tables_to_flat(rec["table"],1)
+        try:
+            e=identity(table,6)
+        except ValueError:
+            continue
+        row=audit_table(table,e)
+        rows.append(row)
+        if not row["E"]:
+            e_empty+=1
+        for name in no_queries:
+            if row[name]["queries"]==0:
+                no_queries[name]+=1
+    assert len(rows)==1373 and e_empty==9
+    return {"source":"Smallsemi 0.7.2 pinned export",
+            "sha256":EXPECTED_SHA256,
+            "catalogue_semigroups_scanned":len(data["semigroups"]),
+            **summarize(rows),"E_empty_including_groups":e_empty,
+            "monoids_resolved_without_residual_queries":no_queries,
+            "note":"Costs for discovering units or Green metadata are excluded. Counts measure residual oracle calls, not wall-clock speed."}
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output",type=Path)
+    p.add_argument("--catalogue-download",action="store_true")
     args=p.parse_args()
-    out=json.dumps(report(),indent=2)+"\n"
+    out=json.dumps(catalogue_report() if args.catalogue_download else report(),indent=2)+"\n"
     if args.output:
         args.output.write_text(out,encoding="utf-8")
     else:
