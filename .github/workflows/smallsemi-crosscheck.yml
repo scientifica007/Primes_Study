@@ -8,6 +8,8 @@ on:
       - 'experiments/match_smallsemi_catalogue.py'
       - 'experiments/green_structural_monoids.py'
       - 'experiments/green_smallsemi_audit.py'
+      - 'experiments/layered_oracle_decision.py'
+      - 'results/layered_oracle_smallsemi_order6.json'
       - 'results/green_smallsemi_order6_audit.json'
       - 'experiments/check_smallsemi_ids_direct.g'
       - 'tests/test_match_smallsemi_catalogue.py'
@@ -51,6 +53,25 @@ jobs:
           expected=json.loads(Path('results/green_smallsemi_order6_audit.json').read_text())
           assert x == expected, 'Full external Green-J report differs from committed audit data'
           print("PASS: Green-J report also matches checked-in reproducible results.")
+          PY
+      - name: Benchmark study twelve oracle reductions on all Smallsemi monoids
+        run: |
+          python3 experiments/layered_oracle_decision.py --catalogue-download \
+            --output /tmp/layered-oracle-smallsemi.json
+          cat /tmp/layered-oracle-smallsemi.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/layered-oracle-smallsemi.json').read_text())
+          assert d['catalogue_semigroups_scanned']==15973
+          assert d['monoids']==1373 and d['E_empty_including_groups']==9
+          assert d['all_predictions_match']
+          assert d['orbit_only_queries_with_precomputed_metadata']<=d['nonunit_pair_bound_sum']
+          assert d['orbit_and_Green_queries_with_precomputed_metadata']<=d['nonunit_pair_bound_sum']
+          saved=Path('results/layered_oracle_smallsemi_order6.json')
+          if saved.exists():
+              assert d==json.loads(saved.read_text())
+          print('PASS: full independent Smallsemi oracle-count audit.')
           PY
       - name: Present exact IDs and cross-validation summary
         run: |
