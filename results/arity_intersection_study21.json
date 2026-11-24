@@ -1,0 +1,104 @@
+{
+  "study": "T77-T82",
+  "finite_census": [
+    {
+      "n": 1,
+      "arity": 2,
+      "tables": 1,
+      "depth_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 2,
+      "arity": 2,
+      "tables": 16,
+      "depth_histogram": {
+        "1": 12,
+        "2": 4
+      }
+    },
+    {
+      "n": 3,
+      "arity": 2,
+      "tables": 19683,
+      "depth_histogram": {
+        "1": 7648,
+        "2": 11910,
+        "3": 125
+      }
+    },
+    {
+      "n": 2,
+      "arity": 3,
+      "tables": 256,
+      "depth_histogram": {
+        "1": 192,
+        "2": 64
+      }
+    }
+  ],
+  "total_tables": 19956,
+  "sharp_examples": [
+    {
+      "arity": 1,
+      "carrier": 2,
+      "depth": 2
+    },
+    {
+      "arity": 2,
+      "carrier": 3,
+      "depth": 3
+    },
+    {
+      "arity": 3,
+      "carrier": 4,
+      "depth": 4
+    },
+    {
+      "arity": 4,
+      "carrier": 5,
+      "depth": 5
+    },
+    {
+      "arity": 5,
+      "carrier": 6,
+      "depth": 6
+    },
+    {
+      "arity": 6,
+      "carrier": 7,
+      "depth": 7
+    },
+    {
+      "arity": 7,
+      "carrier": 8,
+      "depth": 8
+    },
+    {
+      "arity": 8,
+      "carrier": 9,
+      "depth": 9
+    },
+    {
+      "arity": 9,
+      "carrier": 10,
+      "depth": 10
+    },
+    {
+      "arity": 10,
+      "carrier": 11,
+      "depth": 11
+    },
+    {
+      "arity": 11,
+      "carrier": 12,
+      "depth": 12
+    },
+    {
+      "arity": 12,
+      "carrier": 13,
+      "depth": 13
+    }
+  ]
+}

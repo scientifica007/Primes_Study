@@ -105,3 +105,6 @@ The finite and associative hypotheses are essential to the proof. No result abou
 
 ## Addendum: exact depth classification (Study 20)
 A subsequent proof classifies depth three exactly by the existence of a whole group J-class isomorphic to the Klein four-group on which all higher elements that multiply its identity into the class act trivially. All other regular non-group classes admit two local choices with intersection equal to the indispensable part. See [Study 20](../docs/30-experiment-20-intersection-depth-classification.md). This stronger result is not yet integrated into the audited v0.1 theorem; it needs its own independent priority and proof audit.
+
+## Addendum (Study 21): stronger arity theorem and shorter proof
+The bound three now follows without Green/Rees theory or associativity: for positive-arity operations of arity at most d and finite generation, d+1 inclusion-minimal generating sets suffice; without finite generation, d+1 ordinary generating sets suffice (ZFC). See [the direct general proof](T77-bounded-arity-intersections.md). Thus the bound itself is not specific to semigroups. The exact finite-semigroup classification T74 remains separate. The new result and its simpler proof require their own priority audit; this historical draft has not been submitted.

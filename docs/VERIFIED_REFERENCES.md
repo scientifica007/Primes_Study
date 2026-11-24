@@ -148,3 +148,6 @@ Donoven–Mitchell–Wilson [النص الكامل](https://arxiv.org/pdf/1606.0
 
 ## R39 — دراسة 20، التصنيف
 König (1931), [ترجمة النص الكلاسيكي](https://arxiv.org/abs/2009.03780)؛ تطابق حجم المطابقة وغطاء الرؤوس في الرسم الثنائي (T73). Gray [arXiv:1307.8280](https://arxiv.org/abs/1307.8280)، وأدبيات Graham–Houghton/Gray–Ruškuc؛ البحث الأولي لا يحسم أسبقية T74. راجع الدراسة 20. سجل GAP الدراسة 19: [التشغيل الفعلي](https://github.com/scientifica007/Primes_Study/actions/runs/45344229021/job/138274813448)؛ PASS 17282، مع خطأ تهيئة رسائل غير قاتل أزيل في الدراسة 20.
+
+## R40 — المدخلية واللانهاية (الدراسة 21)
+Burris–Sankappanavar, A Course in Universal Algebra، https://math.hawaii.edu/~ralph/Classes/619/univ-algebra.pdf (سجل البحث ومقتطفات عن irredundant bases وarity، لا قراءة كاملة هنا). Berman–Bordalo (2002) R31. مثال Prüfer على غياب مجموعة توليد دنيا معروف، انظر https://math.stackexchange.com/questions/72682/minimal-sets-of-generators-for-groups (نقاش، ليس بحثًا محكمًا). البحث عن bounded arity/intersection/irreducible وinfinite directed graph colouring لم يحسم أسبقية T77–T79؛ يجب مراجعة الأدبيات المتخصصة. GAP أكد التصنيف T74: https://github.com/scientifica007/Primes_Study/actions/runs/45346324443/job/138281653650 .
