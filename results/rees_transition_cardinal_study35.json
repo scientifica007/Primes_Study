@@ -1,0 +1,11 @@
+{
+  "finite_cycle_models": 5,
+  "nonempty_subsets": 12795,
+  "cycle_criterion_checks": 12795,
+  "short_cycle_group_checks": 12795,
+  "finite_disjoint_star_pairs": 16,
+  "irredundance_deletions": 160,
+  "free_group_positive_words": 980,
+  "anchor_letter_checks": 4228,
+  "scope": "Finite cyclic exhaustive fixtures, finite proper-subgroup star fixtures, exact words in a countably generated free group with infinite-rank sandwich; no exhaustive infinite validation."
+}

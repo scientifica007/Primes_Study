@@ -190,3 +190,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R53 — الدراسة 34
 [Jarden، مقدمة](https://www.math.tau.ac.il/~jarden/Articles/paper81.pdf) (مقتطف البحث عن نتيجة Karrass–Solitar حول الزمر الحرة المجردة)؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) و[Rectangular group congruences](https://link.springer.com/article/10.1007/s00233-012-9426-y) (مقتطفات البحث). لا قراءة كاملة لملفات PDF، ولا حسم أسبقية T146–T150.
+
+## R54 — الدراسة 35
+مراجعة مقتطفات البحث: [Gray–Ruškuc، Generating Sets of Completely 0-Simple Semigroups](https://doi.org/10.1080/00927870500276676) الرتبة المنتهية؛ [On the rank of completely 0-simple semigroups](https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/on-the-rank-of-completely-0simple-semigroups/ACCF9BDBEC950334118D5C7FE4772E895) الرتبة وزمرة معاملات؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) Rees والرسم الثنائي. لم تُقرأ النصوص كاملة؛ أسبقية T151–T155 غير محسومة، وأدوات المسارات والأوزان معروفة في الأدبيات القريبة.
