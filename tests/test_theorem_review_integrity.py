@@ -32,15 +32,15 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T42_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T46_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,43)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,47)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 42)
+        self.assertEqual(len(registry), 46)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
 
@@ -76,6 +76,19 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
         self.assertEqual(data["examples"]["B"]["E"], [])
         self.assertEqual(data["exhaustive_cyclic_chain"]["two_layers"]["systems"],24)
         self.assertEqual(data["exhaustive_cyclic_chain"]["three_layers"]["systems"],152)
+
+    def test_layered_oracle_study_ledger(self):
+        doc = (ROOT / "docs" / "19-experiment-12-layered-oracle-complexity.md").read_text(encoding="utf-8")
+        small = json.loads((ROOT / "results" / "layered_oracle_study12.json").read_text(encoding="utf-8"))
+        external = json.loads((ROOT / "results" / "layered_oracle_smallsemi_order6.json").read_text(encoding="utf-8"))
+        for k in range(43,47):
+            self.assertIn(f"T{k}", self.registry)
+            self.assertIn(f"T{k}", doc)
+        self.assertEqual(sum(x["monoids"] for x in small["labelled_small_monoids"]),170)
+        self.assertEqual(external["monoids"],1373)
+        self.assertEqual(external["orbit_and_Green_queries_with_precomputed_metadata"],14123)
+        self.assertTrue(external["Green_metadata_cost_not_counted"])
+        self.assertTrue(external["all_predictions_match"])
 
     def test_priorities_are_complete_and_consistent(self):
         result = Counter(entry["priority"] for entry in self.data["all_theorems"])
