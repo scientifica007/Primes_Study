@@ -1,0 +1,49 @@
+name: Lean formal verification
+on:
+  push:
+    branches: [research/formal-verification]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: formal
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Elan
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned Mathlib and get cached builds
+        run: |
+          lean --version
+          lake update
+          lake exe cache get
+      - name: Check local proof sources for prohibited placeholders
+        run: |
+          if grep -REn '\b(sorry|admit|sorryAx|axiom|unsafe)\b' --include='*.lean' RelationalPrimality RelationalPrimality.lean; then
+            echo "Prohibited token found"
+            exit 1
+          fi
+      - name: Build the formal library
+        run: lake build
+      - name: Audit foundational theorem axiom dependencies
+        run: |
+          set -o pipefail
+          lake env lean RelationalPrimality/Foundations.lean | tee /tmp/formal-axioms.txt
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          out = Path('/tmp/formal-axioms.txt').read_text()
+          allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+          for name in ['T01', 'T02']:
+              m = re.search(r"'(?:RelationalPrimality\.)?" + name + r"' (does not depend on any axioms|depends on axioms: \[([^\]]*)\])", out)
+              assert m, f'Missing axiom audit: {name}: {out}'
+              used = {x.strip() for x in (m.group(2) or '').split(',') if x.strip()}
+              assert used <= allowed, f'{name}: disallowed axioms {used - allowed}'
+              print(name, 'axioms:', sorted(used))
+          PY
