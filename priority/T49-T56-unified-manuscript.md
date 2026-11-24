@@ -208,3 +208,8 @@ The [extension-freedom research note](reviews/P03-extension-freedom-extremal-202
 ## Related shared-target construction (24 November 2026)
 
 The [shared-target research note](reviews/P03-shared-target-extremal-2026-11-24.md) proves a stronger family with a single shared product rectangle, retaining the prescribed statistics and strengthened ideal-extension metadata. For size parameters S=max(s_i), D=sum(s_i), b=C/2, it has n=2Sp+2q+4S+D+1, exact deterministic cost 2pq-b+1 and optimal randomized worst-case expected cost (1-2ε)(2pq+1)/(b+1). At L=0 the deterministic leading coefficient improves from 1/648 to 1/32 on the respective order sequences. The global optimum is still open. This is a separate internally checked result with historical priority unresolved.
+
+
+## Related dependency-graph upper bound (24 November 2026)
+
+The [dependency-graph research note](reviews/P03-dependency-upper-bound-2026-11-24.md) proves a universal deterministic upper bound of floor(a(a−1)/2) for emptiness under the same strengthened metadata, where a counts nonunits outside the designated ideal. For c ambiguous targets, the bound is half the size of their union of possible witness cells, at most floor(min(a(a−1), c floor(a²/4))/2). For a single target with no indispensable elements outside the ideal, floor(a²/8) is sharp along a sequence in the parity-refined T49 family without prescribed rank. It does not resolve the optimal coefficient under the full fixed-statistic promise. Separate internal proof and finite checks; priority unresolved.
