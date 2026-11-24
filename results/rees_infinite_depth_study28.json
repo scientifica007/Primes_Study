@@ -1,0 +1,9 @@
+{
+  "matrix_cases": 115,
+  "direct_E_witness_targets": 1454,
+  "reversible_shift_checks": 1454,
+  "finite_star_pairs": 3,
+  "infinite_Z_words": 1680,
+  "infinite_Z_complement_witnesses": 21,
+  "scope": "Finite cyclic/S3 models and finitely many actual words in N0 x Z x {0,1}; no exhaustive infinite verification."
+}

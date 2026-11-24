@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 28 Rees certificates (Node.js)
+        run: |
+          node experiments/rees_infinite_depth.js > /tmp/rees-infinite-recomputed.json
+          diff -u results/rees_infinite_depth_study28.json /tmp/rees-infinite-recomputed.json
       - name: Recompute Study 27 local class repair certificates (Node.js)
         run: |
           node experiments/local_class_repair.js > /tmp/local-class-repair-recomputed.json
