@@ -1,0 +1,14 @@
+{
+  "models": 55,
+  "subsets": 46240,
+  "relative_bases": 630,
+  "noncommutative_anchor_identities": 864,
+  "unique_tail_checks": 670,
+  "finite_core_triples": 482,
+  "finite_core_complement_not_generating": 0,
+  "band_triples": 136,
+  "band_private_checks": 355,
+  "one_dimensional_band_triples": 12,
+  "infinite_two_layer_words": 1536,
+  "scope": "Finite test models with upper C2 or singleton idempotent; explicit words in genuine infinite C2 rectangular group extension. Not exhaustive infinite validation."
+}
