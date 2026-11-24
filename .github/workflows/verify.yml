@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 45 adaptive recovery (Node.js)
+        run: |
+          node experiments/adaptive_recovery.js > /tmp/adaptive-recovery.json
+          diff -u results/adaptive_recovery_study45.json /tmp/adaptive-recovery.json
       - name: Recompute Study 44 infinite block synchronization (Node.js)
         run: |
           node experiments/rees_infinite_block_synchronization.js > /tmp/rees-infinite-blocks.json

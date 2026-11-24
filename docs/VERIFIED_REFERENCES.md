@@ -220,3 +220,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R63 — الدراسة 44
 بحث مقتطفات عن infinite directed paths / graph colouring / Rees relative generators. [Gray–Ruškuc](https://doi.org/10.1080/00927870500276676)، [Gray 2014](https://arxiv.org/abs/1307.8280)، [Ayik–Ruškuc](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02)، [Monochromatic infinite paths](https://www.sciencedirect.com/science/article/pii/0012365X9390508Q)، [Quinn-Gregson](https://doi.org/10.1112/mtk.12035). لا قراءة كاملة أو حسم أسبقية. [الدراسة](54-experiment-44-infinite-block-synchronization.md).
+
+## R64 — الدراسة 45
+بحث مقتطفات عن definite Horn rules / forward chaining / reaping number. [A Proof-Theoretic Framework for Logic Programming](https://www.sciencedirect.com/science/article/abs/pii/S0049237X98800244)، [Blass](https://arxiv.org/abs/math/9405202) و[نسخة المؤلف](https://sites.lsa.umich.edu/ablass/wp-content/uploads/sites/1471/2025/10/sccc.pdf)، [Monk](https://euclid.colorado.edu/~monkd/cont_card.pdf). أدوات معروفة؛ لا قراءة كاملة أو إثبات أسبقية. [الدراسة](55-experiment-45-adaptive-recovery.md).

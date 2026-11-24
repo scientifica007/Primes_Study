@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 44 (24/11/2026)
+## آخر دراسة — الدراسة 45 (24/11/2026)
+[الدراسة 45: الاسترجاع التكيفي](docs/55-experiment-45-adaptive-recovery.md) — T188–T191. CI الدراسة 44 ناجح. تراص الدعم لكل هدف، تلوين الكتل المعدودة، حد 3 بشروط المخطط، معيار الفخاخ وعتبة عدم الانشطار. [التجربة](experiments/adaptive_recovery.js)، [النتائج](results/adaptive_recovery_study45.json). لا حسم عام أو ادعاء جدة.
+
+## الدراسة 44 (24/11/2026)
 [الدراسة 44: تزامن الكتل اللانهائية](docs/54-experiment-44-infinite-block-synchronization.md) — T184–T187. CI الدراسة 43 ناجح. معيار نقاط العبور والشواهد المعدودة، حد 3 بشروط، مثال مضاد بياني ومثال Rees. [التجربة](experiments/rees_infinite_block_synchronization.js)، [النتائج](results/rees_infinite_block_synchronization_study44.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 43 (24/11/2026)
