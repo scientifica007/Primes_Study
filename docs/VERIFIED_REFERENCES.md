@@ -142,3 +142,6 @@ Graham–Graham–Rhodes (1968), https://www.sciencedirect.com/science/article/p
 
 ## R37 — تصنيف مكملات أشباه الزمر الجزئية القصوى (الدراسة 18)
 Donoven–Mitchell–Wilson (2018), Computing maximal subsemigroups of a finite semigroup, J. Algebra 505, 559–596، https://arxiv.org/abs/1606.05583 ، https://doi.org/10.1016/j.jalgebra.2018.01.044 . تمت مراجعة الصفحة 3 والقضية 1.4 (b,c) من النص الكامل المتاح، وهي الأساس المباشر لـT68. التصنيف مبني على Graham–Graham–Rhodes (1968). بحث أولي بعبارات three generating sets/intersection/indispensable لم يكشف صياغة T69، ولا يكفي لإثبات الجدة. يلزم تدقيق أسبقية متخصص مستقل.
+
+## R38 — إعادة تدقيق T69 (الدراسة 19)
+Donoven–Mitchell–Wilson [النص الكامل](https://arxiv.org/pdf/1606.05583)، ص 2 و3، Lemma 1.2 وPropositions 1.4–1.5: إعادة فحص بصري في الدراسة 19. استغنى البرهان المباشر عن التصنيف. راجع [سجل البحث والأسبقية](29-study-19-triple-intersection-referee-audit.md). لا ادعاء جدة.

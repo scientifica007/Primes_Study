@@ -1,0 +1,34 @@
+{
+  "study": "19",
+  "method": "Independent JavaScript exhaustive associative tables; all subsets and exact intersection depth, no identity assumption",
+  "rows": [
+    {
+      "n": 1,
+      "candidate_tables": 1,
+      "associative_tables": 1,
+      "depth_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 2,
+      "candidate_tables": 16,
+      "associative_tables": 8,
+      "depth_histogram": {
+        "1": 8
+      }
+    },
+    {
+      "n": 3,
+      "candidate_tables": 19683,
+      "associative_tables": 113,
+      "depth_histogram": {
+        "1": 110,
+        "2": 3
+      }
+    }
+  ],
+  "total_tables": 122,
+  "all_passed": true,
+  "smallsemi_gap_status": "Workflow added; check run logs for actual outcome, not claimed here."
+}

@@ -12,6 +12,7 @@ on:
       - 'results/layered_oracle_smallsemi_order6.json'
       - 'results/green_smallsemi_order6_audit.json'
       - 'experiments/check_smallsemi_ids_direct.g'
+      - 'experiments/verify_triple_intersection_smallsemi.g'
       - 'tests/test_match_smallsemi_catalogue.py'
       - 'results/minimal_monoids_order6.json'
       - 'results/smallsemi_catalogue_mapping_2026-11-23.json'
@@ -137,3 +138,6 @@ jobs:
             "22784de79fc9a182d600781e60c7cb5d8f06ebfc"
       - name: Verify all ten IDs from GAP itself
         run: gap -q -b < experiments/check_smallsemi_ids_direct.g
+
+      - name: Independently verify T69 over every Smallsemi representative of orders 1 through 6
+        run: gap -q -b < experiments/verify_triple_intersection_smallsemi.g
