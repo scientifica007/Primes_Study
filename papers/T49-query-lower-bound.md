@@ -153,3 +153,8 @@ Code: [Python](../experiments/green_metadata_adversary.py), [GAP](../experiments
 
 10. J. Schmid, Nongenerators, genuine generators and irreducibles, *Houston Journal of Mathematics* **25** (1999), 405–416. [Text](https://citeseerx.ist.psu.edu/document?doi=9d7ec08426729e2b97d6978c59a2802b837ec3bb&repid=rep1&type=pdf). Section 3, Fact 3.1; extracted text examined.
 11. A. Pasini, On the Frattini subalgebra Φ(A) of an algebra A, *Boll. Unione Mat. Ital.*, Ser. IV **12** (1975), 37–40. Cited by Schmid [10], reference [18]; original full text not examined.
+
+
+## Addendum (24 November 2026): fixed generating rank
+
+The rank caveat above remains valid for Theorem 1's original family. A subsequent construction in [Study 14](../docs/24-experiment-14-fixed-rank-oracle-bound.md) combines two orthogonal nonunit ideals, one multiplied by C3, with shared C12 units and a new zero. Under the promise that exactly one of two Boolean matrices is nonzero, the order is 8(p+q)+21, the generating rank is 2(p+q)+2 independent of the matrices, and the original fixed metadata remain fixed. The deterministic promised query complexity is exactly pq; a bounded-error expected randomized lower bound is (1/2−ε)pq. This extension needs its own priority review before integration into a revised submission draft. No novelty claim is made.

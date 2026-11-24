@@ -203,6 +203,11 @@ jobs:
           python3 experiments/green_metadata_adversary.py > /tmp/green-adversary.json
           diff -u results/green_metadata_adversary_study13.json /tmp/green-adversary.json
 
+      - name: Reproduce study fourteen fixed rank lower bound
+        run: |
+          python3 experiments/fixed_rank_oracle.py > /tmp/fixed-rank.json
+          diff -u results/fixed_rank_oracle_study14.json /tmp/fixed-rank.json
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest

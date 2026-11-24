@@ -1,0 +1,73 @@
+{
+  "study": "T50-T52",
+  "rows": [
+    {
+      "p": 1,
+      "q": 1,
+      "n": 37,
+      "rank": 6,
+      "complete_promise": true,
+      "tables_verified": 2,
+      "E_empty_tables": 1,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    },
+    {
+      "p": 1,
+      "q": 2,
+      "n": 45,
+      "rank": 8,
+      "complete_promise": true,
+      "tables_verified": 6,
+      "E_empty_tables": 3,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "n": 45,
+      "rank": 8,
+      "complete_promise": true,
+      "tables_verified": 6,
+      "E_empty_tables": 3,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    },
+    {
+      "p": 2,
+      "q": 2,
+      "n": 53,
+      "rank": 10,
+      "complete_promise": true,
+      "tables_verified": 30,
+      "E_empty_tables": 15,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "n": 61,
+      "rank": 12,
+      "complete_promise": true,
+      "tables_verified": 126,
+      "E_empty_tables": 63,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    },
+    {
+      "p": 3,
+      "q": 3,
+      "n": 69,
+      "rank": 14,
+      "complete_promise": false,
+      "tables_verified": 18,
+      "E_empty_tables": 9,
+      "identical_metadata": true,
+      "rank_lower_and_upper_certificates": true
+    }
+  ],
+  "total_tables_verified": 188,
+  "note": "Labelled tables; complete promise in specified sizes, single-bit nonzero matrices at 3x3."
+}
