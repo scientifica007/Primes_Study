@@ -32,15 +32,15 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T145_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T150_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,146)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,151)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 145)
+        self.assertEqual(len(registry), 150)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
 

@@ -1,0 +1,11 @@
+{
+  "mixed_patterns": 12,
+  "positive_target_words": 4704,
+  "quotient_lift_checks": 2352,
+  "normal_kernel_decompositions": 15660,
+  "normal_conjugate_factors": 16149,
+  "non_normal_subgroup_target_words": 2352,
+  "associativity_checks": 6144,
+  "obstruction_words": 9330,
+  "scope": "Actual reduced words in countably infinite free groups, two-level Rees extensions; finite samples and bounded affine obstruction."
+}

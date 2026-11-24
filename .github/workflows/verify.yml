@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 34 finite local support (Node.js)
+        run: |
+          node experiments/rees_finite_local_support.js > /tmp/rees-support-recomputed.json
+          diff -u results/rees_finite_local_support_study34.json /tmp/rees-support-recomputed.json
       - name: Recompute Study 33 robust core and dependency decomposition (Node.js)
         run: |
           node experiments/rees_robust_core.js > /tmp/rees-robust-recomputed.json
