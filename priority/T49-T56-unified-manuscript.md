@@ -213,3 +213,8 @@ The [shared-target research note](reviews/P03-shared-target-extremal-2026-11-24.
 ## Related dependency-graph upper bound (24 November 2026)
 
 The [dependency-graph research note](reviews/P03-dependency-upper-bound-2026-11-24.md) proves a universal deterministic upper bound of floor(a(a−1)/2) for emptiness under the same strengthened metadata, where a counts nonunits outside the designated ideal. For c ambiguous targets, the bound is half the size of their union of possible witness cells, at most floor(min(a(a−1), c floor(a²/4))/2). For a single target with no indispensable elements outside the ideal, floor(a²/8) is sharp along a sequence in the parity-refined T49 family without prescribed rank. It does not resolve the optimal coefficient under the full fixed-statistic promise. Separate internal proof and finite checks; priority unresolved.
+
+
+## Related two-sided dependency refinement (24 November 2026)
+
+The [two-sided dependency research note](reviews/P03-two-sided-scc-upper-bound-2026-11-24.md) proves that two-cell sink SCCs have disjoint sets of first and second coordinates, and that each reversed cell of such a sink, if relevant, lies in an SCC of size at least four. Charging reverse cells yields the universal deterministic upper bound floor((a(a−1)+floor(a²/16))/3), with leading coefficient 17/48, under the same metadata including the prescribed statistics. Two-cell sinks still occur in the balanced family, even with all exact unary functional dependencies. The optimal global coefficient remains open. This is separate internal mathematical work, not historically certified or externally reviewed.
