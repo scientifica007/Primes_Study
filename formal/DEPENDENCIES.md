@@ -24,3 +24,6 @@
 
 ## FV03 — تبعيات برمجية محددة (مسودات)
 انظر [FV03](reviews/FV03-2026-11-24.md). تم إدراج جسر T13 للحدود الثابتة ومفهوم التوليد ودنيا الاحتواء. لا تزال الصيغة العددية T53 والجسر إلى الكلمات الموجبة في أشباه الزمر قيد العمل. لا ترقيات قبل CI.
+
+## FV07 — T77
+Generated → generated_finite_support + generated_substitute → finite_generating_subset → fg_refinement → E_iff_all_irredundant_fg وT77_rank_bound. DepthCertificate يقيس عددًا موجبًا من القواعد المتميزة وتقاطعها. essentialPart_exact يربط عدد العناصر الضرورية بـ|E|. يبقى حد المدخلية، واختيار قاعدة من رتبة دنيا/ربط الشهادتين بالحد min.

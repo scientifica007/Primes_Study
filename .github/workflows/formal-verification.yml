@@ -40,14 +40,15 @@ jobs:
             lake env lean RelationalPrimality/Monoids.lean &&
             lake env lean RelationalPrimality/Operations.lean &&
             lake env lean RelationalPrimality/Generation.lean &&
-            lake env lean RelationalPrimality/Counting.lean
+            lake env lean RelationalPrimality/Counting.lean &&
+            lake env lean RelationalPrimality/IntersectionDepth.lean
           } | tee /tmp/formal-axioms.txt
           python3 - <<'PY'
           import re
           from pathlib import Path
           out = Path('/tmp/formal-axioms.txt').read_text()
           allowed = {'propext', 'Classical.choice', 'Quot.sound'}
-          for name in ['T01', 'T02', 'T06', 'T11', 'T12', 'T13', 'term_is_derived', 'T13_fixed', 'generated_mono', 'generates_mono', 'generates_complement_iff', 'T53_core', 'E_iff_all_generating', 'finite_refinement', 'E_iff_all_irredundant_finite', 'erase_univ_generates_iff', 'T53_count', 'binary_E_iff', 'binary_generated_iff_word']:
+          for name in ['T01', 'T02', 'T06', 'T11', 'T12', 'T13', 'term_is_derived', 'T13_fixed', 'generated_mono', 'generates_mono', 'generates_complement_iff', 'T53_core', 'E_iff_all_generating', 'finite_refinement', 'E_iff_all_irredundant_finite', 'erase_univ_generates_iff', 'T53_count', 'binary_E_iff', 'binary_generated_iff_word', 'generated_substitute', 'generated_finite_support', 'finite_generating_subset', 'fg_refinement', 'E_iff_all_irredundant_fg', 'essentialPart_exact', 'T77_rank_bound']:
               m = re.search(r"'(?:RelationalPrimality\.)?" + name + r"' (does not depend on any axioms|depends on axioms: \[([^\]]*)\])", out)
               assert m, f'Missing axiom audit: {name}: {out}'
               used = {x.strip() for x in (m.group(2) or '').split(',') if x.strip()}

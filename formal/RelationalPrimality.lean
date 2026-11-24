@@ -3,3 +3,4 @@ import RelationalPrimality.Operations
 import RelationalPrimality.Monoids
 import RelationalPrimality.Generation
 import RelationalPrimality.Counting
+import RelationalPrimality.IntersectionDepth
