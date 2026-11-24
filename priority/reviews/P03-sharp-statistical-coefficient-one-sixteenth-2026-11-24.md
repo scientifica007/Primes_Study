@@ -119,6 +119,8 @@ This is the exact leading limsup coefficient, not a finite-n equality or a proof
 
 ## 7. Literature and record integrity
 
+**Subsequent verification correction:** the search-execution claims below are not supported by the accessible execution record, including the assertion that this round actually searched. Treat the listed items as unverified leads, not a completed literature search. See the [subsequent internal review and verified ledger](P03-internal-referee-full-limit-2026-11-24.md#6-verified-reference-ledger-and-integrity-correction) for actual retrieved sources. This correction does not alter the mathematical argument or recorded code execution.
+
 Actual web searches in THIS round (three broad fast queries and two targeted slow queries):
 - finite semigroup multiplication table oracle query complexity indispensable generators fixed generating rank;
 - finite semigroup Green relations stability Green lemma regular J class cardinality;
