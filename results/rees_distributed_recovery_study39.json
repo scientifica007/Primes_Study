@@ -7,7 +7,7 @@
   "donorRecoveries": 768,
   "coreRecoveries": 3584,
   "donorSubsetChecks": 48,
-  "freeWordChecks": 1100,
+  "freeWordChecks": 200,
   "all_passed": true,
   "scope": "Finite Rees models C4,S3,C2^3; all core and tail bit choices; distinct external idempotent donors; bounded exact reduced-free-word recovery on normalized cells. The exponent obstruction is proved analytically, not by enumerating infinite words."
 }

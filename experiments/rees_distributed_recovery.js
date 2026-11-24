@@ -49,9 +49,6 @@ function experiment(){
   const k=p(p(p(e,b),e),tInv);
   ok(eq(k,[0,[y],0]),"free word anchor");freeWordChecks++;
   ok(eq(p(p(u,k),u),a),"free word transported");freeWordChecks++;
-  // d-exponent 0 forces no negative-tail generator; any positive word
-  // containing b twice cannot have target y-exponent 1.
-  for(let copies=2;copies<=10;copies++){ok(copies!==1,"exponent invariant");freeWordChecks++}
  }
  return {study:39,models,choices,deleteChecks,disjointChecks,donorRecoveries,coreRecoveries,donorSubsetChecks,freeWordChecks,all_passed:true,scope:"Finite Rees models C4,S3,C2^3; all core and tail bit choices; distinct external idempotent donors; bounded exact reduced-free-word recovery on normalized cells. The exponent obstruction is proved analytically, not by enumerating infinite words."};
 }
