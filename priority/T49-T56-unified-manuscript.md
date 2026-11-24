@@ -218,3 +218,8 @@ The [dependency-graph research note](reviews/P03-dependency-upper-bound-2026-11-
 ## Related two-sided dependency refinement (24 November 2026)
 
 The [two-sided dependency research note](reviews/P03-two-sided-scc-upper-bound-2026-11-24.md) proves that two-cell sink SCCs have disjoint sets of first and second coordinates, and that each reversed cell of such a sink, if relevant, lies in an SCC of size at least four. Charging reverse cells yields the universal deterministic upper bound floor((a(a−1)+floor(a²/16))/3), with leading coefficient 17/48, under the same metadata including the prescribed statistics. Two-cell sinks still occur in the balanced family, even with all exact unary functional dependencies. The optimal global coefficient remains open. This is separate internal mathematical work, not historically certified or externally reviewed.
+
+
+## Related joint-statistics and composite-modulus refinement (24 November 2026)
+
+The [joint-statistics research note](reviews/P03-joint-statistics-constraints-2026-11-24.md) proves a necessary-and-sufficient moment signature of generating counts in the null-ideal setting, zero-query recovery criteria for the number of missing singleton classes, and a joint query/inference rule using integer-matrix column bases. It generalizes shared targets to sizes dividing any common modulus S and computes the least such balancing modulus for L=0..10. The leading lower coefficient at L=6 improves from 1/512 to 1/192, while L=0 remains 1/32. These conditional results do not improve the general 17/48 upper bound, and their historical priority and external verification remain open.
