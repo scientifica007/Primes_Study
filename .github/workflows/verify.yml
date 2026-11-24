@@ -198,6 +198,11 @@ jobs:
           print('PASS: exact layered decision and quadratic query lower-bound fixtures.')
           PY
 
+      - name: Recompute study thirteen fixed-Green adversary
+        run: |
+          python3 experiments/green_metadata_adversary.py > /tmp/green-adversary.json
+          diff -u results/green_metadata_adversary_study13.json /tmp/green-adversary.json
+
   independent-gap:
     name: Independent algebra audit (GAP)
     runs-on: ubuntu-latest
@@ -216,3 +221,5 @@ jobs:
         run: gap -q -b < experiments/verify_rees_obstruction.g
       - name: Verify Clifford cross-J linking-map counterexample using GAP
         run: gap -q -b < experiments/verify_clifford_linking_maps.g
+      - name: Independently verify all sixteen 2x2 fixed-Green adversary matrices
+        run: gap -q -b < experiments/verify_green_metadata_adversary.g

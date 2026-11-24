@@ -1,0 +1,127 @@
+{
+  "study": "T47-T49",
+  "rows": [
+    {
+      "p": 1,
+      "q": 1,
+      "n": 10,
+      "independent_bits": 1,
+      "complete_enumeration": true,
+      "tables_verified": 2,
+      "E_empty_tables": 1,
+      "base_E": [
+        8
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 9
+    },
+    {
+      "p": 1,
+      "q": 2,
+      "n": 12,
+      "independent_bits": 2,
+      "complete_enumeration": true,
+      "tables_verified": 4,
+      "E_empty_tables": 3,
+      "base_E": [
+        10
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 20
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "n": 12,
+      "independent_bits": 2,
+      "complete_enumeration": true,
+      "tables_verified": 4,
+      "E_empty_tables": 3,
+      "base_E": [
+        10
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 20
+    },
+    {
+      "p": 2,
+      "q": 2,
+      "n": 14,
+      "independent_bits": 4,
+      "complete_enumeration": true,
+      "tables_verified": 16,
+      "E_empty_tables": 15,
+      "base_E": [
+        12
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 36
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "n": 16,
+      "independent_bits": 6,
+      "complete_enumeration": true,
+      "tables_verified": 64,
+      "E_empty_tables": 63,
+      "base_E": [
+        14
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 56
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "n": 16,
+      "independent_bits": 6,
+      "complete_enumeration": true,
+      "tables_verified": 64,
+      "E_empty_tables": 63,
+      "base_E": [
+        14
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 56
+    },
+    {
+      "p": 3,
+      "q": 3,
+      "n": 18,
+      "independent_bits": 9,
+      "complete_enumeration": true,
+      "tables_verified": 512,
+      "E_empty_tables": 511,
+      "base_E": [
+        16
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 81
+    },
+    {
+      "p": 4,
+      "q": 4,
+      "n": 22,
+      "independent_bits": 16,
+      "complete_enumeration": false,
+      "tables_verified": 17,
+      "E_empty_tables": 16,
+      "base_E": [
+        20
+      ],
+      "fixed_metadata_verified": true,
+      "all_blocks_queried_on_base": true,
+      "orbit_Green_queries_on_base": 144
+    }
+  ],
+  "total_tables_verified": 683,
+  "note": "Labelled tables, not isomorphism classes. Exact oracle lower bound on the promised family is p*q."
+}
