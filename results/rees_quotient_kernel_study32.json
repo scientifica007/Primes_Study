@@ -1,0 +1,12 @@
+{
+  "finite_fixtures": 20,
+  "homomorphism_pairs": 9832,
+  "subsets_examined": 16000,
+  "kernel_saturation_checks": 15733,
+  "shift_invariance_checks": 8388,
+  "noncentral_normal_kernel_checks": 4945,
+  "infinite_rank_positive_words": 1620,
+  "matrix_extraction_words": 1620,
+  "positive_only_obstruction_words": 3905,
+  "scope": "Finite C4/S3 fixtures and upper actions; actual finite-support words in infinite-rank free abelian group. Not exhaustive infinite validation."
+}

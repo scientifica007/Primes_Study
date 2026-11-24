@@ -181,3 +181,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R50 — الدراسة 31
 [Quinn-Gregson، Homogeneous completely simple semigroups](https://doi.org/10.1112/mtk.12035)؛ [GAP reference chapter 51](https://docs.gap-system.org/doc/ref/chap51_mj.html)؛ [On Cayley graphs of rectangular groups](https://www.sciencedirect.com/science/article/pii/S0012365X09004518). مقتطفات بحث عن تمثيل Rees والتطبيع والضرب المباشر للزمرة والمستطيل؛ لم نقرأ النصوص الكاملة. لم يحسم البحث الأولي أسبقية T131–T135. لا ادعاء جدة.
+
+## R51 — الدراسة 32
+[Solvable and (super)nilpotent semigroups with completely simple ideal and (super)nilpotent monoids](https://link.springer.com/article/10.1007/s00233-026-10627-5)، §3، المعادلة (3.2) والبرهان (HTML): توافق N العادية داخل المثالي البسيط كليًا مع العوامل الخارجية معروف؛ [GAP Semigroups manual، §16.6](https://mtorpey.github.io/Semigroups/doc/chap16.html) عن linked triples، Howie §3.5؛ [Quinn-Gregson](https://doi.org/10.1112/mtk.12035) نتيجة بحث عن Rees. قرأنا المقاطع المعنية من المرجعين الأولين، لا النصوص الكاملة. لا ندعي أسبقية التوافق؛ أسبقية T137–T140 غير محسومة.
