@@ -1,0 +1,63 @@
+# P03 — arithmetic statistical thresholds for indispensable-element decision
+24 November 2026. Internal priority and mathematical development. No main changes, no T numbers. No externally reviewed priority claim.
+
+## Source comparison: evidence actually retrieved
+- K. Alladi and P. Erdős, On an additive arithmetic function, Pacific Journal of Mathematics 71(2) (1977), [publisher PDF](https://msp.org/pjm/1977/71-2/pjm-v71-n2-p01-s.pdf). Retrieved text, introduction and opening of Section 2, especially extracted lines 13–20 and 617–618. Their A(n)=sum of prime factors with multiplicity is the modern sopfr(n), and Section 2 explicitly notes A(n)=n iff n is prime or n=4. This function and equality characterization are classical. Cover page successfully displayed visually; not a full-page-by-page inspection. The application below is not attributed to their paper.
+- B. Cha et al., An Investigation on Partitions with Equal Products, [arXiv:1811.07451v1](https://arxiv.org/pdf/1811.07451), deposited 19 November 2018; abstract, introduction (PDF p.2), references (PDF p.12) inspected. Defines admissible triples (sum, product, number of parts) and credits J. B. Kelly, Partitions with equal products, Proc. AMS 15 (1964), 987–990, and Partitions with equal products (II), Proc. AMS 107 (1989), 887–893. Those originals are leads, not full-text reads. This is direct precedence for the arithmetic collision conditions at L=1; the semigroup realization and oracle bound are different questions.
+- Joel Berman, Upper bounds on the sizes of finitely generated algebras, [author PDF](https://www.math.uic.edu/~berman/upper-bounds.pdf). Section 3, Proposition 3.1, Theorem 3.2, Propositions 3.4–3.5, Definition 3.6 and Proposition 3.7 inspected (text lines 316–555). Proposition 3.5 characterizes a partition into compulsory generating blocks via complements that are maximal proper subalgebras, and counts generating tuples for equal-size blocks. This is close classical precedent for transversal generation and block-counting; a generating subset must meet every block, so the product-of-block-factors polynomial is an elementary consequence, not a standalone novelty claim. Our nonregular Green-class local factors specialize this principle, while fixed regular-class factors may be more complicated.
+- A. Lucchini, Generating hypergraphs of finite groups, Ars Combinatoria 161 (2024), 17–28, [PDF](https://combinatorialpress.com/article/ars/Volume%20161/generating-hypergraphs-of-finite-groups.pdf). Section 3 (Theorem 3.1 and Lemma 3.2) inspected, Hall's generating probability and inversion from values to coefficients. Precedence for inverse structural information from generating statistics, but group generating tuples/Dirichlet polynomial are not the P03 partial multiplication oracle.
+- Prouhet–Tarry–Escott equal-power-sum literature: [Mathematics of Computation DOI 10.1090/mcom/3917](https://doi.org/10.1090/mcom/3917), search abstract only. Our moment constraints include selected powers plus prime valuations; no claim to priority for balancing power sums.
+- Search also located Gray's rank paper, and Computing generating sets of minimal size in finite algebras (2023), abstract only, not direct comparison.
+
+Actual searches included "finite semigroup generating polynomial number of generating sets minimal generators enumeration Green classes", "generation polynomial finite algebra generating subsets irreducible generators semigroup probabilistic zeta function", "finite semigroup number of minimum generating sets rank generating sets counting Gray", "generating sets polynomial finite groups generating subsets reliability polynomial independence hypergraph generating probability Möbius", "finite algebra generating set count polynomial generating tuples Möbius inversion subalgebra lattice Hall", "product sum partitions equal product equal sum equal number factors multisets multiplicative partitions", "multisets equal sum product power sums multiplicative partitions equal sums products Prouhet Tarry Escott", "John B Kelly partitions with equal products 1964 1989 mathematics journal", "additive arithmetic function sopfr sum prime factors with multiplicity integer sum prime factors". Screenshot attempts for Cha PDF index 1 and Berman index 7 failed (cache miss); Lucchini index 3 failed (unexpected status). Alladi–Erdos cover index 0 succeeded. The PTE review HTML returned 429; only its search summary was obtained, and it is not needed for the proof. No image assistance presently necessary, since relevant formulas are legible in extracted text. Pin 2026 remains a pending author-copy request, not a completed comparison. No comprehensive specialized database search.
+
+## 1. Model and exact first coefficient
+Use D_red and optionally D* of the sharp manuscript, and additionally supply g_(r+j) for 0<=j<=L (ordinary generating subset counts, not tuples). Denote deterministic exact worst-case decision or cardinality query cost by D_L(n), separately for adaptive and nonadaptive. Coefficients past degree n are zero by definition. The known factor F(w) from regular interior and all exterior classes has leading terms w^r_* (g_*+g_*' w+...). Let D be total size of nonregular interior classes, Z their missing subcollection, b=|Z|, P=product of their sizes, p1=sum of their sizes. Then
+G(w)=F(w)(1+w)^(D-p1) product_{C in Z} ((1+w)^|C|-1).
+Hence r=r_*+b, g_r=g_*P and
+g_(r+1)/g_r=g_*'/g_*+D-(p1+b)/2.
+This is exact, including the case b=0. The known factor can be computed by the signature/local subset procedure from the manuscript. Recover p1 via rational arithmetic; no rounding or logarithmic factorization estimates. All computations are free in the query model.
+
+## 2. An explicit improved bound for L=1
+Define A(s)=sopfr(s), A(1)=0, and f(s)=s-A(s). Alladi–Erdos explicitly record that A(s)=s precisely for primes and 4. For completeness, if s>=2 is composite, write s=ab with a,b>=2. Inductively A(a)<=a,A(b)<=b, so A(s)<=a+b<=ab. Equality in the second inequality forces a=b=2; primes and 4 do give equality. Thus f(1)=1, f(prime)=f(4)=0, and f(s)>0 for composite s>=6. By complete additivity A(P)=sum A(s_C), so
+\[
+m_1=p_1-A(P)-\sum_{\substack{C\in Z\\ |C|\ge6,\ |C|\text{ composite}}} (|C|-A(|C|)).
+\]
+Query only status of nonregular interior classes of composite size at least 6. Theorem 7 and its direct implementation give, for both tasks and for nonadaptive (thus also adaptive),
+\[
+D_1(n)\le n^2/24+O(n^{5/3}).
+\]
+The known E_* contribution is added, and if p1=A(P) all nonnegative summands vanish, so m1=0 without queries. This improves the previous 1/16 general upper bound when g_(r+1) is supplied. No claim that 1/24 is optimal. For example the missing-size multisets {1,3,4,4} and {2,2,2,6} both have b=4, sum12, product48, but different singleton multiplicity. They show purely arithmetic ambiguity with sizes <=6, not an extremal 1/24 lower bound. The previously established modulus-8 split construction gives leading lower coefficient 1/32 for L=1, not a matching one.
+
+## 3. General arithmetic threshold
+Use the previous exact moment equivalence in [joint-statistics constraints](P03-joint-statistics-constraints-2026-11-24.md) and [general-ideal factorization](P03-general-ideal-statistics-2026-11-24.md): J_L={1<=j<=L: j=1 or j even}; data determine b, P, and p_j for j in J_L. Let A_L(k) be the integer matrix on sizes 1,...,k, whose rows are count 1, all valuations v_p(s) for primes p<=k, and s^j for j in J_L. Define s_L as the least k for which ker_Q A_L(k) contains a vector with nonzero first coordinate. The condition is equivalent to rank(A_L(k))=rank(A_L(k) with its first column removed). A rational null vector can be scaled to an integral vector and split into disjoint positive and negative multisets. Conversely a collision differing in number of ones gives such a vector. Thus s_L is precisely the least possible maximum part in an arithmetic collision with different singleton count. This is NOT the least common modulus S_L from the previous lower-bound construction, nor an oracle lower-bound coefficient.
+
+Existence: take sizes 2^i and coefficients of polynomial (X-1)^2 product_{j in J_L}(X-2^j). Its constant coefficient is nonzero; its root and derivative at 1 encode equal count and equal total valuation, and roots 2^j encode moments. This proves finite s_L <=2^(2+|J_L|). For fixed L, query all nonregular interior classes of composite size >=s_L (if desired query all sizes >=s_L). Prime-sized counts not queried can be handled as follows: for prime p>=s_L, no unqueried composite size >=p remains, so its multiplicity is determined by v_p(P) after subtracting the queried contributions. Thus after subtracting known larger counts, the remaining multiplicities satisfy the system on 1,...,s_L-1, where the singleton coordinate is fixed by the row space. Equivalently query every class >=s_L, subtract its contribution and solve. By Theorem 7,
+\[
+D_L(n)\le n^2/(4s_L)+O_L(n^{5/3}).
+\]
+All four deterministic tasks covered. The known arithmetic threshold is exact as defined, not the optimal query threshold across all possible algorithms; realizable semigroup size patterns may impose additional constraints. A nonzero null vector at k=s_L gives no lower bound of 1/(4s_L). In particular the minimum modulus and minimum max part need not coincide.
+
+The count and the first floor(L/2) even-power rows are an ordinary Vandermonde on distinct squares. Thus the columns for 1,...,floor(L/2)+1 are independent, giving s_L>=floor(L/2)+2. Consequently s_L tends to infinity, and extra coefficients progressively reduce the universal upper coefficient towards zero. More precisely for any sequence L(n)->infinity, monotonicity in supplied data and the fixed-L bounds imply D_{L(n)}(n)=o(n²). This is a diagonal argument, not a uniform estimate of the O_L term.
+
+## 4. Verified arithmetic thresholds and comparison with existing lower bounds
+Exact integer row reduction (fraction-free elimination, row normalization) finds:
+L | s_L | universal upper coefficient | previously constructed split lower coefficient
+---|---:|---:|---:
+0 | 4 | 1/16 | 1/16
+1 | 6 | 1/24 | 1/32
+2,3 | 8 | 1/32 | 1/48
+4,5 | 9 | 1/36 | 1/96
+6,7 | 10 | 1/40 | 1/96
+8,9 | 12 | 1/48 | 1/144
+10 | 14 | 1/56 | 1/192
+11 | 14 | 1/56 | 1/192 (same moment data as L=10)
+12 | 15 | 1/60 | not assessed here
+
+The lower coefficients are inherited from the prior split construction with divisor moduli 4,8,12,24,24,36,48 (see earlier reports); no rerun of those constructions in this round. Interpret these as asymptotic lower bounds from families, not claims of ordinary limits except the previously proved L=0 theorem. At L=1 an explicit vector on sizes 1,...,6 is (1,-3,1,2,0,-1); at L=2,3 on 1,...,8 it is (1,-4,3,2,0,-3,0,1). For every smaller maximum part, the rank test excludes singleton collisions. Further vectors are emitted by the exact script. The optimum for L>=1 remains open.
+
+## 5. Actual verification
+[statistical-threshold-arithmetic-audit.js](../experiments/statistical-threshold-arithmetic-audit.js) was executed before saving. 131 exact BigInt matrix threshold/rank comparisons for L=0,...,12, with kernel certificates, 6188 multiset identity checks, 6188 first-coefficient ratio checks with two optional elements, and 9999 equality-characterization checks for s=2,...,10000. PASS. The multiset checks enumerate all multisets of length <=5 using sizes 1..12, including the empty multiset; the ratio check is a specialization with a constant known factor and two optional elements. No full-table enumeration or implementation of the complete P03 upper algorithm is claimed in this round. Independently ran a local SymPy nullspace scan for L=0,...,12 and obtained the same thresholds (not archived as a separate script). Proof is algebraic, audit finite.
+
+## 6. Priority and next direction
+The arithmetic function, compulsory generating blocks, sum/product/length collisions and equal moments are established classical tools. Credit Alladi–Erdos, Berman, Cha et al. (and Kelly via their bibliography), and Lucchini in the source comparison. The model-specific identity and threshold upper bounds are candidate contributions, not historical novelty certification. No matching P03 theorem found in inspected passages. PARTIAL_OVERLAP remains. Keep the central manuscript's L=0 theorem unchanged, add the new L>=1 upper result separately. Next investigate stronger lower bounds for L>=1 and exact extremal arithmetic/geometry trade-offs; Pin 2026 still pending. No purchase needed, no claim of author request sent.
