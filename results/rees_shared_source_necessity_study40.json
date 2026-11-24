@@ -1,14 +1,14 @@
 {
   "study": 40,
-  "models": 24,
-  "choices": 720,
-  "deletions": 5808,
-  "complements": 720,
-  "anchorChecks": 720,
-  "sharedSourceRecoveries": 2016,
-  "tailRecoveries": 1008,
-  "properInternal": 144,
+  "models": 36,
+  "choices": 960,
+  "deletions": 7584,
+  "complements": 960,
+  "anchorChecks": 960,
+  "sharedSourceRecoveries": 2688,
+  "tailRecoveries": 1344,
+  "properInternal": 192,
   "freeWordChecks": 200,
   "all_passed": true,
-  "scope": "Finite capacity analogues C4,S3,C2^3, with and without extra missing column sources, three normalized sandwich patterns, and a proper internal monoid case; exact free-word computations for donor-assisted inverse recovery. No exhaustive enumeration of infinite semigroups."
+  "scope": "Finite capacity analogues C4,S3,C2^3, with extra missing columns, only anchor column missing, or all column sources occupied by tail, three normalized sandwich patterns, and a proper internal monoid case; exact free-word computations for donor-assisted inverse recovery. No exhaustive enumeration of infinite semigroups."
 }

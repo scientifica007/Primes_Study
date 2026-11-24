@@ -50,9 +50,9 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
         for n in range(168,172):
             self.assertIn(f"T{n}", study)
         self.assertTrue(data["all_passed"])
-        self.assertEqual(data["choices"], 720)
-        self.assertEqual(data["tailRecoveries"], 1008)
-        self.assertEqual(data["deletions"], 5808)
+        self.assertEqual(data["choices"], 960)
+        self.assertEqual(data["tailRecoveries"], 1344)
+        self.assertEqual(data["deletions"], 7584)
 
     def test_study39_distributed_recovery(self):
         study = (ROOT / "docs" / "49-experiment-39-distributed-recovery.md").read_text(encoding="utf-8")
