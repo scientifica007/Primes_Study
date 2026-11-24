@@ -158,3 +158,7 @@ Code: [Python](../experiments/green_metadata_adversary.py), [GAP](../experiments
 ## Addendum (24 November 2026): fixed generating rank
 
 The rank caveat above remains valid for Theorem 1's original family. A subsequent construction in [Study 14](../docs/24-experiment-14-fixed-rank-oracle-bound.md) combines two orthogonal nonunit ideals, one multiplied by C3, with shared C12 units and a new zero. Under the promise that exactly one of two Boolean matrices is nonzero, the order is 8(p+q)+21, the generating rank is 2(p+q)+2 independent of the matrices, and the original fixed metadata remain fixed. The deterministic promised query complexity is exactly pq; a bounded-error expected randomized lower bound is (1/2−ε)pq. This extension needs its own priority review before integration into a revised submission draft. No novelty claim is made.
+
+## Addendum (24 November 2026): fixed generating-set statistics
+
+[Study 15](../docs/25-experiment-15-generator-statistics.md), T53–T56, strengthens the promised lower bound further: fixed rank, fixed number and complete size distribution of inclusion-minimal generating sets, and for every fixed L, fixed counts of all generating subsets of sizes r through r+L. The full generating-set size distribution cannot be fixed while changing emptiness, since the number of indispensable elements equals n minus the count of generating subsets of size n−1. The new construction and priority assessment remain separate from the reviewed v0.3 main theorem; no novelty or peer-review claim is made.

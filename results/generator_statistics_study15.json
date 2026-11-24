@@ -1,0 +1,133 @@
+{
+  "study": "T53-T56",
+  "units": {
+    "nonempty_subsets": 65535,
+    "irredundant_pairs": 48
+  },
+  "rows": [
+    {
+      "p": 1,
+      "q": 1,
+      "n": 71,
+      "full": true,
+      "tables": 2,
+      "empty": 1,
+      "rank": 12,
+      "irredundant_count": "12582912"
+    },
+    {
+      "p": 1,
+      "q": 2,
+      "n": 89,
+      "full": true,
+      "tables": 18,
+      "empty": 9,
+      "rank": 16,
+      "irredundant_count": "3221225472"
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "n": 89,
+      "full": true,
+      "tables": 18,
+      "empty": 9,
+      "rank": 16,
+      "irredundant_count": "3221225472"
+    },
+    {
+      "p": 2,
+      "q": 2,
+      "n": 107,
+      "full": false,
+      "tables": 32,
+      "empty": 16,
+      "rank": 20,
+      "irredundant_count": "824633720832"
+    }
+  ],
+  "total_tables_verified": 70,
+  "matched_initial_generating_coefficients": [
+    {
+      "L": 0,
+      "coefficients": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "zero_components_each": 2,
+      "sum_sizes": [
+        5,
+        4
+      ],
+      "matched_coefficients": 1
+    },
+    {
+      "L": 1,
+      "coefficients": [
+        "2",
+        "-5",
+        "4",
+        "-1"
+      ],
+      "zero_components_each": 6,
+      "sum_sizes": [
+        18,
+        18
+      ],
+      "matched_coefficients": 2
+    },
+    {
+      "L": 2,
+      "coefficients": [
+        "8",
+        "-22",
+        "21",
+        "-8",
+        "1"
+      ],
+      "zero_components_each": 30,
+      "sum_sizes": [
+        108,
+        108
+      ],
+      "matched_coefficients": 3
+    },
+    {
+      "L": 3,
+      "coefficients": [
+        "64",
+        "-184",
+        "190",
+        "-85",
+        "16",
+        "-1"
+      ],
+      "zero_components_each": 270,
+      "sum_sizes": [
+        1080,
+        1080
+      ],
+      "matched_coefficients": 4
+    },
+    {
+      "L": 4,
+      "coefficients": [
+        "1024",
+        "-3008",
+        "3224",
+        "-1550",
+        "341",
+        "-32",
+        "1"
+      ],
+      "zero_components_each": 4590,
+      "sum_sizes": [
+        19440,
+        19440
+      ],
+      "matched_coefficients": 5
+    }
+  ],
+  "note": "Labelled tables for T54; single-bit nonzero matrices at 2x2. T56 checks truncated polynomial identities, not full tables."
+}
