@@ -1,0 +1,21 @@
+{
+  "study": 58,
+  "graphCases": 25736,
+  "graphDeletionChecks": 50768,
+  "finiteGroupCases": 6,
+  "finiteGroupDeletionChecks": 33,
+  "starCases": 6,
+  "starDeletionChecks": 33,
+  "donorModels": 4,
+  "donorHomChecks": 450,
+  "donorInverseChecks": 20,
+  "donorSupportChecks": 60,
+  "repairCases": 12,
+  "repairDeletionChecks": 37,
+  "tailChecks": 8,
+  "skipCases": 0,
+  "matchingChecks": 40,
+  "freeWordChecks": 1640,
+  "all_passed": true,
+  "scope": "Finite bipartite required-vertex covers, exact C3 and S3 Rees closures, star and upper-action donor repair, bounded free-word identities. Infinite results analytic."
+}

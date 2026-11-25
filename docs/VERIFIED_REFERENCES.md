@@ -267,3 +267,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R76 — الدراسة 57
 لا بحث ببليوغرافي جديد؛ لا ادعاء استرجاع أو أسبقية. [الدراسة](67-experiment-57-distributed-residual-repair.md).
+
+## R77 — الدراسة 58
+لا بحث ببليوغرافي جديد؛ لا ادعاء استرجاع أو أسبقية. [الدراسة](68-experiment-58-distributed-donors.md).

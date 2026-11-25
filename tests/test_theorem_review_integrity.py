@@ -32,17 +32,29 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T239_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T243_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,240)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,244)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 239)
+        self.assertEqual(len(registry), 243)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study58_distributed_donors(self):
+        study = (ROOT / "docs" / "68-experiment-58-distributed-donors.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "distributed_donors_study58.json").read_text(encoding="utf-8"))
+        for n in range(240,244):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["graphCases"], 25736)
+        self.assertEqual(data["graphDeletionChecks"], 50768)
+        self.assertEqual(data["donorHomChecks"], 450)
+        self.assertEqual(data["repairCases"], 12)
+        self.assertEqual(data["freeWordChecks"], 1640)
 
     def test_study57_distributed_residual_repair(self):
         study = (ROOT / "docs" / "67-experiment-57-distributed-residual-repair.md").read_text(encoding="utf-8")

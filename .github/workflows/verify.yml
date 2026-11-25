@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 58 distributed donors (Node.js)
+        run: |
+          node experiments/distributed_donors.js > /tmp/distributed-donors.json
+          diff -u results/distributed_donors_study58.json /tmp/distributed-donors.json
       - name: Recompute Study 57 distributed residual repair (Node.js)
         run: |
           node experiments/distributed_residual_repair.js > /tmp/distributed-residual-repair.json
