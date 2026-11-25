@@ -32,17 +32,29 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T231_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T235_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,232)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,236)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 231)
+        self.assertEqual(len(registry), 235)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study56_partial_positional_symmetries(self):
+        study = (ROOT / "docs" / "66-experiment-56-partial-positional-symmetries.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "partial_positional_symmetries_study56.json").read_text(encoding="utf-8"))
+        for n in range(232,236):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["starForests"], 174)
+        self.assertEqual(data["automorphismChecks"], 2171832)
+        self.assertEqual(data["repairCases"], 18)
+        self.assertEqual(data["targetedPrivateChecks"], 4)
+        self.assertEqual(data["partialOverlapChecks"], 30)
 
     def test_study55_finite_orbit_palettes(self):
         study = (ROOT / "docs" / "65-experiment-55-finite-orbit-palettes.md").read_text(encoding="utf-8")

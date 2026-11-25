@@ -259,3 +259,6 @@ The rank of a commutative semigroup، https://dml.cz/handle/10338.dmlcz/140663 (
 
 ## R74 — الدراسة 55 (25/11/2026)
 بيانات ومقتطفات بحث مرئية: [Gray وRuškuc، Generating Sets of Completely 0-Simple Semigroups](https://doi.org/10.1080/00927870500276676)، [Homogeneous completely simple semigroups](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/mtk.12035)، [Generators and relations of Rees matrix semigroups](https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society/article/generators-and-relations-of-rees-matrix-semigroups/1BA034D65B609743692C9AB8CBAF8F02). سياق الرتبة وتمثيل Rees والتوليد؛ لا قراءة كاملة أو إثبات مطابقة أو أسبقية. R60–R73 مؤقتة وفق ملاحظات السجل. [الدراسة](65-experiment-55-finite-orbit-palettes.md).
+
+## R75 — الدراسة 56 (25/11/2026)
+مقتطفات بحث ظاهرة في الجلسة: [Homogeneous completely simple semigroups](https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/mtk.12035)، [GAP — Semigroups and Monoids](https://docs.gap-system.org/doc/ref/chap51.html). سياق تمثيل Rees والتناظرات؛ لا قراءة كاملة أو إثبات مطابقة أو أسبقية. R60–R73 مؤقتة، ولم نتحقق استقلاليًا من جميع ادعاءات الاسترجاع في R74 (ظهر مرجع التجانس في البحث الحالي). [الدراسة](66-experiment-56-partial-positional-symmetries.md).
