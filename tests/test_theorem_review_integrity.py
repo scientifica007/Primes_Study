@@ -32,17 +32,29 @@ class TheoremReviewIntegrityTests(unittest.TestCase):
             )
         )
 
-    def test_historic_27_stable_and_new_T28_to_T235_appended(self):
+    def test_historic_27_stable_and_new_T28_to_T239_appended(self):
         expected = {f"T{i:02d}" for i in range(1, 28)}
         registry = re.findall(r"^\| \*\*(T\d{2,})\*\* \|", self.registry, re.M)
         synthesis = re.findall(r"^\| \*\*(T\d\d)\*\* \|", self.synthesis, re.M)
         ranked = [entry["id"] for entry in self.data["all_theorems"]]
-        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,236)})
+        self.assertEqual(set(registry), expected | {f"T{i:02d}" for i in range(28,240)})
         self.assertEqual(set(synthesis), expected)
         self.assertEqual(set(ranked), expected)
-        self.assertEqual(len(registry), 235)
+        self.assertEqual(len(registry), 239)
         self.assertEqual(len(synthesis), 27)
         self.assertEqual(len(ranked), 27)
+
+    def test_study57_distributed_residual_repair(self):
+        study = (ROOT / "docs" / "67-experiment-57-distributed-residual-repair.md").read_text(encoding="utf-8")
+        data = json.loads((ROOT / "results" / "distributed_residual_repair_study57.json").read_text(encoding="utf-8"))
+        for n in range(236,240):
+            self.assertIn(f"T{n}", study)
+        self.assertTrue(data["all_passed"])
+        self.assertEqual(data["repairCases"], 72)
+        self.assertEqual(data["directedTailChecks"], 67)
+        self.assertEqual(data["freeTransportChecks"], 1640)
+        self.assertEqual(data["relativeMinChecks"], 780)
+        self.assertEqual(data["crossIntersectionChecks"], 40)
 
     def test_study56_partial_positional_symmetries(self):
         study = (ROOT / "docs" / "66-experiment-56-partial-positional-symmetries.md").read_text(encoding="utf-8")

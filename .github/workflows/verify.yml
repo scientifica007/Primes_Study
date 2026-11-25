@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 57 distributed residual repair (Node.js)
+        run: |
+          node experiments/distributed_residual_repair.js > /tmp/distributed-residual-repair.json
+          diff -u results/distributed_residual_repair_study57.json /tmp/distributed-residual-repair.json
       - name: Recompute Study 56 partial positional symmetries (Node.js)
         run: |
           node experiments/partial_positional_symmetries.js > /tmp/partial-positional-symmetries.json

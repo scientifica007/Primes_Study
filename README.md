@@ -1,6 +1,9 @@
 # Primes_Study — دراسة الأولية بوصفها ظاهرة علائقية
 
-## آخر دراسة — الدراسة 56 (25/11/2026)
+## آخر دراسة — الدراسة 57 (25/11/2026)
+[الدراسة 57: الإصلاح الموزع للبقايا اللانهائية](docs/67-experiment-57-distributed-residual-repair.md) — T236–T239. CI الدراسة 56 ناجح. نقل جزئي بنواتين منتهيتين، غطاء موضعي منته لتقاطع لانهائي، إصلاح كتلي مشروط وعائق مجرد. [التجربة](experiments/distributed_residual_repair.js)، [النتائج](results/distributed_residual_repair_study57.json). لا حسم عام أو ادعاء جدة؛ راجع تصحيح حالة R74–R75.
+
+## الدراسة 56 (25/11/2026)
 [الدراسة 56: التناظرات الجزئية والاحتياطي الموضعي](docs/66-experiment-56-partial-positional-symmetries.md) — T232–T235. CI الدراسة 55 ناجح. غابة النجوم والضرورة المصدرية، حد بقايا التقاطع وإصلاح منته مع منع لانهائي. [التجربة](experiments/partial_positional_symmetries.js)، [النتائج](results/partial_positional_symmetries_study56.json). لا حسم عام أو ادعاء جدة.
 
 ## الدراسة 55 (25/11/2026)
