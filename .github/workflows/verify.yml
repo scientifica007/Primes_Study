@@ -19,6 +19,10 @@ jobs:
         run: |
           node experiments/periodic_clifford_depth.js > /tmp/periodic-clifford-recomputed.json
           diff -u results/periodic_clifford_study25.json /tmp/periodic-clifford-recomputed.json
+      - name: Recompute Study 55 finite orbit palettes (Node.js)
+        run: |
+          node experiments/finite_orbit_palettes.js > /tmp/finite-orbit-palettes.json
+          diff -u results/finite_orbit_palettes_study55.json /tmp/finite-orbit-palettes.json
       - name: Recompute Study 54 revisable recovery (Node.js)
         run: |
           node experiments/revisable_recovery.js > /tmp/revisable-recovery.json

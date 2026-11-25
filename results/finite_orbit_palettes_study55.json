@@ -1,0 +1,20 @@
+{
+  "study": 55,
+  "models": 6,
+  "bases": 24,
+  "orbitChecks": 880,
+  "tripleChecks": 24,
+  "closureChecks": 72,
+  "deletionChecks": 387,
+  "substitutionChecks": 240,
+  "paletteChecks": 480,
+  "booleanCases": 1500,
+  "booleanAssignments": 96000,
+  "booleanSat": 1237,
+  "booleanUnsat": 263,
+  "motifAssignments": 1024,
+  "motifPrivateChecks": 12,
+  "motifWordChecks": 400,
+  "all_passed": true,
+  "scope": "Exact finite Rees closure, upper min actions, twin automorphisms, finite orbit palettes and Boolean constraints; reduced free-word identities for a restricted-symmetry obstruction. General infinite results proved analytically."
+}
